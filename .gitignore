@@ -5,6 +5,7 @@ __pycache__/
 
 # 缩略图（可选忽略，或提交示例缩略图）
 thumbnails/
+!thumbnails/**/*.png
 
 # 历史备份
 history/
