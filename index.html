@@ -178,11 +178,6 @@
       border-color: var(--accent);
     }
 
-    .component-card.pending-deletion {
-      opacity: 0.5;
-      border-color: #e74c3c;
-    }
-
     .component-thumbnail {
       width: 100%;
       height: 180px;
@@ -353,6 +348,177 @@
       justify-content: flex-end;
     }
 
+    /* 组件详情样式 */
+    .detail-section {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .detail-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .detail-value {
+      font-size: 14px;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .detail-props-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--spacing-sm);
+    }
+
+    .detail-props-table th,
+    .detail-props-table td {
+      padding: var(--spacing-sm);
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .detail-props-table th {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .detail-props-table td {
+      color: var(--text-secondary);
+    }
+
+    .detail-when-to-use {
+      background: var(--bg-tertiary);
+      padding: var(--spacing-md);
+      border-radius: var(--border-radius);
+      margin-top: var(--spacing-sm);
+    }
+
+    .detail-when-to-use li {
+      margin-bottom: var(--spacing-xs);
+      margin-left: var(--spacing-md);
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    /* 导出按钮 */
+    .export-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--accent), #6366f1);
+      color: #ffffff;
+      border: none;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .export-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+    }
+
+    /* AI聊天界面 */
+    .ai-chat-panel {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 360px;
+      height: 480px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      z-index: 101;
+    }
+
+    .ai-chat-panel.active {
+      display: flex;
+    }
+
+    .ai-chat-header {
+      padding: var(--spacing-md);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ai-chat-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .ai-chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--spacing-md);
+    }
+
+    .ai-message {
+      margin-bottom: var(--spacing-md);
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--border-radius);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ai-message.user {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      margin-left: 20%;
+    }
+
+    .ai-message.assistant {
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--text-primary);
+      margin-right: 20%;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .ai-chat-input-area {
+      padding: var(--spacing-md);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: var(--spacing-sm);
+    }
+
+    .ai-chat-input {
+      flex: 1;
+      padding: var(--spacing-sm);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      color: var(--text-primary);
+      font-size: 13px;
+    }
+
+    .ai-chat-send {
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 13px;
+    }
+
     /* 响应式 */
     @media (max-width: 1200px) {
       .preview-panel {
@@ -378,6 +544,10 @@
       <li class="category-item" data-category="cards">卡片</li>
       <li class="category-item" data-category="cta">CTA</li>
       <li class="category-item" data-category="xianxia">修仙</li>
+      <li class="category-item" data-category="footer">页脚</li>
+      <li class="category-item" data-category="forms">表单</li>
+      <li class="category-item" data-category="stats">数据</li>
+      <li class="category-item" data-category="features">特性</li>
     </ul>
   </div>
 
@@ -388,6 +558,7 @@
       <input type="text" class="search-box" placeholder="搜索组件..." id="searchBox">
       <button class="btn btn-secondary" id="aiModeBtn">AI模式：关</button>
       <button class="btn" id="generatePromptBtn">生成AI提示词</button>
+      <button class="btn btn-secondary" id="aiChatToggle">AI聊天</button>
     </div>
 
     <!-- 组件网格 -->
@@ -404,6 +575,7 @@
     <div class="preview-actions">
       <button class="btn btn-secondary" id="copyCodeBtn">复制代码</button>
       <button class="btn" id="copyIdBtn">复制ID</button>
+      <button class="btn btn-secondary" id="detailBtn">详情</button>
     </div>
   </div>
 
@@ -419,9 +591,45 @@
     </div>
   </div>
 
+  <!-- 组件详情模态框 -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal" style="max-width: 700px; max-height: 80vh; overflow-y: auto;">
+      <h3 id="detailTitle">组件详情</h3>
+      <div id="detailContent"></div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="closeDetailBtn">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 导出按钮 -->
+  <button class="export-btn" id="exportBtn">📦 批量导出</button>
+
+  <!-- AI聊天面板 -->
+  <div class="ai-chat-panel" id="aiChatPanel">
+    <div class="ai-chat-header">
+      <span>🤖 AI助手</span>
+      <button class="ai-chat-close" id="aiChatClose">×</button>
+    </div>
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <div class="ai-message assistant">
+        你好！我是组件库AI助手。你可以让我：<br>
+        • 添加新组件<br>
+        • 修改现有组件<br>
+        • 删除组件<br>
+        • 搜索组件<br>
+        • 生成页面
+      </div>
+    </div>
+    <div class="ai-chat-input-area">
+      <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="输入指令...">
+      <button class="ai-chat-send" id="aiChatSend">发送</button>
+    </div>
+  </div>
+
   <script>
     // 组件数据（内嵌，避免 file:// 协议的 fetch 限制）
-    const COMPONENTS_DATA = {"schema_version":"1.0","last_updated":"2026-05-06T10:37","library_path":"/Users/oxohuang/oxo-ui-library","components":[{"id":"navbar-dark","name":"暗色导航栏","category":"navigation","tags":["导航","响应式","暗色","固定顶部","毛玻璃"],"meta_path":"components/navigation/navbar-dark.meta.json","file_path":"components/navigation/navbar-dark.html","thumbnail":"thumbnails/navigation/navbar-dark.png"},{"id":"hero-centered","name":"居中Hero区域","category":"hero","tags":["Hero","CTA","全屏","科技感","暗色"],"meta_path":"components/hero/hero-centered.meta.json","file_path":"components/hero/hero-centered.html","thumbnail":"thumbnails/hero/hero-centered.png"},{"id":"card-product","name":"产品卡片","category":"cards","tags":["卡片","产品展示","悬停动效","暗色"],"meta_path":"components/cards/card-product.meta.json","file_path":"components/cards/card-product.html","thumbnail":"thumbnails/cards/card-product.png"},{"id":"cta-centered","name":"居中CTA区域","category":"cta","tags":["CTA","居中","暗色","双按钮"],"meta_path":"components/cta/cta-centered.meta.json","file_path":"components/cta/cta-centered.html","thumbnail":"thumbnails/cta/cta-centered.png"},{"id":"cultivation-card","name":"修仙修炼卡片","category":"xianxia","tags":["修仙","卡片","技能展示","紫金配色","动效"],"meta_path":"components/xianxia/cultivation-card.meta.json","file_path":"components/xianxia/cultivation-card.html","thumbnail":"thumbnails/xianxia/cultivation-card.png"},{"id":"footer-simple","name":"简单页脚","category":"footer","tags":["页脚","链接","多栏","响应式"],"meta_path":"components/footer/footer-simple.meta.json","file_path":"components/footer/footer-simple.html","thumbnail":"thumbnails/footer/footer-simple.png"},{"id":"form-login","name":"登录表单","category":"forms","tags":["表单","登录","第三方登录","暗色"],"meta_path":"components/forms/form-login.meta.json","file_path":"components/forms/form-login.html","thumbnail":"thumbnails/forms/form-login.png"},{"id":"stats-grid","name":"数据网格","category":"stats","tags":["数据","统计","网格","趋势"],"meta_path":"components/stats/stats-grid.meta.json","file_path":"components/stats/stats-grid.html","thumbnail":"thumbnails/stats/stats-grid.png"},{"id":"feature-list","name":"特性列表","category":"features","tags":["特性","功能展示","网格布局","暗色","卡片"],"meta_path":"components/features/feature-list.meta.json","file_path":"components/features/feature-list.html","thumbnail":"thumbnails/features/feature-list.png"}]};
+    const COMPONENTS_DATA = {"schema_version": "1.0", "last_updated": "2026-05-06T16:25:00+08:00", "library_path": "/Users/oxohuang/oxo-ui-library", "components": [{"id": "navbar-dark", "name": "暗色导航栏", "category": "navigation", "tags": ["导航", "响应式", "暗色", "固定顶部", "毛玻璃"], "meta_path": "components/navigation/navbar-dark.meta.json", "file_path": "components/navigation/navbar-dark.html", "thumbnail": "thumbnails/navigation/navbar-dark.png"}, {"id": "hero-centered", "name": "居中Hero区域", "category": "hero", "tags": ["Hero", "CTA", "全屏", "科技感", "暗色"], "meta_path": "components/hero/hero-centered.meta.json", "file_path": "components/hero/hero-centered.html", "thumbnail": "thumbnails/hero/hero-centered.png"}, {"id": "card-product", "name": "产品卡片", "category": "cards", "tags": ["卡片", "产品展示", "悬停动效", "暗色"], "meta_path": "components/cards/card-product.meta.json", "file_path": "components/cards/card-product.html", "thumbnail": "thumbnails/cards/card-product.png"}, {"id": "cta-centered", "name": "居中CTA区域", "category": "cta", "tags": ["CTA", "居中", "暗色", "双按钮"], "meta_path": "components/cta/cta-centered.meta.json", "file_path": "components/cta/cta-centered.html", "thumbnail": "thumbnails/cta/cta-centered.png"}, {"id": "cultivation-card", "name": "修仙修炼卡片", "category": "xianxia", "tags": ["修仙", "卡片", "技能展示", "紫金配色", "动效"], "meta_path": "components/xianxia/cultivation-card.meta.json", "file_path": "components/xianxia/cultivation-card.html", "thumbnail": "thumbnails/xianxia/cultivation-card.png"}, {"id": "footer-simple", "name": "简单页脚", "category": "footer", "tags": ["页脚", "链接", "多栏", "响应式"], "meta_path": "components/footer/footer-simple.meta.json", "file_path": "components/footer/footer-simple.html", "thumbnail": "thumbnails/footer/footer-simple.png"}, {"id": "form-login", "name": "登录表单", "category": "forms", "tags": ["表单", "登录", "第三方登录", "暗色"], "meta_path": "components/forms/form-login.meta.json", "file_path": "components/forms/form-login.html", "thumbnail": "thumbnails/forms/form-login.png"}, {"id": "stats-grid", "name": "数据网格", "category": "stats", "tags": ["数据", "统计", "网格", "趋势"], "meta_path": "components/stats/stats-grid.meta.json", "file_path": "components/stats/stats-grid.html", "thumbnail": "thumbnails/stats/stats-grid.png"}, {"id": "feature-list", "name": "特性列表", "category": "features", "tags": ["特性", "功能展示", "网格布局", "暗色", "卡片"], "meta_path": "components/features/feature-list.meta.json", "file_path": "components/features/feature-list.html", "thumbnail": "thumbnails/features/feature-list.png"}]};
 
     let components = COMPONENTS_DATA.components;
     let currentCategory = 'all';
@@ -429,7 +637,7 @@
     let aiMode = false;
     let selectedComponent = null;
 
-    // 加载组件列表（优先用内嵌数据）
+    // 加载组件列表
     function loadComponentsData() {
       renderComponents();
     }
@@ -453,28 +661,27 @@
         card.dataset.id = comp.id;
 
         const thumbnailHtml = comp.thumbnail && comp.thumbnail !== '' 
-          ? `<img src="${comp.thumbnail}" alt="${comp.name}">`
-          : `<span>📦</span>`;
+          ? '<img src="' + comp.thumbnail + '" alt="' + comp.name + '">'
+          : '<span>📦</span>';
 
-        card.innerHTML = `
-          <div class="component-thumbnail">
-            ${thumbnailHtml}
-          </div>
-          <div class="component-info">
-            <div class="component-name">${comp.name}</div>
-            <div class="component-tags">
-              ${comp.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
-            </div>
-            <div class="component-actions">
-              <button class="btn" onclick="previewComponent('${comp.id}')">查看演示</button>
-              <button class="btn btn-secondary" onclick="copyComponentId('${comp.id}')">复制ID</button>
-              <button class="btn btn-danger" onclick="deleteComponent('${comp.id}')">删除</button>
-            </div>
-          </div>
-          <div class="ai-metadata">
-            <pre>${JSON.stringify({id: comp.id, category: comp.category, tags: comp.tags}, null, 2)}</pre>
-          </div>
-        `;
+        card.innerHTML = 
+          '<div class="component-thumbnail">' +
+            thumbnailHtml +
+          '</div>' +
+          '<div class="component-info">' +
+            '<div class="component-name">' + comp.name + '</div>' +
+            '<div class="component-tags">' +
+              comp.tags.map(tag => '<span class="tag">#' + tag + '</span>').join('') +
+            '</div>' +
+            '<div class="component-actions">' +
+              '<button class="btn" onclick="previewComponent('' + comp.id + '')">查看演示</button>' +
+              '<button class="btn btn-secondary" onclick="copyComponentId('' + comp.id + '')">复制ID</button>' +
+              '<button class="btn btn-danger" onclick="deleteComponent('' + comp.id + '')">删除</button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="ai-metadata">' +
+            '<pre>' + JSON.stringify({id: comp.id, category: comp.category, tags: comp.tags}, null, 2) + '</pre>' +
+          '</div>';
 
         grid.appendChild(card);
       });
@@ -487,14 +694,14 @@
 
       selectedComponent = comp;
       document.getElementById('previewFrame').src = comp.file_path;
-      
-      // 尝试加载代码（file:// 协议下可能失败）
+
+      // 尝试加载代码
       try {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', comp.file_path, true);
         xhr.onreadystatechange = function() {
           if (xhr.readyState === 4) {
-            if (xhr.status === 200 || xhr.status === 0) {  // status 0 = file:// 协议
+            if (xhr.status === 200 || xhr.status === 0) {
               document.getElementById('codePanel').textContent = xhr.responseText;
             } else {
               document.getElementById('codePanel').textContent = '无法加载代码（请使用本地服务器查看完整功能）';
@@ -518,9 +725,9 @@
     window.deleteComponent = function(id) {
       const comp = components.find(c => c.id === id);
       document.getElementById('deleteMessage').textContent = 
-        `确定要删除组件「${comp.name}」吗？删除后可以从 history/ 目录恢复。`;
+        '确定要删除组件「' + comp.name + '」吗？删除后可以从 history/ 目录恢复。';
       document.getElementById('deleteModal').classList.add('active');
-      document.getElementById('confirmDeleteBtn').onclick = () => {
+      document.getElementById('confirmDeleteBtn').onclick = function() {
         confirmDelete(id);
       };
     };
@@ -529,6 +736,140 @@
       alert('已标记组件 ' + id + ' 为待删除。AI将在下次同步时执行删除。');
       document.getElementById('deleteModal').classList.remove('active');
     }
+
+    // 显示组件详情
+    window.showComponentDetail = function(id) {
+      const comp = components.find(c => c.id === id);
+      if (!comp) return;
+
+      fetch(comp.meta_path)
+        .then(res => res.json())
+        .then(meta => {
+          let html = '';
+          html += '<div class="detail-section">';
+          html += '<div class="detail-label">组件名称</div>';
+          html += '<div class="detail-value"><strong>' + meta.name + '</strong> (' + meta.id + ')</div>';
+          html += '</div>';
+
+          html += '<div class="detail-section">';
+          html += '<div class="detail-label">分类</div>';
+          html += '<div class="detail-value">' + meta.category + '</div>';
+          html += '</div>';
+
+          html += '<div class="detail-section">';
+          html += '<div class="detail-label">描述</div>';
+          html += '<div class="detail-value">' + (meta.description || '暂无描述') + '</div>';
+          html += '</div>';
+
+          html += '<div class="detail-section">';
+          html += '<div class="detail-label">标签</div>';
+          html += '<div class="detail-value">' + meta.tags.map(t => '`' + t + '`').join(' ') + '</div>';
+          html += '</div>';
+
+          if (meta.props && Object.keys(meta.props).length > 0) {
+            html += '<div class="detail-section">';
+            html += '<div class="detail-label">配置参数 (Props)</div>';
+            html += '<table class="detail-props-table">';
+            html += '<thead><tr><th>参数名</th><th>类型</th><th>默认值</th><th>说明</th></tr></thead>';
+            html += '<tbody>';
+            Object.entries(meta.props).forEach(([key, val]) => {
+              html += '<tr>';
+              html += '<td>' + key + '</td>';
+              html += '<td>' + (val.type || '-') + '</td>';
+              html += '<td>' + (val.default || '-') + '</td>';
+              html += '<td>' + (val.description || '-') + '</td>';
+              html += '</tr>';
+            });
+            html += '</tbody></table>';
+            html += '</div>';
+          }
+
+          if (meta.when_to_use && meta.when_to_use.length > 0) {
+            html += '<div class="detail-section">';
+            html += '<div class="detail-label">适用场景</div>';
+            html += '<div class="detail-when-to-use"><ul>';
+            meta.when_to_use.forEach(w => {
+              html += '<li>' + w + '</li>';
+            });
+            html += '</ul></div>';
+            html += '</div>';
+          }
+
+          document.getElementById('detailTitle').textContent = '组件详情：' + meta.name;
+          document.getElementById('detailContent').innerHTML = html;
+          document.getElementById('detailModal').classList.add('active');
+        })
+        .catch(err => {
+          alert('无法加载组件元数据：' + err.message);
+        });
+    };
+
+    // 关闭详情弹窗
+    document.getElementById('closeDetailBtn').addEventListener('click', () => {
+      document.getElementById('detailModal').classList.remove('active');
+    });
+
+    // 点击详情按钮
+    document.getElementById('detailBtn').addEventListener('click', () => {
+      if (selectedComponent) {
+        showComponentDetail(selectedComponent.id);
+      } else {
+        alert('请先选择一个组件');
+      }
+    });
+
+    // 导出所有组件
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      alert('正在准备导出...（需要服务器环境支持完整导出功能）\n\n当前组件数：' + components.length);
+    });
+
+    // AI聊天功能
+    document.getElementById('aiChatSend').addEventListener('click', sendAIMessage);
+    document.getElementById('aiChatInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendAIMessage();
+    });
+
+    function sendAIMessage() {
+      const input = document.getElementById('aiChatInput');
+      const message = input.value.trim();
+      if (!message) return;
+
+      const messagesDiv = document.getElementById('aiChatMessages');
+      const userMsg = document.createElement('div');
+      userMsg.className = 'ai-message user';
+      userMsg.textContent = message;
+      messagesDiv.appendChild(userMsg);
+
+      input.value = '';
+
+      setTimeout(() => {
+        const aiMsg = document.createElement('div');
+        aiMsg.className = 'ai-message assistant';
+        aiMsg.innerHTML = '收到指令：' + message + '<br>此功能需要连接后端AI服务。<br>当前为演示模式。';
+        messagesDiv.appendChild(aiMsg);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      }, 500);
+    }
+
+    // 打开/关闭AI聊天面板
+    let aiChatOpen = false;
+
+    document.getElementById('aiChatToggle').addEventListener('click', () => {
+      aiChatOpen = !aiChatOpen;
+      document.getElementById('aiChatPanel').classList.toggle('active', aiChatOpen);
+    });
+
+    document.getElementById('aiChatClose').addEventListener('click', () => {
+      document.getElementById('aiChatPanel').classList.remove('active');
+      aiChatOpen = false;
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('aiChatPanel').classList.remove('active');
+        aiChatOpen = false;
+      }
+    });
 
     // 搜索
     document.getElementById('searchBox').addEventListener('input', (e) => {
@@ -555,12 +896,7 @@
 
     // 生成AI提示词
     document.getElementById('generatePromptBtn').addEventListener('click', () => {
-      const prompt = `用我的组件库搭建页面：
-
-组件库路径：/Users/oxohuang/oxo-ui-library
-
-请读取 components/index.json 获取组件列表，然后按我的需求组装页面。`;
-      
+      const prompt = '用我的组件库搭建页面：\n\n组件库路径：/Users/oxohuang/oxo-ui-library\n\n请读取 components/index.json 获取组件列表，然后按我的需求组装页面。';
       navigator.clipboard.writeText(prompt).then(() => {
         alert('AI提示词已复制到剪贴板！');
       });
