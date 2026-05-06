@@ -1,0 +1,31 @@
+{
+  "id": "cta-centered",
+  "name": "居中CTA区域",
+  "category": "cta",
+  "description": "居中CTA区域，带背景光晕效果，双按钮布局，适合引导用户行动",
+  "version": "1.0.0",
+  "author": "oxohuang",
+  "created_at": "2026-05-06",
+  "updated_at": "2026-05-06",
+  "tags": ["CTA", "居中", "暗色", "双按钮"],
+  "when_to_use": [
+    "页面底部引导用户注册",
+    "免费试用引导",
+    "预约演示",
+    "限时优惠提示"
+  ],
+  "dependencies": {
+    "css": ["../../assets/css/theme.css"],
+    "js": [],
+    "external": []
+  },
+  "props": {
+    "badge_text": {"type": "string", "default": "⚡ 限时优惠", "description": "顶部徽章文字"},
+    "title": {"type": "string", "default": "准备好开始了吗？", "description": "CTA标题"},
+    "subtitle": {"type": "string", "default": "加入数千名满意用户的行列", "description": "CTA副标题"},
+    "cta_primary": {"type": "string", "default": "免费注册", "description": "主CTA按钮文字"},
+    "cta_secondary": {"type": "string", "default": "预约演示", "description": "次CTA按钮文字"}
+  },
+  "file_path": "components/cta/cta-centered.html",
+  "thumbnail": "thumbnails/cta/cta-centered.png"
+}

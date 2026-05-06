@@ -1,0 +1,31 @@
+{
+  "id": "card-product",
+  "name": "产品卡片",
+  "category": "cards",
+  "description": "带悬停动效的产品卡片，包含图片区、标题、描述、价格和CTA按钮",
+  "version": "1.0.0",
+  "author": "oxohuang",
+  "created_at": "2026-05-06",
+  "updated_at": "2026-05-06",
+  "tags": ["卡片", "产品展示", "悬停动效", "暗色"],
+  "when_to_use": [
+    "产品列表页",
+    "电商/应用商店",
+    "需要悬停交互效果",
+    "展示多个相似项目"
+  ],
+  "dependencies": {
+    "css": ["../../assets/css/theme.css"],
+    "js": [],
+    "external": []
+  },
+  "props": {
+    "image_emoji": {"type": "string", "default": "🎮", "description": "图片区emoji（可替换为img标签）"},
+    "title": {"type": "string", "default": "产品名称", "description": "产品标题"},
+    "description": {"type": "string", "default": "这是产品的简短描述", "description": "产品描述"},
+    "price": {"type": "string", "default": "¥199", "description": "价格显示"},
+    "button_text": {"type": "string", "default": "了解更多", "description": "按钮文字"}
+  },
+  "file_path": "components/cards/card-product.html",
+  "thumbnail": "thumbnails/cards/card-product.png"
+}

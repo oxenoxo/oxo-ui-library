@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oxo-ui-library - 组件库</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0a1a;
+      --bg-secondary: #1a1a2e;
+      --bg-tertiary: #16213e;
+      --bg-card: #1e1e3a;
+      --text-primary: #e0e0e0;
+      --text-secondary: #a0a0b0;
+      --text-muted: #6c6c80;
+      --accent: #00d4ff;
+      --accent-hover: #00b8e6;
+      --border-color: #2a2a4a;
+      --border-radius: 8px;
+      --border-radius-lg: 12px;
+      --spacing-xs: 4px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 24px;
+      --spacing-xl: 32px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* 侧边栏 */
+    .sidebar {
+      width: 240px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border-color);
+      padding: var(--spacing-lg);
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: var(--spacing-lg);
+      color: var(--accent);
+    }
+
+    .category-list {
+      list-style: none;
+    }
+
+    .category-item {
+      padding: var(--spacing-sm) var(--spacing-md);
+      margin-bottom: var(--spacing-xs);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .category-item:hover {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    .category-item.active {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* 主内容区 */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* 顶部工具栏 */
+    .toolbar {
+      padding: var(--spacing-md) var(--spacing-lg);
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      flex: 1;
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      color: var(--text-primary);
+      font-size: 14px;
+    }
+
+    .search-box::placeholder {
+      color: var(--text-muted);
+    }
+
+    .btn {
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-danger {
+      background: #e74c3c;
+    }
+
+    .btn-danger:hover {
+      background: #c0392b;
+    }
+
+    /* 组件网格 */
+    .components-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--spacing-lg);
+    }
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--spacing-lg);
+    }
+
+    .component-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .component-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border-color: var(--accent);
+    }
+
+    .component-card.pending-deletion {
+      opacity: 0.5;
+      border-color: #e74c3c;
+    }
+
+    .component-thumbnail {
+      width: 100%;
+      height: 180px;
+      background: var(--bg-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: var(--text-muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .component-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .component-info {
+      padding: var(--spacing-md);
+    }
+
+    .component-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .component-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .tag {
+      padding: 2px 8px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .component-actions {
+      display: flex;
+      gap: var(--spacing-sm);
+    }
+
+    .component-actions .btn {
+      flex: 1;
+      font-size: 12px;
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    /* 预览面板 */
+    .preview-panel {
+      width: 500px;
+      background: var(--bg-secondary);
+      border-left: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .preview-header {
+      padding: var(--spacing-md);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 14px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .preview-frame {
+      flex: 1;
+      border: none;
+      background: #ffffff;
+      min-height: 400px;
+    }
+
+    .code-panel {
+      height: 300px;
+      overflow-y: auto;
+      padding: var(--spacing-md);
+      background: #1a1a1a;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #e0e0e0;
+      flex-shrink: 0;
+      white-space: pre-wrap;
+    }
+
+    .preview-actions {
+      padding: var(--spacing-md);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: var(--spacing-sm);
+      flex-shrink: 0;
+    }
+
+    /* AI模式 */
+    .ai-mode .component-card {
+      cursor: default;
+    }
+
+    .ai-metadata {
+      display: none;
+      padding: var(--spacing-md);
+      background: var(--bg-tertiary);
+      border-top: 1px solid var(--border-color);
+      font-size: 12px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .ai-mode .ai-metadata {
+      display: block;
+    }
+
+    .ai-mode .component-thumbnail,
+    .ai-mode .component-actions {
+      display: none;
+    }
+
+    /* 模态框 */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-xl);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .modal h3 {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .modal p {
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-lg);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: flex-end;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1200px) {
+      .preview-panel {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 侧边栏 -->
+  <div class="sidebar">
+    <h2>📦 组件库</h2>
+    <ul class="category-list">
+      <li class="category-item active" data-category="all">全部组件</li>
+      <li class="category-item" data-category="navigation">导航</li>
+      <li class="category-item" data-category="hero">Hero</li>
+      <li class="category-item" data-category="cards">卡片</li>
+      <li class="category-item" data-category="cta">CTA</li>
+      <li class="category-item" data-category="xianxia">修仙</li>
+    </ul>
+  </div>
+
+  <!-- 主内容区 -->
+  <div class="main-content">
+    <!-- 工具栏 -->
+    <div class="toolbar">
+      <input type="text" class="search-box" placeholder="搜索组件..." id="searchBox">
+      <button class="btn btn-secondary" id="aiModeBtn">AI模式：关</button>
+      <button class="btn" id="generatePromptBtn">生成AI提示词</button>
+    </div>
+
+    <!-- 组件网格 -->
+    <div class="components-area">
+      <div class="components-grid" id="componentsGrid"></div>
+    </div>
+  </div>
+
+  <!-- 预览面板 -->
+  <div class="preview-panel">
+    <div class="preview-header">预览</div>
+    <iframe class="preview-frame" id="previewFrame" src="about:blank"></iframe>
+    <div class="code-panel" id="codePanel">点击组件查看代码</div>
+    <div class="preview-actions">
+      <button class="btn btn-secondary" id="copyCodeBtn">复制代码</button>
+      <button class="btn" id="copyIdBtn">复制ID</button>
+    </div>
+  </div>
+
+  <!-- 删除确认模态框 -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal">
+      <h3>确认删除</h3>
+      <p id="deleteMessage">确定要删除这个组件吗？此操作可以恢复。</p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancelDeleteBtn">取消</button>
+        <button class="btn btn-danger" id="confirmDeleteBtn">确认删除</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let components = [];
+    let currentCategory = 'all';
+    let currentSearch = '';
+    let aiMode = false;
+    let selectedComponent = null;
+
+    // 加载组件列表
+    async function loadComponents() {
+      try {
+        const response = await fetch('components/index.json');
+        const data = await response.json();
+        components = data.components;
+        renderComponents();
+      } catch (error) {
+        console.error('加载组件失败：', error);
+      }
+    }
+
+    // 渲染组件卡片
+    function renderComponents() {
+      const grid = document.getElementById('componentsGrid');
+      grid.innerHTML = '';
+
+      const filtered = components.filter(comp => {
+        const matchCategory = currentCategory === 'all' || comp.category === currentCategory;
+        const matchSearch = currentSearch === '' || 
+          comp.name.toLowerCase().includes(currentSearch) ||
+          comp.tags.some(tag => tag.toLowerCase().includes(currentSearch));
+        return matchCategory && matchSearch;
+      });
+
+      filtered.forEach(comp => {
+        const card = document.createElement('div');
+        card.className = 'component-card';
+        card.dataset.id = comp.id;
+
+        const thumbnailHtml = comp.thumbnail && comp.thumbnail !== '' 
+          ? `<img src="${comp.thumbnail}" alt="${comp.name}">`
+          : `<span>📦</span>`;
+
+        card.innerHTML = `
+          <div class="component-thumbnail">
+            ${thumbnailHtml}
+          </div>
+          <div class="component-info">
+            <div class="component-name">${comp.name}</div>
+            <div class="component-tags">
+              ${comp.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
+            </div>
+            <div class="component-actions">
+              <button class="btn" onclick="previewComponent('${comp.id}')">查看演示</button>
+              <button class="btn btn-secondary" onclick="copyComponentId('${comp.id}')">复制ID</button>
+              <button class="btn btn-danger" onclick="deleteComponent('${comp.id}')">删除</button>
+            </div>
+          </div>
+          <div class="ai-metadata">
+            <pre>${JSON.stringify({id: comp.id, category: comp.category, tags: comp.tags}, null, 2)}</pre>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    // 预览组件
+    window.previewComponent = function(id) {
+      const comp = components.find(c => c.id === id);
+      if (!comp) return;
+
+      selectedComponent = comp;
+      document.getElementById('previewFrame').src = comp.file_path;
+      
+      fetch(comp.file_path)
+        .then(res => res.text())
+        .then(code => {
+          document.getElementById('codePanel').textContent = code;
+        });
+    };
+
+    // 复制组件ID
+    window.copyComponentId = function(id) {
+      navigator.clipboard.writeText(id).then(() => {
+        alert('已复制组件ID：' + id);
+      });
+    };
+
+    // 删除组件
+    window.deleteComponent = function(id) {
+      const comp = components.find(c => c.id === id);
+      document.getElementById('deleteMessage').textContent = 
+        `确定要删除组件「${comp.name}」吗？删除后可以从 history/ 目录恢复。`;
+      document.getElementById('deleteModal').classList.add('active');
+      document.getElementById('confirmDeleteBtn').onclick = () => {
+        confirmDelete(id);
+      };
+    };
+
+    function confirmDelete(id) {
+      alert('已标记组件 ' + id + ' 为待删除。AI将在下次同步时执行删除。');
+      document.getElementById('deleteModal').classList.remove('active');
+    }
+
+    // 搜索
+    document.getElementById('searchBox').addEventListener('input', (e) => {
+      currentSearch = e.target.value.toLowerCase();
+      renderComponents();
+    });
+
+    // 分类筛选
+    document.querySelectorAll('.category-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        currentCategory = item.dataset.category;
+        renderComponents();
+      });
+    });
+
+    // AI模式切换
+    document.getElementById('aiModeBtn').addEventListener('click', () => {
+      aiMode = !aiMode;
+      document.body.classList.toggle('ai-mode', aiMode);
+      document.getElementById('aiModeBtn').textContent = aiMode ? 'AI模式：开' : 'AI模式：关';
+    });
+
+    // 生成AI提示词
+    document.getElementById('generatePromptBtn').addEventListener('click', () => {
+      const prompt = `用我的组件库搭建页面：
+
+组件库路径：/Users/oxohuang/oxo-ui-library
+
+请读取 components/index.json 获取组件列表，然后按我的需求组装页面。`;
+      
+      navigator.clipboard.writeText(prompt).then(() => {
+        alert('AI提示词已复制到剪贴板！');
+      });
+    });
+
+    // 复制代码
+    document.getElementById('copyCodeBtn').addEventListener('click', () => {
+      const code = document.getElementById('codePanel').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        alert('代码已复制到剪贴板！');
+      });
+    });
+
+    // 复制ID（预览面板按钮）
+    document.getElementById('copyIdBtn').addEventListener('click', () => {
+      if (selectedComponent) {
+        navigator.clipboard.writeText(selectedComponent.id).then(() => {
+          alert('已复制组件ID：' + selectedComponent.id);
+        });
+      }
+    });
+
+    // 取消删除
+    document.getElementById('cancelDeleteBtn').addEventListener('click', () => {
+      document.getElementById('deleteModal').classList.remove('active');
+    });
+
+    // 初始化
+    loadComponents();
+  </script>
+</body>
+</html>

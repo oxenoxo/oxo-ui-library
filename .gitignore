@@ -1,0 +1,25 @@
+# 依赖
+node_modules/
+__pycache__/
+*.pyc
+
+# 缩略图（可选忽略，或提交示例缩略图）
+thumbnails/
+
+# 历史备份
+history/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.log
+tmp/
+temp/

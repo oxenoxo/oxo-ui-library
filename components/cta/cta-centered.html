@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>居中CTA区域</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <style>
+    .cta {
+      padding: var(--spacing-xxl) var(--spacing-lg);
+      text-align: center;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .cta-badge {
+      display: inline-block;
+      padding: var(--spacing-xs) var(--spacing-md);
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid var(--accent);
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: var(--spacing-lg);
+      position: relative;
+    }
+
+    .cta-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-md);
+      position: relative;
+    }
+
+    .cta-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto var(--spacing-xl);
+      line-height: 1.8;
+      position: relative;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      position: relative;
+    }
+
+    .cta-actions .btn {
+      padding: var(--spacing-sm) var(--spacing-xl);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .cta-title {
+        font-size: 28px;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-actions .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 居中CTA区域 -->
+  <section class="cta">
+    <div class="cta-badge">⚡ 限时优惠</div>
+    
+    <h2 class="cta-title">准备好开始了吗？</h2>
+    
+    <p class="cta-subtitle">
+      加入数千名满意用户的行列，今天就开始你的旅程。
+      无需信用卡，随时可以取消。
+    </p>
+    
+    <div class="cta-actions">
+      <a href="#signup" class="btn btn-primary">免费注册</a>
+      <a href="#demo" class="btn btn-outline">预约演示</a>
+    </div>
+  </section>
+</body>
+</html>

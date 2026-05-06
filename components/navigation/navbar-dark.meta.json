@@ -1,0 +1,30 @@
+{
+  "id": "navbar-dark",
+  "name": "暗色导航栏",
+  "category": "navigation",
+  "description": "固定顶部的响应式导航栏，右侧有CTA按钮，支持移动端汉堡菜单，带毛玻璃效果",
+  "version": "1.0.0",
+  "author": "oxohuang",
+  "created_at": "2026-05-06",
+  "updated_at": "2026-05-06",
+  "tags": ["导航", "响应式", "暗色", "固定顶部", "毛玻璃"],
+  "when_to_use": [
+    "产品官网需要顶部导航",
+    "页面需要登录/注册入口",
+    "移动端需要汉堡菜单",
+    "想要毛玻璃视觉效果"
+  ],
+  "dependencies": {
+    "css": ["../../assets/css/theme.css"],
+    "js": [],
+    "external": []
+  },
+  "props": {
+    "brand": {"type": "string", "default": "网站标题", "description": "品牌名称"},
+    "logo": {"type": "string", "default": "", "description": "Logo图片URL（可选）"},
+    "cta_text": {"type": "string", "default": "开始使用", "description": "CTA按钮文字"},
+    "cta_link": {"type": "string", "default": "#cta", "description": "CTA按钮链接"}
+  },
+  "file_path": "components/navigation/navbar-dark.html",
+  "thumbnail": "thumbnails/navigation/navbar-dark.png"
+}
