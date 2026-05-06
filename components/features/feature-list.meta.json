@@ -1,0 +1,42 @@
+{
+  "id": "feature-list",
+  "name": "特性列表",
+  "category": "features",
+  "description": "展示产品核心特性的网格布局，包含图标、标题、描述和链接，适合SaaS产品功能介绍",
+  "tags": ["特性", "功能展示", "网格布局", "暗色", "卡片"],
+  "when_to_use": [
+    "产品功能介绍页面",
+    "Landing page的特性板块",
+    "为何选择我们板块"
+  ],
+  "dependencies": {
+    "css": ["../../assets/css/theme.css"],
+    "js": [],
+    "external": []
+  },
+  "props": {
+    "label": {
+      "type": "string",
+      "default": "核心能力",
+      "description": "顶部标签文本"
+    },
+    "title": {
+      "type": "string",
+      "default": "为什么选择我们？",
+      "description": "主标题"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "探索我们产品的强大功能，为您的业务赋能",
+      "description": "副标题"
+    },
+    "features": {
+      "type": "array",
+      "description": "特性列表，每项包含icon、title、desc、link"
+    }
+  },
+  "file_path": "components/features/feature-list.html",
+  "thumbnail": "thumbnails/features/feature-list.png",
+  "created_at": "2026-05-06T17:23:00+08:00",
+  "version": "1.0"
+}

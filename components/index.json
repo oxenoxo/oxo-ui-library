@@ -74,6 +74,15 @@
       "meta_path": "components/stats/stats-grid.meta.json",
       "file_path": "components/stats/stats-grid.html",
       "thumbnail": "thumbnails/stats/stats-grid.png"
+    },
+    {
+      "id": "feature-list",
+      "name": "特性列表",
+      "category": "features",
+      "tags": ["特性", "功能展示", "网格布局", "暗色", "卡片"],
+      "meta_path": "components/features/feature-list.meta.json",
+      "file_path": "components/features/feature-list.html",
+      "thumbnail": "thumbnails/features/feature-list.png"
     }
   ]
 }

@@ -105,6 +105,52 @@
       color: var(--xianxia-gold);
     }
 
+    .cultivation-card-progress {
+      margin: var(--spacing-md) 0;
+      position: relative;
+    }
+
+    .cultivation-progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .cultivation-progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(155, 89, 182, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cultivation-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--xianxia-purple), var(--xianxia-gold));
+      border-radius: 4px;
+      transition: width 0.6s ease;
+      position: relative;
+    }
+
+    .cultivation-progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
     .cultivation-card-btn {
       width: 100%;
       padding: var(--spacing-sm);
@@ -148,6 +194,16 @@
     <p class="cultivation-card-desc">
       引天雷之力，凝聚于指尖，释放狂暴的雷电攻击。威力随境界提升而增强。
     </p>
+    
+    <div class="cultivation-card-progress">
+      <div class="cultivation-progress-label">
+        <span>筑基期 · 三层</span>
+        <span>65%</span>
+      </div>
+      <div class="cultivation-progress-bar">
+        <div class="cultivation-progress-fill" style="width: 65%"></div>
+      </div>
+    </div>
     
     <div class="cultivation-card-stats">
       <div class="cultivation-stat">
