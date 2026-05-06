@@ -1,0 +1,154 @@
+[
+  {
+    "id": "reward-hero",
+    "name": "奖励Hero区域",
+    "category": "reward",
+    "tags": ["奖励", "Hero", "总额展示", "黑金风格", "动画"],
+    "props": {
+      "eyebrow_text": {"type": "string", "default": "Reward Contract · 2026", "description": "顶部标签文字"},
+      "sub_title": {"type": "string", "default": "两场考试奖励池", "description": "副标题"},
+      "total_amount": {"type": "string", "default": "¥1500", "description": "奖励总额"},
+      "copy_text": {"type": "string", "default": "目标明确、档位清楚", "description": "说明文字"}
+    },
+    "when_to_use": [
+      "需要展示奖励/奖金总额的页面顶部",
+      "黑金/暗色风格的奖励合约页面",
+      "需要视觉冲击力的总分展示"
+    ],
+    "description": "奖励页面Hero区域，含动态金色渐变总额、旋转光晕动画、标签胶囊。适用于奖励合约、奖金公示等场景。"
+  },
+  {
+    "id": "reward-pool",
+    "name": "奖励池卡片",
+    "category": "reward",
+    "tags": ["奖励", "池子", "双栏", "进度高度", "暗色"],
+    "props": {
+      "pool_label": {"type": "string", "default": "BIO + GEO EXAM", "description": "池子标签"},
+      "pool_amount": {"type": "string", "default": "¥800", "description": "金额"},
+      "pool_note": {"type": "string", "default": "100 + 80 及以上", "description": "说明文字"},
+      "fill_height": {"type": "string", "default": "76%", "description": "底部光晕高度"}
+    },
+    "when_to_use": [
+      "需要并排展示多个奖励池/预算池",
+      "需要直观展示各池子金额和触发条件"
+    ],
+    "description": "双栏奖励池卡片，底部有渐变光晕高度可视化，可直接对比多个奖励池。"
+  },
+  {
+    "id": "reward-tier-card",
+    "name": "奖励档位卡片",
+    "category": "reward",
+    "tags": ["奖励", "档位", "排行榜", "金色", "暗色", "可复用"],
+    "props": {
+      "rank": {"type": "number", "default": "1", "description": "排名序号（右下角大水印）"},
+      "score_text": {"type": "string", "default": "100 + 80", "description": "分数/档位文字"},
+      "score_sub": {"type": "string", "default": "及以上", "description": "分数副标题"},
+      "bonus_amount": {"type": "string", "default": "+800", "description": "奖励金额"},
+      "tier_type": {"type": "string", "default": "", "description": "类型：空=普通，max=绿色封顶，spike=铜色暴击，warn=红色警戒"}
+    },
+    "when_to_use": [
+      "展示奖励分档/阶梯奖金",
+      "需要排行榜风格的档位列表",
+      "需要不同档位用颜色区分优先级"
+    ],
+    "description": "核心奖励档位卡片，左侧有彩色竖线，右下角有大号排名水印，支持4种类型（普通/封顶/暴击/警戒）。"
+  },
+  {
+    "id": "reward-metrics",
+    "name": "奖励指标网格",
+    "category": "reward",
+    "tags": ["指标", "网格", "3栏", "数据", "暗色"],
+    "props": {
+      "num1": {"type": "string", "default": "800", "description": "指标1数值"},
+      "label1": {"type": "string", "default": "最高奖金 / 元", "description": "指标1标签"},
+      "num2": {"type": "string", "default": "90", "description": "指标2数值"},
+      "label2": {"type": "string", "default": "生死线分数", "description": "指标2标签"},
+      "num3": {"type": "string", "default": "100", "description": "指标3数值"},
+      "label3": {"type": "string", "default": "满分目标", "description": "指标3标签"}
+    },
+    "when_to_use": [
+      "需要在页面顶部展示3个关键指标",
+      "奖励/考试场景的核心数据概览"
+    ],
+    "description": "3栏指标网格，金色数字+灰色标签，常用于奖励页面顶部数据概览。"
+  },
+  {
+    "id": "reward-spotlight",
+    "name": "亮点洞察卡片",
+    "category": "reward",
+    "tags": ["亮点", "洞察", "关键数据", "双栏", "金色"],
+    "props": {
+      "big_number": {"type": "string", "default": "95", "description": "大号数字"},
+      "title": {"type": "string", "default": "关键暴击点", "description": "标题"},
+      "description": {"type": "string", "default": "94到95分单分差值340元", "description": "描述文字"}
+    },
+    "when_to_use": [
+      "需要突出某个关键数据点",
+      "奖励/考试页面的核心洞察展示"
+    ],
+    "description": "左侧大号数字胶囊+右侧标题描述的双栏卡片，带金色光晕背景，用于突出关键洞察。"
+  },
+  {
+    "id": "reward-progress",
+    "name": "进度条区域",
+    "category": "reward",
+    "tags": ["进度条", "分数", "3栏数据", "渐变", "暗色"],
+    "props": {
+      "score": {"type": "string", "default": "590", "description": "分数/总分"},
+      "progress_percent": {"type": "string", "default": "100%", "description": "进度条百分比"},
+      "increment": {"type": "string", "default": "214", "description": "每5分增值"},
+      "gap": {"type": "string", "default": "封顶", "description": "距目标文字"}
+    },
+    "when_to_use": [
+      "展示分数进度和距离目标的距离",
+      "需要可视化冲刺进度"
+    ],
+    "description": "含分数显示、渐变进度条、3栏迷你数据（进度%/增值/距目标）的组合组件。"
+  },
+  {
+    "id": "reward-formula",
+    "name": "公式卡片",
+    "category": "reward",
+    "tags": ["公式", "等宽字体", "计算原理", "暗色", "金色边框"],
+    "props": {
+      "formula_title": {"type": "string", "default": "Final Exam Formula", "description": "公式标题"},
+      "formula_text": {"type": "string", "default": "奖金 = 700 × ((你的总分 − 560) / 30)²", "description": "公式内容"}
+    },
+    "when_to_use": [
+      "需要展示计算规则/公式",
+      "奖励计算原理说明"
+    ],
+    "description": "等宽字体的公式展示卡片，金色边框，适合展示奖励计算公式。"
+  },
+  {
+    "id": "reward-bar-chart",
+    "name": "柱状图列表",
+    "category": "reward",
+    "tags": ["柱状图", "对比", "渐变", "列表", "暗色"],
+    "props": {
+      "bar_label": {"type": "string", "default": "560 → 565", "description": "柱状图标签"},
+      "bar_value": {"type": "string", "default": "19 元", "description": "柱状图数值"},
+      "bar_width": {"type": "string", "default": "9%", "description": "柱状图宽度百分比"}
+    },
+    "when_to_use": [
+      "需要对比不同区间的收益/数值",
+      "奖励增值可视化"
+    ],
+    "description": "横向柱状图列表，铜→金→紫渐变色条，适合展示各区间对比数据。"
+  },
+  {
+    "id": "reward-insight",
+    "name": "洞察文本网格",
+    "category": "reward",
+    "tags": ["洞察", "文本", "网格", "策略", "暗色"],
+    "props": {
+      "insight_title": {"type": "string", "default": "边际递增", "description": "洞察标题"},
+      "insight_text": {"type": "string", "default": "分数越接近目标，每1分奖金价值越高", "description": "洞察描述"}
+    },
+    "when_to_use": [
+      "展示策略要点/洞察总结",
+      "奖励规则的文字说明"
+    ],
+    "description": "金色标题+灰色描述的洞察文本卡片网格，适合展示策略要点或规则说明。"
+  }
+]

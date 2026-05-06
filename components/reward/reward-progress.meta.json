@@ -1,0 +1,17 @@
+{
+  "id": "reward-progress",
+  "name": "进度条区域",
+  "category": "reward",
+  "tags": ["进度条", "分数", "3栏数据", "渐变", "暗色"],
+  "props": {
+    "score": {"type": "string", "default": "590", "description": "分数/总分"},
+    "progress_percent": {"type": "string", "default": "100%", "description": "进度条百分比"},
+    "increment": {"type": "string", "default": "214", "description": "每5分增值"},
+    "gap": {"type": "string", "default": "封顶", "description": "距目标文字"}
+  },
+  "when_to_use": [
+    "展示分数进度和距离目标的距离",
+    "需要可视化冲刺进度"
+  ],
+  "description": "含分数显示、渐变进度条、3栏迷你数据（进度%/增值/距目标）的组合组件。"
+}

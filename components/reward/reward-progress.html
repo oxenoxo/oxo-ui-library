@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reward-progress - 进度条区域</title>
+  <style>
+    :root {
+      --gold: #f6cc7b;
+      --copper: #d77a4f;
+      --green: #8fe6b4;
+      --text-soft: #d8d0c3;
+      --muted: #918b82;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07080d;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .exam-card {
+      padding: 17px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045));
+      box-shadow: 0 18px 58px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      backdrop-filter: blur(18px);
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .exam-score {
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 1000;
+      color: var(--gold);
+      letter-spacing: -0.05em;
+    }
+
+    .progress-line {
+      position: relative;
+      height: 9px;
+      margin-top: 15px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .progress-line i {
+      display: block;
+      width: var(--w, 50%);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--copper), var(--gold), var(--green));
+      box-shadow: 0 0 16px rgba(246, 204, 123, 0.24);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      padding: 10px 8px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.16);
+      border: 1px solid rgba(255,255,255,0.075);
+      text-align: center;
+    }
+
+    .mini b { display: block; color: var(--text-soft); font-size: 14px; }
+    .mini span { color: var(--muted); font-size: 10px; font-weight: 700; }
+
+    @media (max-width: 560px) {
+      .mini-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="exam-card">
+    <div class="exam-score">590</div>
+    <div class="progress-line"><i style="--w: 100%;"></i></div>
+    <div class="mini-grid">
+      <div class="mini"><b>100%</b><span>分数进度</span></div>
+      <div class="mini"><b>+214</b><span>每 5 分增值</span></div>
+      <div class="mini"><b>封顶</b><span>距目标</span></div>
+    </div>
+  </div>
+</body>
+</html>

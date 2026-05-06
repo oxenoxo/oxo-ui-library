@@ -1,0 +1,18 @@
+{
+  "id": "reward-template-complete",
+  "name": "奖励页面完整模板",
+  "category": "reward",
+  "tags": ["奖励", "完整模板", "黑金风格", "暗色", "可复用"],
+  "props": {
+    "title": {"type": "string", "default": "奖励合约 | 考试奖励可视化", "description": "页面标题"},
+    "total_amount": {"type": "string", "default": "¥1500", "description": "总金额"},
+    "exam1_name": {"type": "string", "default": "生地会考", "description": "考试1名称"},
+    "exam2_name": {"type": "string", "default": "期末考试", "description": "考试2名称"}
+  },
+  "when_to_use": [
+    "需要完整的奖励/考试可视化页面",
+    "黑金风格的数据展示页面",
+    "需要Tab切换的多板块页面"
+  ],
+  "description": "完整的奖励类页面模板，包含Hero区域、奖励池、Tab导航、指标网格、档位卡片、进度条、公式展示、柱状图等所有组件，可直接复用为完整页面。"
+}

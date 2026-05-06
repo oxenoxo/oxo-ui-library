@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reward-pool - 奖励池卡片</title>
+  <style>
+    :root {
+      --bg: #07080d;
+      --gold: #f6cc7b;
+      --gold-3: #ffe5ad;
+      --text-soft: #d8d0c3;
+      --muted: #918b82;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #0a0c13;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .split-card {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 10px;
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .pool {
+      position: relative;
+      overflow: hidden;
+      min-height: 104px;
+      padding: 15px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.055);
+    }
+
+    .pool::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: var(--h, 76%);
+      background: linear-gradient(0deg, rgba(246, 204, 123, 0.24), transparent);
+      opacity: 0.9;
+    }
+
+    .pool .label,
+    .pool .amount,
+    .pool .note { position: relative; z-index: 1; }
+    .pool .label { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+    .pool .amount { margin-top: 8px; font-size: 34px; line-height: 1; font-weight: 1000; color: var(--gold-3); }
+    .pool .note { margin-top: 7px; color: var(--text-soft); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="split-card">
+    <div class="pool" style="--h: 76%;">
+      <div class="label">BIO + GEO EXAM</div>
+      <div class="amount">¥800</div>
+      <div class="note">100 + 80 及以上，满额领取</div>
+    </div>
+    <div class="pool" style="--h: 66%;">
+      <div class="label">FINAL EXAM</div>
+      <div class="amount">¥700</div>
+      <div class="note">590 分封顶，560 分起算</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reward-bar-chart - 柱状图列表</title>
+  <style>
+    :root {
+      --copper: #d77a4f;
+      --gold: #f6cc7b;
+      --purple: #a996ff;
+      --muted: #918b82;
+      --text-soft: #d8d0c3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07080d;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045));
+      box-shadow: 0 18px 58px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      backdrop-filter: blur(18px);
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 13px;
+      padding: 18px;
+    }
+
+    .bar-row {
+      display: grid;
+      gap: 7px;
+    }
+
+    .bar-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text-soft);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .bar-label b { color: var(--gold); }
+
+    .bar {
+      height: 10px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .bar i {
+      display: block;
+      width: var(--w, 50%);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--copper), var(--gold), var(--purple));
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="bar-list">
+      <div class="bar-row">
+        <div class="bar-label"><span>560 → 565 / 起步 5 分</span><b>19 元</b></div>
+        <div class="bar"><i style="--w: 9%;"></i></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>585 → 590 / 冲刺 5 分</span><b>214 元</b></div>
+        <div class="bar"><i style="--w: 100%;"></i></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

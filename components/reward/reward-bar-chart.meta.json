@@ -1,0 +1,16 @@
+{
+  "id": "reward-bar-chart",
+  "name": "柱状图列表",
+  "category": "reward",
+  "tags": ["柱状图", "对比", "渐变", "列表", "暗色"],
+  "props": {
+    "bar_label": {"type": "string", "default": "560 → 565", "description": "柱状图标签"},
+    "bar_value": {"type": "string", "default": "19 元", "description": "柱状图数值"},
+    "bar_width": {"type": "string", "default": "9%", "description": "柱状图宽度百分比"}
+  },
+  "when_to_use": [
+    "需要对比不同区间的收益/数值",
+    "奖励增值可视化"
+  ],
+  "description": "横向柱状图列表，铜→金→紫渐变色条，适合展示各区间对比数据。"
+}

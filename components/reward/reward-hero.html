@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reward-hero - 奖励Hero区域</title>
+  <style>
+    :root {
+      --bg: #07080d;
+      --gold: #f6cc7b;
+      --gold-2: #c99a43;
+      --gold-3: #ffe5ad;
+      --text: #f4f0e8;
+      --text-soft: #d8d0c3;
+      --muted: #918b82;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: #0a0c13;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(246, 204, 123, 0.23);
+      border-radius: 36px;
+      padding: 26px 22px 22px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045) 48%, rgba(246, 204, 123, 0.08)),
+        rgba(7, 8, 13, 0.78);
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(24px) saturate(1.35);
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      right: -112px;
+      top: -124px;
+      border-radius: 50%;
+      background: conic-gradient(from 160deg, transparent, rgba(246, 204, 123, 0.5), transparent 44%, rgba(143, 221, 230, 0.22), transparent 70%);
+      filter: blur(2px);
+      opacity: 0.78;
+      animation: orbit 9s linear infinite;
+    }
+
+    @keyframes orbit {
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-inner { position: relative; z-index: 2; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 12px;
+      border: 1px solid rgba(246, 204, 123, 0.28);
+      border-radius: 999px;
+      color: var(--gold-3);
+      background: rgba(246, 204, 123, 0.08);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow i {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #8fe6b4;
+      box-shadow: 0 0 16px rgba(143, 230, 180, 0.8);
+    }
+
+    .hero-title {
+      margin-top: 18px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .hero-title .small {
+      color: var(--text-soft);
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .total {
+      font-size: clamp(70px, 22vw, 136px);
+      line-height: 0.92;
+      font-weight: 1000;
+      letter-spacing: -0.07em;
+      background: linear-gradient(95deg, #fff8df 0%, var(--gold-3) 16%, var(--gold) 42%, #d77a4f 72%, #fff0c8 100%);
+      background-size: 180% 180%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 18px 34px rgba(246, 204, 123, 0.2));
+      animation: goldflow 4.5s ease-in-out infinite;
+    }
+
+    @keyframes goldflow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero-copy {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    .hero-copy b { color: var(--text); font-weight: 800; }
+  </style>
+</head>
+<body>
+  <div class="hero-card">
+    <div class="hero-inner">
+      <div class="eyebrow"><i></i> Reward Contract · 2026</div>
+      <div class="hero-title">
+        <div class="small">两场考试奖励池</div>
+        <div class="total">¥1500</div>
+      </div>
+      <p class="hero-copy">
+        生地会考 <b>800元</b> ＋ 期末考试 <b>700元</b>。目标明确、档位清楚、越接近顶点越有压迫感。
+      </p>
+    </div>
+  </div>
+</body>
+</html>

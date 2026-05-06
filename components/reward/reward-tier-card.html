@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reward-tier-card - 奖励档位卡片</title>
+  <style>
+    :root {
+      --gold: #f6cc7b;
+      --gold-3: #ffe5ad;
+      --green: #8fe6b4;
+      --copper: #d77a4f;
+      --red: #ff887d;
+      --text: #f4f0e8;
+      --text-soft: #d8d0c3;
+      --muted: #918b82;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07080d;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .reward-stack { display: grid; gap: 11px; max-width: 760px; width: 100%; }
+
+    .reward-card {
+      --accent: var(--gold);
+      position: relative;
+      overflow: hidden;
+      padding: 16px;
+      min-height: 112px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 11%, transparent), transparent 48%),
+        rgba(255,255,255,0.055);
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .reward-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, transparent, var(--accent), transparent);
+      opacity: 0.9;
+    }
+
+    .reward-card::after {
+      content: attr(data-rank);
+      position: absolute;
+      right: 14px;
+      bottom: -12px;
+      color: rgba(255,255,255,0.035);
+      font-size: 86px;
+      line-height: 1;
+      font-weight: 1000;
+      letter-spacing: -0.08em;
+      pointer-events: none;
+    }
+
+    .reward-card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 42%, transparent); }
+    .reward-card.max { --accent: var(--green); }
+    .reward-card.spike { --accent: var(--copper); }
+    .reward-card.warn { --accent: var(--red); }
+
+    .reward-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .score {
+      font-size: 17px;
+      font-weight: 950;
+      color: var(--text);
+    }
+
+    .score span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .bonus {
+      font-size: 32px;
+      line-height: 0.95;
+      font-weight: 1000;
+      letter-spacing: -0.05em;
+      color: var(--accent);
+      text-align: right;
+      filter: drop-shadow(0 0 16px color-mix(in srgb, var(--accent) 34%, transparent));
+    }
+
+    .bonus small {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .reward-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.055);
+      color: var(--text-soft);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .reward-note {
+      position: relative;
+      z-index: 1;
+      margin-top: 10px;
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="reward-stack">
+    <!-- 普通档位 -->
+    <article class="reward-card" data-rank="01">
+      <div class="reward-top">
+        <div class="score">100 + 80<span>及以上</span></div>
+        <div class="bonus">+800<small>奖励 / 元</small></div>
+      </div>
+      <div class="reward-meta">
+        <span class="pill">最终折算 90.0 / 满分</span>
+        <span class="pill">封顶</span>
+      </div>
+      <p class="reward-note">王座档：无伤通关，直接拿走全部奖励池。</p>
+    </article>
+
+    <!-- 暴击档位 -->
+    <article class="reward-card spike" data-rank="06">
+      <div class="reward-top">
+        <div class="score">95 + 80<span>及以上</span></div>
+        <div class="bonus">+530<small>奖励 / 元</small></div>
+      </div>
+      <div class="reward-meta">
+        <span class="pill">最终折算 87.5</span>
+        <span class="pill">暴击</span>
+      </div>
+      <p class="reward-note">暴击档：触发隐藏宝箱，单分收益最夸张。</p>
+    </article>
+
+    <!-- 警戒档位 -->
+    <article class="reward-card warn" data-rank="07">
+      <div class="reward-top">
+        <div class="score">94 + 80<span>及以上</span></div>
+        <div class="bonus">+190<small>奖励 / 元</small></div>
+      </div>
+      <div class="reward-meta">
+        <span class="pill">最终折算 87.0</span>
+        <span class="pill">警戒</span>
+      </div>
+      <p class="reward-note">断崖前一格：只差 1 分，奖金少 340 元。</p>
+    </article>
+
+    <!-- 封顶档位 -->
+    <article class="reward-card max" data-rank="01">
+      <div class="reward-top">
+        <div class="score">590<span>总分</span></div>
+        <div class="bonus">+700<small>到手奖金 / 元</small></div>
+      </div>
+      <div class="reward-meta">
+        <span class="pill">进度 100%</span>
+        <span class="pill">封顶</span>
+      </div>
+      <p class="reward-note">封顶档：拿走全部 700 元。</p>
+    </article>
+  </div>
+</body>
+</html>

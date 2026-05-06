@@ -1,0 +1,17 @@
+{
+  "id": "reward-pool",
+  "name": "奖励池卡片",
+  "category": "reward",
+  "tags": ["奖励", "池子", "双栏", "进度高度", "暗色"],
+  "props": {
+    "pool_label": {"type": "string", "default": "BIO + GEO EXAM", "description": "池子标签"},
+    "pool_amount": {"type": "string", "default": "¥800", "description": "金额"},
+    "pool_note": {"type": "string", "default": "100 + 80 及以上", "description": "说明文字"},
+    "fill_height": {"type": "string", "default": "76%", "description": "底部光晕高度"}
+  },
+  "when_to_use": [
+    "需要并排展示多个奖励池/预算池",
+    "需要直观展示各池子金额和触发条件"
+  ],
+  "description": "双栏奖励池卡片，底部有渐变光晕高度可视化，可直接对比多个奖励池。"
+}

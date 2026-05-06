@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reward-insight - 洞察文本网格</title>
+  <style>
+    :root {
+      --gold-3: #ffe5ad;
+      --muted: #918b82;
+      --text-soft: #d8d0c3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07080d;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045));
+      box-shadow: 0 18px 58px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      backdrop-filter: blur(18px);
+      max-width: 760px;
+      width: 100%;
+      padding: 18px;
+      border-color: rgba(246, 204, 123, 0.22);
+    }
+
+    .insight-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .insight {
+      padding: 15px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.095);
+      background: rgba(255,255,255,0.052);
+    }
+
+    .insight b {
+      display: block;
+      color: var(--gold-3);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .insight span { color: var(--muted); font-size: 13px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="insight-grid">
+      <div class="insight"><b>边际递增</b><span>分数越接近目标，每 1 分的奖金价值越高。</span></div>
+      <div class="insight"><b>期末冲刺线</b><span>560 分起算，590 分封顶；最后 5 分价值 214 元。</span></div>
+      <div class="insight"><b>生地断崖点</b><span>95 分是最大性价比节点，94 到 95 的单分差值高达 340 元。</span></div>
+    </div>
+  </div>
+</body>
+</html>

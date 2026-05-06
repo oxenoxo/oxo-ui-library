@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reward-metrics - 指标网格</title>
+  <style>
+    :root {
+      --gold-3: #ffe5ad;
+      --muted: #918b82;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07080d;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .metric {
+      padding: 15px 12px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.085), rgba(255,255,255,0.045));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .metric .num {
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 1000;
+      letter-spacing: -0.04em;
+      color: var(--gold-3);
+    }
+
+    .metric .txt {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 560px) {
+      .metrics { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="metrics">
+    <div class="metric"><div class="num">800</div><div class="txt">最高奖金 / 元</div></div>
+    <div class="metric"><div class="num">90</div><div class="txt">生死线分数</div></div>
+    <div class="metric"><div class="num">100</div><div class="txt">满分目标</div></div>
+  </div>
+</body>
+</html>

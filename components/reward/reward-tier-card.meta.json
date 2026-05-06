@@ -1,0 +1,19 @@
+{
+  "id": "reward-tier-card",
+  "name": "奖励档位卡片",
+  "category": "reward",
+  "tags": ["奖励", "档位", "排行榜", "金色", "暗色", "可复用"],
+  "props": {
+    "rank": {"type": "number", "default": "1", "description": "排名序号（右下角大水印）"},
+    "score_text": {"type": "string", "default": "100 + 80", "description": "分数/档位文字"},
+    "score_sub": {"type": "string", "default": "及以上", "description": "分数副标题"},
+    "bonus_amount": {"type": "string", "default": "+800", "description": "奖励金额"},
+    "tier_type": {"type": "string", "default": "", "description": "类型：空=普通，max=绿色封顶，spike=铜色暴击，warn=红色警戒"}
+  },
+  "when_to_use": [
+    "展示奖励分档/阶梯奖金",
+    "需要排行榜风格的档位列表",
+    "需要不同档位用颜色区分优先级"
+  ],
+  "description": "核心奖励档位卡片，左侧有彩色竖线，右下角有大号排名水印，支持4种类型（普通/封顶/暴击/警戒）。"
+}

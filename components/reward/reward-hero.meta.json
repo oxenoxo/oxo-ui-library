@@ -1,0 +1,18 @@
+{
+  "id": "reward-hero",
+  "name": "奖励Hero区域",
+  "category": "reward",
+  "tags": ["奖励", "Hero", "总额展示", "黑金风格", "动画"],
+  "props": {
+    "eyebrow_text": {"type": "string", "default": "Reward Contract · 2026", "description": "顶部标签文字"},
+    "sub_title": {"type": "string", "default": "两场考试奖励池", "description": "副标题"},
+    "total_amount": {"type": "string", "default": "¥1500", "description": "奖励总额"},
+    "copy_text": {"type": "string", "default": "目标明确、档位清楚", "description": "说明文字"}
+  },
+  "when_to_use": [
+    "需要展示奖励/奖金总额的页面顶部",
+    "黑金/暗色风格的奖励合约页面",
+    "需要视觉冲击力的总分展示"
+  ],
+  "description": "奖励页面Hero区域，含动态金色渐变总额、旋转光晕动画、标签胶囊。适用于奖励合约、奖金公示等场景。"
+}

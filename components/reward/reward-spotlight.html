@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reward-spotlight - 亮点卡片</title>
+  <style>
+    :root {
+      --gold: #f6cc7b;
+      --gold-3: #ffe5ad;
+      --text: #f4f0e8;
+      --text-soft: #d8d0c3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07080d;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045));
+      box-shadow: 0 18px 58px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      backdrop-filter: blur(18px);
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .spotlight {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: center;
+      border-color: rgba(246, 204, 123, 0.28);
+      background:
+        radial-gradient(circle at 18% 22%, rgba(246, 204, 123, 0.18), transparent 38%),
+        linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+    }
+
+    .spotlight .big {
+      width: 82px;
+      height: 82px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      color: #171006;
+      background: linear-gradient(135deg, var(--gold-3), var(--gold));
+      font-size: 25px;
+      font-weight: 1000;
+      box-shadow: 0 16px 34px rgba(246, 204, 123, 0.18);
+    }
+
+    .spotlight h3 { font-size: 18px; font-weight: 950; color: var(--text); }
+    .spotlight p { color: var(--text-soft); font-size: 13px; margin-top: 4px; line-height: 1.6; }
+
+    @media (max-width: 560px) {
+      .spotlight { grid-template-columns: 1fr; }
+      .spotlight .big { width: 100%; height: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card spotlight">
+    <div class="big">95</div>
+    <div>
+      <h3>关键暴击点：94 → 95 分</h3>
+      <p>94 分只有 190 元，95 分跃升到 530 元，单分差值 340 元。这个档位是最值得盯死的收益点。</p>
+    </div>
+  </div>
+</body>
+</html>
