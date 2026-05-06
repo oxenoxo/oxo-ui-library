@@ -1,0 +1,27 @@
+{
+  "id": "footer-simple",
+  "name": "简单页脚",
+  "category": "footer",
+  "description": "多栏页脚，包含链接列、社交媒体图标和版权信息",
+  "version": "1.0.0",
+  "author": "oxohuang",
+  "created_at": "2026-05-06",
+  "updated_at": "2026-05-06",
+  "tags": ["页脚", "链接", "多栏", "响应式"],
+  "when_to_use": [
+    "网站底部导航",
+    "需要展示多栏链接",
+    "需要社交媒体入口"
+  ],
+  "dependencies": {
+    "css": ["../../assets/css/theme.css"],
+    "js": [],
+    "external": []
+  },
+  "props": {
+    "columns": {"type": "number", "default": "4", "description": "链接列数"},
+    "show_social": {"type": "boolean", "default": true, "description": "显示社交媒体图标"}
+  },
+  "file_path": "components/footer/footer-simple.html",
+  "thumbnail": "thumbnails/footer/footer-simple.png"
+}

@@ -47,6 +47,33 @@
       "meta_path": "components/xianxia/cultivation-card.meta.json",
       "file_path": "components/xianxia/cultivation-card.html",
       "thumbnail": "thumbnails/xianxia/cultivation-card.png"
+    },
+    {
+      "id": "footer-simple",
+      "name": "简单页脚",
+      "category": "footer",
+      "tags": ["页脚", "链接", "多栏", "响应式"],
+      "meta_path": "components/footer/footer-simple.meta.json",
+      "file_path": "components/footer/footer-simple.html",
+      "thumbnail": "thumbnails/footer/footer-simple.png"
+    },
+    {
+      "id": "form-login",
+      "name": "登录表单",
+      "category": "forms",
+      "tags": ["表单", "登录", "第三方登录", "暗色"],
+      "meta_path": "components/forms/form-login.meta.json",
+      "file_path": "components/forms/form-login.html",
+      "thumbnail": "thumbnails/forms/form-login.png"
+    },
+    {
+      "id": "stats-grid",
+      "name": "数据网格",
+      "category": "stats",
+      "tags": ["数据", "统计", "网格", "趋势"],
+      "meta_path": "components/stats/stats-grid.meta.json",
+      "file_path": "components/stats/stats-grid.html",
+      "thumbnail": "thumbnails/stats/stats-grid.png"
     }
   ]
 }

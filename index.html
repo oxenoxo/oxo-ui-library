@@ -420,22 +420,18 @@
   </div>
 
   <script>
-    let components = [];
+    // 组件数据（内嵌，避免 file:// 协议的 fetch 限制）
+    const COMPONENTS_DATA = {"schema_version":"1.0","last_updated":"2026-05-06T17:10:00+08:00","library_path":"/Users/oxohuang/oxo-ui-library","components":[{"id":"navbar-dark","name":"暗色导航栏","category":"navigation","tags":["导航","响应式","暗色","固定顶部","毛玻璃"],"meta_path":"components/navigation/navbar-dark.meta.json","file_path":"components/navigation/navbar-dark.html","thumbnail":"thumbnails/navigation/navbar-dark.png"},{"id":"hero-centered","name":"居中Hero区域","category":"hero","tags":["Hero","CTA","全屏","科技感","暗色"],"meta_path":"components/hero/hero-centered.meta.json","file_path":"components/hero/hero-centered.html","thumbnail":"thumbnails/hero/hero-centered.png"},{"id":"card-product","name":"产品卡片","category":"cards","tags":["卡片","产品展示","悬停动效","暗色"],"meta_path":"components/cards/card-product.meta.json","file_path":"components/cards/card-product.html","thumbnail":"thumbnails/cards/card-product.png"},{"id":"cta-centered","name":"居中CTA区域","category":"cta","tags":["CTA","居中","暗色","双按钮"],"meta_path":"components/cta/cta-centered.meta.json","file_path":"components/cta/cta-centered.html","thumbnail":"thumbnails/cta/cta-centered.png"},{"id":"cultivation-card","name":"修仙修炼卡片","category":"xianxia","tags":["修仙","卡片","技能展示","紫金配色","动效"],"meta_path":"components/xianxia/cultivation-card.meta.json","file_path":"components/xianxia/cultivation-card.html","thumbnail":"thumbnails/xianxia/cultivation-card.png"},{"id":"footer-simple","name":"简单页脚","category":"footer","tags":["页脚","链接","多栏","响应式"],"meta_path":"components/footer/footer-simple.meta.json","file_path":"components/footer/footer-simple.html","thumbnail":"thumbnails/footer/footer-simple.png"},{"id":"form-login","name":"登录表单","category":"forms","tags":["表单","登录","第三方登录","暗色"],"meta_path":"components/forms/form-login.meta.json","file_path":"components/forms/form-login.html","thumbnail":"thumbnails/forms/form-login.png"},{"id":"stats-grid","name":"数据网格","category":"stats","tags":["数据","统计","网格","趋势"],"meta_path":"components/stats/stats-grid.meta.json","file_path":"components/stats/stats-grid.html","thumbnail":"thumbnails/stats/stats-grid.png"}]};
+
+    let components = COMPONENTS_DATA.components;
     let currentCategory = 'all';
     let currentSearch = '';
     let aiMode = false;
     let selectedComponent = null;
 
-    // 加载组件列表
-    async function loadComponents() {
-      try {
-        const response = await fetch('components/index.json');
-        const data = await response.json();
-        components = data.components;
-        renderComponents();
-      } catch (error) {
-        console.error('加载组件失败：', error);
-      }
+    // 加载组件列表（优先用内嵌数据）
+    function loadComponentsData() {
+      renderComponents();
     }
 
     // 渲染组件卡片
@@ -492,11 +488,23 @@
       selectedComponent = comp;
       document.getElementById('previewFrame').src = comp.file_path;
       
-      fetch(comp.file_path)
-        .then(res => res.text())
-        .then(code => {
-          document.getElementById('codePanel').textContent = code;
-        });
+      // 尝试加载代码（file:// 协议下可能失败）
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', comp.file_path, true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200 || xhr.status === 0) {  // status 0 = file:// 协议
+              document.getElementById('codePanel').textContent = xhr.responseText;
+            } else {
+              document.getElementById('codePanel').textContent = '无法加载代码（请使用本地服务器查看完整功能）';
+            }
+          }
+        };
+        xhr.send(null);
+      } catch (e) {
+        document.getElementById('codePanel').textContent = '代码加载失败：' + e.message;
+      }
     };
 
     // 复制组件ID
@@ -581,7 +589,7 @@
     });
 
     // 初始化
-    loadComponents();
+    loadComponentsData();
   </script>
 </body>
 </html>

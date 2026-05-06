@@ -1,0 +1,27 @@
+{
+  "id": "stats-grid",
+  "name": "数据网格",
+  "category": "stats",
+  "description": "数据展示网格，包含数值、标签、趋势指示器",
+  "version": "1.0.0",
+  "author": "oxohuang",
+  "created_at": "2026-05-06",
+  "updated_at": "2026-05-06",
+  "tags": ["数据", "统计", "网格", "趋势"],
+  "when_to_use": [
+    "展示关键指标",
+    "数据可视化",
+    "dashboard页面"
+  ],
+  "dependencies": {
+    "css": ["../../assets/css/theme.css"],
+    "js": [],
+    "external": []
+  },
+  "props": {
+    "columns": {"type": "number", "default": "4", "description": "网格列数"},
+    "show_trend": {"type": "boolean", "default": true, "description": "显示趋势"}
+  },
+  "file_path": "components/stats/stats-grid.html",
+  "thumbnail": "thumbnails/stats/stats-grid.png"
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据网格组件</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-lg);
+      padding: var(--spacing-xxl) var(--spacing-lg);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-xl);
+      text-align: center;
+      transition: all var(--transition-normal);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+
+    .stat-icon {
+      font-size: 32px;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .stat-value {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: var(--spacing-sm);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .stat-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: var(--spacing-sm);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .stat-trend.up {
+      color: var(--success);
+    }
+
+    .stat-trend.down {
+      color: var(--error);
+    }
+  </style>
+</head>
+<body>
+  <!-- 数据网格组件 -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">👥</div>
+      <div class="stat-value">12.8K</div>
+      <div class="stat-label">总用户数</div>
+      <div class="stat-trend up">↑ 12.5%</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">💰</div>
+      <div class="stat-value">¥85.2万</div>
+      <div class="stat-label">月收入</div>
+      <div class="stat-trend up">↑ 8.3%</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <div class="stat-value">99.9%</div>
+      <div class="stat-label">系统可用性</div>
+      <div class="stat-trend up">↑ 0.1%</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">⏱️</div>
+      <div class="stat-value">1.2s</div>
+      <div class="stat-label">平均响应时间</div>
+      <div class="stat-trend down">↓ 15.3%</div>
+    </div>
+  </div>
+</body>
+</html>
