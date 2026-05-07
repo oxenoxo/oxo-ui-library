@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据行 · Dossier KV Row</title>
+  <style>
+    :root {
+      --ink-700: #10141d;
+      --gold-300: #e4c989;
+      --gold-500: #d4af6a;
+      --gold-600: #b89152;
+      --text: #ece4cf;
+      --text-mute: #6e6a5c;
+      --line: rgba(212, 175, 106, 0.18);
+      --serif: "Songti SC", "SimSun", serif;
+      --mono: "SF Mono", Monaco, Menlo, monospace;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07090f;
+      color: var(--text);
+      padding: 20px;
+    }
+    /* ============ 数据行 (3栏) ============ */
+    .dossier-kv-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      background: rgba(16, 20, 29, 0.4);
+    }
+    .dossier-kv-cell {
+      padding: 16px 12px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+      position: relative;
+    }
+    .dossier-kv-cell:last-child { border-right: none; }
+    .dossier-kv-cell.accent {
+      background: linear-gradient(180deg, rgba(212, 175, 106, 0.08), rgba(212, 175, 106, 0.02));
+    }
+    .dossier-kv-cell.accent::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold-500);
+    }
+    .dossier-kv-cell .k {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .dossier-kv-cell .v {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text);
+    }
+    .dossier-kv-cell.accent .v {
+      color: var(--gold-300);
+    }
+    .dossier-kv-cell .v-suffix {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      margin-left: 4px;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="dossier-kv-row">
+    <div class="dossier-kv-cell accent">
+      <div class="k">TOP PRIZE</div>
+      <div class="v">800<span class="v-suffix">CNY</span></div>
+    </div>
+    <div class="dossier-kv-cell">
+      <div class="k">生死线</div>
+      <div class="v">90</div>
+    </div>
+    <div class="dossier-kv-cell">
+      <div class="k">满分</div>
+      <div class="v">100</div>
+    </div>
+  </div>
+</body>
+</html>

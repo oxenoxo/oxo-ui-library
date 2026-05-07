@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>金额大字展示 · Dossier Amount Plate</title>
+  <style>
+    :root {
+      --ink-900: #07090f;
+      --gold-300: #e4c989;
+      --gold-500: #d4af6a;
+      --gold-600: #b89152;
+      --text-dim: #b0a890;
+      --line: rgba(212, 175, 106, 0.18);
+      --serif: "Songti SC", "SimSun", serif;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: var(--ink-900);
+      color: #ece4cf;
+      padding: 20px;
+    }
+    /* ============ 金额大字展示 ============ */
+    .dossier-amount-plate {
+      text-align: center;
+      padding: 32px 0 24px;
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .dossier-amount-plate::before,
+    .dossier-amount-plate::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 1px;
+      background: var(--gold-600);
+    }
+    .dossier-amount-plate::before { top: 10px; }
+    .dossier-amount-plate::after { bottom: 6px; }
+    .dossier-amount-plate .label {
+      font-family: "SF Mono", Monaco, Menlo, monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .dossier-amount-plate .value {
+      font-family: var(--serif);
+      font-size: clamp(64px, 18vw, 112px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      background: linear-gradient(180deg, #f4e3bb 0%, #d4af6a 50%, #8f6f3a 85%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 24px rgba(212, 175, 106, 0.2));
+    }
+    .dossier-amount-plate .value .currency {
+      font-size: 0.4em;
+      font-weight: 300;
+      vertical-align: top;
+      color: var(--gold-600);
+      -webkit-text-fill-color: var(--gold-600);
+      margin-right: 4px;
+    }
+    .dossier-amount-plate .caption {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text-dim);
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dossier-amount-plate">
+    <div class="label">MAXIMUM PAYOUT</div>
+    <div class="value"><span class="currency">¥</span>800</div>
+    <div class="caption">满分通关 · 拿走全部筹码</div>
+  </div>
+</body>
+</html>

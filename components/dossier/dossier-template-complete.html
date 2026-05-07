@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>赌上所有的筹码 · 奖励卷宗 N°01</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink-900: #07090f;
+      --ink-800: #0a0d14;
+      --ink-700: #10141d;
+      --ink-600: #181d29;
+      --ink-500: #242a38;
+      --paper: #f4ecd8;
+      --paper-soft: #e6dcc4;
+      --gold-100: #f4e3bb;
+      --gold-300: #e4c989;
+      --gold-500: #d4af6a;
+      --gold-600: #b89152;
+      --gold-700: #8f6f3a;
+      --seal-red: #8b2d2d;
+      --jade: #6ba18a;
+      --ash: #8a8f9c;
+      --ash-dim: #5a6071;
+      --line: rgba(212, 175, 106, 0.18);
+      --line-strong: rgba(212, 175, 106, 0.42);
+      --line-faint: rgba(212, 175, 106, 0.08);
+      --text: #ece4cf;
+      --text-dim: #b0a890;
+      --text-mute: #6e6a5c;
+      --serif: "Cormorant Garamond", "Noto Serif SC", "Songti SC", "SimSun", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", sans-serif;
+      --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(212, 175, 106, 0.08), transparent 70%),
+        radial-gradient(ellipse 60% 30% at 50% 100%, rgba(139, 45, 45, 0.05), transparent 70%),
+        linear-gradient(180deg, var(--ink-900) 0%, var(--ink-800) 50%, var(--ink-900) 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding-bottom: 60px;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.83, 0 0 0 0 0.68, 0 0 0 0 0.41, 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .page {
+      width: min(100% - 28px, 720px);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    /* ============ 卷宗头标 ============ */
+    .dossier-top {
+      padding: 26px 0 14px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .dossier-top .brand {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+    }
+    .dossier-top .brand .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--seal-red);
+      margin-right: 6px;
+      vertical-align: middle;
+      box-shadow: 0 0 8px rgba(139, 45, 45, 0.7);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    .dossier-top .meta {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--text-mute);
+      text-align: right;
+      line-height: 1.7;
+    }
+    /* ============ Hero ============ */
+    .hero {
+      text-align: center;
+      padding: 40px 0 32px;
+      position: relative;
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+    }
+    .hero::before { top: 20px; }
+    .hero::after { bottom: 16px; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--gold-600);
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(26px, 6.5vw, 36px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+    .hero-title em { font-style: normal; color: var(--gold-500); font-weight: 500; }
+    .hero-money {
+      font-family: var(--serif);
+      font-size: clamp(72px, 22vw, 128px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      display: block;
+      margin: 12px 0 8px;
+      position: relative;
+      color: var(--gold-300);
+      background: linear-gradient(180deg, #f4e3bb 0%, #d4af6a 45%, #8f6f3a 75%, #d4af6a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 20px rgba(212, 175, 106, 0.25));
+    }
+    .hero-money .currency {
+      font-family: var(--serif);
+      font-size: 0.45em;
+      font-weight: 300;
+      vertical-align: top;
+      margin-right: 4px;
+      letter-spacing: 0;
+      color: var(--gold-600);
+      -webkit-text-fill-color: var(--gold-600);
+    }
+    .hero-sub {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--gold-500);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-top: 14px;
+    }
+    .hero-desc {
+      color: var(--text-dim);
+      font-size: 13px;
+      margin-top: 18px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+    .hero-desc .amt { font-family: var(--mono); color: var(--gold-500); font-weight: 500; }
+    .hero-desc .divider {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold-600);
+      transform: rotate(45deg);
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+    /* ============ 两场考试筹码卡 ============ */
+    .chips {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      margin-top: 8px;
+      padding: 18px 0;
+    }
+    .chip { text-align: center; }
+    .chip-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .chip-value {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--gold-300);
+      letter-spacing: -0.01em;
+    }
+    .chip-value .unit {
+      font-family: var(--mono);
+      font-size: 0.32em;
+      color: var(--gold-600);
+      margin-left: 4px;
+      letter-spacing: 0.1em;
+      font-weight: 400;
+    }
+    .chip-divider {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(180deg, transparent, var(--gold-600), transparent);
+      position: relative;
+    }
+    .chip-divider::after {
+      content: "×";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--ink-800);
+      padding: 0 6px;
+      font-family: var(--serif);
+      color: var(--gold-500);
+      font-size: 18px;
+      font-style: italic;
+    }
+    /* ============ Tabs ============ */
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      margin: 20px -14px 0;
+      padding: 14px 14px;
+      background: rgba(10, 13, 20, 0.92);
+      backdrop-filter: blur(18px) saturate(1.4);
+      -webkit-backdrop-filter: blur(18px) saturate(1.4);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .tab-buttons {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      padding: 4px;
+      background: rgba(7, 9, 15, 0.6);
+    }
+    .tab-buttons::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      flex: 1;
+      min-width: 90px;
+      padding: 9px 14px;
+      border: none;
+      background: transparent;
+      color: var(--text-dim);
+      border-radius: 999px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+    }
+    .tab-btn .num { font-family: var(--mono); font-size: 10px; color: var(--text-mute); margin-right: 6px; }
+    .tab-btn.active {
+      background: linear-gradient(180deg, var(--gold-500), var(--gold-600));
+      color: var(--ink-900);
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(212, 175, 106, 0.25), inset 0 1px 0 rgba(255, 245, 220, 0.4);
+    }
+    .tab-btn.active .num { color: var(--ink-700); opacity: 0.7; }
+    /* ============ Sections ============ */
+    .section { padding: 28px 0 12px; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .section-head::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 60px;
+      height: 1px;
+      background: var(--gold-500);
+    }
+    .section-head .left .no {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .section-head .left .title {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+    .section-head .left .title em { font-style: italic; color: var(--gold-500); }
+    .section-head .right {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      letter-spacing: 0.15em;
+      line-height: 1.8;
+    }
+    .section-head .right b { color: var(--gold-500); font-weight: 500; }
+    /* ============ 金额大字展示 ============ */
+    .amount-plate {
+      text-align: center;
+      padding: 32px 0 24px;
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .amount-plate::before, .amount-plate::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 1px;
+      background: var(--gold-600);
+    }
+    .amount-plate::before { top: 10px; }
+    .amount-plate::after { bottom: 6px; }
+    .amount-plate .label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .amount-plate .value {
+      font-family: var(--serif);
+      font-size: clamp(64px, 18vw, 112px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      background: linear-gradient(180deg, #f4e3bb 0%, #d4af6a 50%, #8f6f3a 85%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 24px rgba(212, 175, 106, 0.2));
+    }
+    .amount-plate .value .currency {
+      font-size: 0.4em;
+      font-weight: 300;
+      vertical-align: top;
+      color: var(--gold-600);
+      -webkit-text-fill-color: var(--gold-600);
+      margin-right: 4px;
+    }
+    .amount-plate .caption {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text-dim);
+      margin-top: 10px;
+    }
+    /* ============ 数据行 (3栏) ============ */
+    .kv-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 22px;
+      background: rgba(16, 20, 29, 0.4);
+    }
+    .kv-cell {
+      padding: 16px 12px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+      position: relative;
+    }
+    .kv-cell:last-child { border-right: none; }
+    .kv-cell.accent {
+      background: linear-gradient(180deg, rgba(212, 175, 106, 0.08), rgba(212, 175, 106, 0.02));
+    }
+    .kv-cell.accent::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: var(--gold-500);
+    }
+    .kv-cell .k {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .kv-cell .v {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text);
+    }
+    .kv-cell.accent .v { color: var(--gold-300); }
+    .kv-cell .v-suffix {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      margin-left: 4px;
+      letter-spacing: 0.1em;
+    }
+    /* ============ 奖励档位卷宗条目 ============ */
+    .ledger {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(16, 20, 29, 0.5), rgba(10, 13, 20, 0.3));
+    }
+    .ledger-head {
+      display: grid;
+      grid-template-columns: 80px 1fr 110px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(212, 175, 106, 0.04);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: var(--gold-600);
+      text-transform: uppercase;
+    }
+    .ledger-head span:last-child { text-align: right; }
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 110px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line-faint);
+      align-items: center;
+      gap: 12px;
+      transition: background 0.2s ease;
+      position: relative;
+    }
+    .ledger-row:last-child { border-bottom: none; }
+    .ledger-row:hover { background: rgba(212, 175, 106, 0.04); }
+    .ledger-row .score {
+      font-family: var(--mono);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .ledger-row .score .plus { color: var(--gold-600); margin: 0 2px; }
+    .ledger-row .desc {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.5;
+      font-weight: 300;
+    }
+    .ledger-row .desc .final {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-mute);
+      display: block;
+      margin-top: 3px;
+      letter-spacing: 0.05em;
+    }
+    .ledger-row .bonus {
+      text-align: right;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--gold-300);
+      letter-spacing: -0.01em;
+    }
+    .ledger-row .bonus .cur {
+      font-family: var(--mono);
+      font-size: 0.45em;
+      font-weight: 400;
+      color: var(--gold-600);
+      margin-right: 2px;
+    }
+    .ledger-row.tier-max {
+      background: linear-gradient(90deg, rgba(107, 161, 138, 0.1), transparent 70%);
+    }
+    .ledger-row.tier-max::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--jade);
+    }
+    .ledger-row.tier-max .bonus { color: #a8d4bf; }
+    .ledger-row.tier-crit {
+      background: linear-gradient(90deg, rgba(212, 175, 106, 0.08), transparent 70%);
+    }
+    .ledger-row.tier-crit::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold-500);
+    }
+    .ledger-row.tier-zero {
+      background: linear-gradient(90deg, rgba(139, 45, 45, 0.1), transparent 70%);
+    }
+    .ledger-row.tier-zero::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--seal-red);
+    }
+    .ledger-row.tier-zero .score, .ledger-row.tier-zero .bonus { color: var(--ash); }
+    .ledger-row.tier-zero .bonus .cur { color: var(--ash-dim); }
+    .tier-badge {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 7px;
+      border: 1px solid currentColor;
+      border-radius: 3px;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .tier-badge.jade { color: var(--jade); }
+    .tier-badge.gold { color: var(--gold-500); }
+    .tier-badge.red { color: var(--seal-red); }
+    /* ============ 期末考档位卡 ============ */
+    .exam-stack { display: grid; gap: 10px; }
+    .exam-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(16, 20, 29, 0.55), rgba(10, 13, 20, 0.3));
+      position: relative;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+    .exam-card:hover { border-color: var(--line-strong); transform: translateY(-1px); }
+    .exam-card.tier-full {
+      border-color: rgba(107, 161, 138, 0.4);
+      background: linear-gradient(180deg, rgba(107, 161, 138, 0.08), rgba(10, 13, 20, 0.3));
+    }
+    .exam-card.tier-zero {
+      border-color: rgba(139, 45, 45, 0.35);
+      background: linear-gradient(180deg, rgba(139, 45, 45, 0.06), rgba(10, 13, 20, 0.3));
+      opacity: 0.85;
+    }
+    .exam-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px dashed var(--line);
+    }
+    .exam-score { display: flex; flex-direction: column; }
+    .exam-score .lbl {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .exam-score .val {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .exam-card.tier-full .exam-score .val { color: #a8d4bf; }
+    .exam-card.tier-zero .exam-score .val { color: var(--ash); }
+    .exam-prize { text-align: right; }
+    .exam-prize .lbl {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .exam-prize .val {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--gold-300);
+      letter-spacing: -0.01em;
+    }
+    .exam-prize .val .cur {
+      font-family: var(--mono);
+      font-size: 0.35em;
+      font-weight: 400;
+      color: var(--gold-600);
+      margin-right: 3px;
+    }
+    .exam-card.tier-full .exam-prize .val { color: #a8d4bf; }
+    .exam-card.tier-full .exam-prize .val .cur { color: #6ba18a; }
+    .exam-card.tier-zero .exam-prize .val { color: var(--ash); }
+    .exam-card.tier-zero .exam-prize .val .cur { color: var(--ash-dim); }
+    .exam-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-bottom: 14px;
+    }
+    .metric {
+      text-align: center;
+      padding: 8px 4px;
+      border-right: 1px solid var(--line-faint);
+    }
+    .metric:last-child { border-right: none; }
+    .metric .k {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .metric .v {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .metric .v.accent { color: var(--gold-500); }
+    .metric .v.jade { color: var(--jade); }
+    .metric .v.dim { color: var(--ash); }
+    .exam-note {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-dim);
+      padding: 10px 14px;
+      background: rgba(212, 175, 106, 0.04);
+      border-left: 2px solid var(--gold-600);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      line-height: 1.6;
+    }
+    .exam-card.tier-full .exam-note {
+      border-left-color: var(--jade);
+      background: rgba(107, 161, 138, 0.06);
+      color: #c9e0d5;
+    }
+    .exam-card.tier-zero .exam-note {
+      border-left-color: var(--seal-red);
+      background: rgba(139, 45, 45, 0.05);
+      color: var(--text-mute);
+    }
+    /* ============ 计算原理 ============ */
+    .formula-block {
+      text-align: center;
+      padding: 36px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(ellipse at center, rgba(212, 175, 106, 0.06), transparent 70%),
+        linear-gradient(180deg, rgba(16, 20, 29, 0.5), rgba(10, 13, 20, 0.3));
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .formula-block::before, .formula-block::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--gold-500);
+    }
+    .formula-block::before {
+      top: 10px; left: 10px;
+      border-right: none; border-bottom: none;
+    }
+    .formula-block::after {
+      bottom: 10px; right: 10px;
+      border-left: none; border-top: none;
+    }
+    .formula-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .formula {
+      font-family: var(--mono);
+      font-size: clamp(14px, 4vw, 18px);
+      color: var(--text);
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      padding: 14px 0;
+    }
+    .formula .gold { color: var(--gold-300); }
+    .formula .mute { color: var(--text-mute); }
+    .formula-caption {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-dim);
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .formula-caption b { color: var(--gold-500); font-weight: 500; font-style: normal; }
+    /* ============ 增值条 ============ */
+    .curve-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      background: linear-gradient(180deg, rgba(16, 20, 29, 0.5), rgba(10, 13, 20, 0.3));
+      margin-bottom: 24px;
+    }
+    .curve-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .curve-head .title {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .curve-head .hint {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      letter-spacing: 0.15em;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 64px;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .bar-row:last-child { margin-bottom: 0; }
+    .bar-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.02em;
+    }
+    .bar-label .small {
+      display: block;
+      font-size: 9px;
+      color: var(--text-mute);
+      margin-top: 2px;
+      letter-spacing: 0.15em;
+    }
+    .bar-track {
+      height: 6px;
+      background: rgba(212, 175, 106, 0.06);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500) 60%, var(--gold-100));
+      transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 0 8px rgba(212, 175, 106, 0.3);
+    }
+    .bar-fill.peak {
+      background: linear-gradient(90deg, var(--gold-500), #f4e3bb 50%, #fff5dc);
+      box-shadow: 0 0 14px rgba(244, 227, 187, 0.5);
+    }
+    .bar-value {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold-300);
+      text-align: right;
+      letter-spacing: -0.02em;
+    }
+    .bar-value.peak { color: var(--gold-100); }
+    /* ============ 策略启示 ============ */
+    .insights {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(16, 20, 29, 0.5), rgba(10, 13, 20, 0.3));
+      margin-bottom: 24px;
+    }
+    .insights-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .insights-title .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--gold-500);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .insight-list { display: grid; gap: 0; }
+    .insight-item {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .insight-item:last-child { border-bottom: none; }
+    .insight-no {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--gold-500);
+      letter-spacing: 0.15em;
+      padding-top: 2px;
+    }
+    .insight-body .k {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .insight-body .k em { font-style: italic; color: var(--gold-500); font-weight: 400; }
+    .insight-body .v {
+      font-size: 12.5px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    /* ============ 底部印章 ============ */
+    .footer-seal {
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer-left {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      letter-spacing: 0.15em;
+      line-height: 1.8;
+    }
+    .footer-left b { color: var(--gold-500); font-weight: 500; }
+    .seal {
+      width: 78px;
+      height: 78px;
+      border: 2px solid var(--seal-red);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--seal-red);
+      font-family: var(--serif);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      transform: rotate(-8deg);
+      position: relative;
+      box-shadow: 0 0 0 2px rgba(139, 45, 45, 0.15);
+      opacity: 0.9;
+      flex-shrink: 0;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .seal::before {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border: 1px solid var(--seal-red);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+    .seal span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      margin-top: 2px;
+    }
+    /* ============ Animation ============ */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 420px) {
+      .ledger-head { grid-template-columns: 72px 1fr 90px; padding: 10px 14px; }
+      .ledger-row { grid-template-columns: 72px 1fr 90px; padding: 14px; gap: 10px; }
+      .ledger-row .score { font-size: 15px; }
+      .ledger-row .bonus { font-size: 22px; }
+      .ledger-row .desc { font-size: 12px; }
+      .exam-metrics .metric .v { font-size: 13px; }
+      .kv-cell .v { font-size: 24px; }
+      .chips { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .chip-divider { display: none; }
+      .bar-row { grid-template-columns: 80px 1fr 56px; gap: 10px; }
+      .hero-money { font-size: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- ========== 卷宗头标 ========== -->
+    <div class="dossier-top">
+      <div class="brand"><span class="dot"></span>DOSSIER · CONFIDENTIAL</div>
+      <div class="meta">N° 01 / 2026<br>ISSUED · MAY</div>
+    </div>
+
+    <!-- ========== Hero ========== -->
+    <div class="hero reveal">
+      <div class="hero-eyebrow">ALL IN · 赌上所有的筹码</div>
+      <div class="hero-title"><em>最高奖金池</em> · 两场考试</div>
+      <span class="hero-money"><span class="currency">¥</span>1,500</span>
+      <div class="hero-sub">THE GRAND PRIZE</div>
+      <p class="hero-desc">
+        生地会考 <span class="amt">¥800</span>
+        <span class="divider"></span>
+        期末考试 <span class="amt">¥700</span>
+        <br>
+        分数越高，回报越狠——最后 5 分的价值，是前三十分的 <span class="amt">13 倍</span>。
+      </p>
+      <div class="chips">
+        <div class="chip">
+          <div class="chip-label">BIO · 生地会考</div>
+          <div class="chip-value">800<span class="unit">CNY</span></div>
+        </div>
+        <div class="chip-divider"></div>
+        <div class="chip">
+          <div class="chip-label">FINAL · 期末</div>
+          <div class="chip-value">700<span class="unit">CNY</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== Tabs ========== -->
+    <nav class="tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="bio"><span class="num">01</span>生地会考</button>
+        <button class="tab-btn" data-tab="final"><span class="num">02</span>期末考试</button>
+        <button class="tab-btn" data-tab="calc"><span class="num">03</span>计算原理</button>
+      </div>
+    </nav>
+
+    <!-- ========== 生地会考 ========== -->
+    <section class="tab-panel active" id="bio">
+      <div class="section reveal">
+        <div class="section-head">
+          <div class="left">
+            <div class="no">CHAPTER N° 01</div>
+            <div class="title"><em>生地会考</em> · The Opening Act</div>
+          </div>
+          <div class="right">MAX <b>¥800</b><br>LINE <b>90 分</b></div>
+        </div>
+        <div class="amount-plate">
+          <div class="label">MAXIMUM PAYOUT</div>
+          <div class="value"><span class="currency">¥</span>800</div>
+          <div class="caption">满分通关 · 拿走全部筹码</div>
+        </div>
+        <div class="kv-row">
+          <div class="kv-cell accent">
+            <div class="k">TOP PRIZE</div>
+            <div class="v">800<span class="v-suffix">CNY</span></div>
+          </div>
+          <div class="kv-cell">
+            <div class="k">生死线</div>
+            <div class="v">90</div>
+          </div>
+          <div class="kv-cell">
+            <div class="k">满分</div>
+            <div class="v">100</div>
+          </div>
+        </div>
+        <div class="ledger">
+          <div class="ledger-head">
+            <span>SCORE</span><span>NOTE</span><span>PAYOUT</span>
+          </div>
+          <div class="ledger-row tier-max">
+            <div class="score">100<span class="plus">+</span>80</div>
+            <div class="desc">
+              王座 · 无伤通关，拿走全部筹码
+              <span class="tier-badge jade">CROWN</span>
+              <span class="final">最终折算 90.0 · 满分</span>
+            </div>
+            <div class="bonus"><span class="cur">¥</span>800</div>
+          </div>
+          <div class="ledger-row tier-crit">
+            <div class="score">95<span class="plus">+</span>80</div>
+            <div class="desc">
+              暴击·触发 267 元隐藏宝箱
+              <span class="tier-badge gold">CRIT</span>
+              <span class="final">最终折算 87.5</span>
+            </div>
+            <div class="bonus"><span class="cur">¥</span>530</div>
+          </div>
+          <div class="ledger-row tier-zero">
+            <div class="score">90<span class="plus">+</span>80</div>
+            <div class="desc">
+              生死线 · 惊险保本，不赚不赔
+              <span class="tier-badge red">LINE</span>
+              <span class="final">最终折算 85.0</span>
+            </div>
+            <div class="bonus"><span class="cur">¥</span>0</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 期末考试 ========== -->
+    <section class="tab-panel" id="final">
+      <div class="section reveal">
+        <div class="section-head">
+          <div class="left">
+            <div class="no">CHAPTER N° 02</div>
+            <div class="title"><em>期末考试</em> · The Final Game</div>
+          </div>
+          <div class="right">MAX <b>¥700</b><br>TARGET <b>590 分</b></div>
+        </div>
+        <div class="amount-plate">
+          <div class="label">MAXIMUM PAYOUT</div>
+          <div class="value"><span class="currency">¥</span>700</div>
+          <div class="caption">封神奖励 · 分数越近目标，越值钱</div>
+        </div>
+        <div class="kv-row">
+          <div class="kv-cell accent">
+            <div class="k">TOP PRIZE</div>
+            <div class="v">700<span class="v-suffix">CNY</span></div>
+          </div>
+          <div class="kv-cell">
+            <div class="k">目标分数</div>
+            <div class="v">590</div>
+          </div>
+          <div class="kv-cell">
+            <div class="k">满分</div>
+            <div class="v">740</div>
+          </div>
+        </div>
+        <div class="exam-stack">
+          <div class="exam-card tier-full">
+            <div class="exam-card-head">
+              <div class="exam-score"><div class="lbl">TOTAL SCORE</div><div class="val">590</div></div>
+              <div class="exam-prize"><div class="lbl">PAYOUT</div><div class="val"><span class="cur">¥</span>700</div></div>
+            </div>
+            <div class="exam-metrics">
+              <div class="metric"><div class="k">进度</div><div class="v jade">100%</div></div>
+              <div class="metric"><div class="k">每 5 分增值</div><div class="v accent">+214</div></div>
+              <div class="metric"><div class="k">距目标</div><div class="v jade">TARGET</div></div>
+            </div>
+            <div class="exam-note">封神 · 拿走全部 700 元。</div>
+          </div>
+          <div class="exam-card tier-zero">
+            <div class="exam-card-head">
+              <div class="exam-score"><div class="lbl">TOTAL SCORE</div><div class="val">560</div></div>
+              <div class="exam-prize"><div class="lbl">PAYOUT</div><div class="val"><span class="cur">¥</span>0</div></div>
+            </div>
+            <div class="exam-metrics">
+              <div class="metric"><div class="k">进度</div><div class="v dim">0%</div></div>
+              <div class="metric"><div class="k">每 5 分增值</div><div class="v dim">—</div></div>
+              <div class="metric"><div class="k">距目标</div><div class="v dim">−30</div></div>
+            </div>
+            <div class="exam-note">警戒线 · 一分未得，颗粒无收。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 计算原理 ========== -->
+    <section class="tab-panel" id="calc">
+      <div class="section reveal">
+        <div class="section-head">
+          <div class="left">
+            <div class="no">CHAPTER N° 03</div>
+            <div class="title"><em>计算原理</em> · The Mechanics</div>
+          </div>
+          <div class="right">MODEL <b>QUADRATIC</b><br>EXPONENT <b>²</b></div>
+        </div>
+        <div class="formula-block">
+          <div class="formula-label">期末奖励 · FINAL EXAM FORMULA</div>
+          <div class="formula">
+            <span class="gold">奖金</span> &nbsp;=&nbsp; 700 <span class="mute">×</span>
+            <br>
+            <span class="mute">(</span> <span class="gold">(总分 − 560) / 30</span> <span class="mute">)</span><sup style="font-size:0.65em;">2</sup>
+          </div>
+          <div class="formula-caption">
+            这不是线性奖励——而是 <b>加速回报</b>。<br>
+            分数越高，每 1 分的价值增长越快。
+          </div>
+        </div>
+        <div class="curve-card">
+          <div class="curve-head">
+            <div class="title">每 5 分增值曲线</div>
+            <div class="hint">VALUE / 5-POINT · CNY</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">560 → 565<span class="small">起步 5 分</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:9%;"></div></div>
+            <div class="bar-value">+19</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">585 → 590<span class="small">冲刺 5 分</span></div>
+            <div class="bar-track"><div class="bar-fill peak" style="width:100%;"></div></div>
+            <div class="bar-value peak">+214</div>
+          </div>
+        </div>
+        <div class="insights">
+          <div class="insights-title">
+            <span>策略启示</span>
+            <span class="tag">INSIGHTS</span>
+          </div>
+          <div class="insight-list">
+            <div class="insight-item">
+              <div class="insight-no">01</div>
+              <div class="insight-body">
+                <div class="k"><em>边际递增</em>效应</div>
+                <div class="v">分数越接近目标，每 1 分的奖金价值越高。奖励曲线是指数型上扬——而不是平直的线性。</div>
+              </div>
+            </div>
+            <div class="insight-item">
+              <div class="insight-no">02</div>
+              <div class="insight-body">
+                <div class="k"><em>临界点</em>战略</div>
+                <div class="v">从 585 到 590 的 5 分，价值是 560 到 565 的 11 倍。越是尾段，越值得死磕。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 底部印章 ========== -->
+    <div class="footer-seal">
+      <div class="footer-left">
+        DOSSIER N° 01 · ISSUED 2026<br>
+        <b>TOTAL POOL</b> &nbsp; ¥1,500<br>
+        VALID UNTIL · FINAL EXAM
+      </div>
+      <div class="seal">ALL IN<span>赌上筹码</span></div>
+    </div>
+  </div>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+        setTimeout(() => {
+          document.querySelectorAll('.tab-panel.active .reveal').forEach(el => el.classList.add('visible'));
+        }, 50);
+      });
+    });
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => io.observe(el));
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }, 100);
+  </script>
+</body>
+</html>

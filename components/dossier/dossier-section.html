@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>区块头部 · Dossier Section</title>
+  <style>
+    :root {
+      --ink-700: #10141d;
+      --gold-500: #d4af6a;
+      --text: #ece4cf;
+      --text-dim: #b0a890;
+      --text-mute: #6e6a5c;
+      --line: rgba(212, 175, 106, 0.18);
+      --serif: "Songti SC", "SimSun", serif;
+      --mono: "SF Mono", Monaco, Menlo, monospace;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07090f;
+      color: var(--text);
+      padding: 20px;
+    }
+    /* ============ Section Head ============ */
+    .dossier-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .dossier-section-head::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 60px;
+      height: 1px;
+      background: var(--gold-500);
+    }
+    .dossier-section-head .left .no {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .dossier-section-head .left .title {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+    .dossier-section-head .left .title em {
+      font-style: italic;
+      color: var(--gold-500);
+    }
+    .dossier-section-head .right {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      letter-spacing: 0.15em;
+      line-height: 1.8;
+    }
+    .dossier-section-head .right b {
+      color: var(--gold-500);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="dossier-section-head">
+    <div class="left">
+      <div class="no">CHAPTER N° 01</div>
+      <div class="title"><em>生地会考</em> · The Opening Act</div>
+    </div>
+    <div class="right">
+      MAX &nbsp;<b>¥800</b><br>
+      LINE &nbsp;<b>90 分</b>
+    </div>
+  </div>
+</body>
+</html>

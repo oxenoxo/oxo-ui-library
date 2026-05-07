@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>增值条 · Dossier Bar Chart</title>
+  <style>
+    :root {
+      --ink-700: #10141d;
+      --gold-300: #e4c989;
+      --gold-500: #d4af6a;
+      --gold-700: #8f6f3a;
+      --gold-100: #f4e3bb;
+      --text: #ece4cf;
+      --text-dim: #b0a890;
+      --text-mute: #6e6a5c;
+      --line: rgba(212, 175, 106, 0.18);
+      --line-faint: rgba(212, 175, 106, 0.08);
+      --mono: "SF Mono", Monaco, Menlo, monospace;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07090f;
+      color: var(--text);
+      padding: 20px;
+    }
+    /* ============ 增值条/柱状图 ============ */
+    .dossier-curve-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px 20px;
+      background: linear-gradient(180deg, rgba(16, 20, 29, 0.5), rgba(10, 13, 20, 0.3));
+      margin-bottom: 24px;
+    }
+    .dossier-curve-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .dossier-curve-head .title {
+      font-family: "Songti SC", "SimSun", serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .dossier-curve-head .hint {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      letter-spacing: 0.15em;
+    }
+    .dossier-bar-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 64px;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .dossier-bar-row:last-child { margin-bottom: 0; }
+    .dossier-bar-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.02em;
+    }
+    .dossier-bar-label .small {
+      display: block;
+      font-size: 9px;
+      color: var(--text-mute);
+      margin-top: 2px;
+      letter-spacing: 0.15em;
+    }
+    .dossier-bar-track {
+      height: 6px;
+      background: rgba(212, 175, 106, 0.06);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .dossier-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500) 60%, var(--gold-100));
+      transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 0 8px rgba(212, 175, 106, 0.3);
+    }
+    .dossier-bar-fill.peak {
+      background: linear-gradient(90deg, var(--gold-500), #f4e3bb 50%, #fff5dc);
+      box-shadow: 0 0 14px rgba(244, 227, 187, 0.5);
+    }
+    .dossier-bar-value {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold-300);
+      text-align: right;
+      letter-spacing: -0.02em;
+    }
+    .dossier-bar-value.peak { color: var(--gold-100); }
+  </style>
+</head>
+<body>
+  <div class="dossier-curve-card">
+    <div class="dossier-curve-head">
+      <div class="title">每 5 分增值曲线</div>
+      <div class="hint">VALUE / 5-POINT · CNY</div>
+    </div>
+
+    <div class="dossier-bar-row">
+      <div class="dossier-bar-label">560 → 565<span class="small">起步 5 分</span></div>
+      <div class="dossier-bar-track"><div class="dossier-bar-fill" style="width: 9%;"></div></div>
+      <div class="dossier-bar-value">+19</div>
+    </div>
+    <div class="dossier-bar-row">
+      <div class="dossier-bar-label">585 → 590<span class="small">冲刺 5 分</span></div>
+      <div class="dossier-bar-track"><div class="dossier-bar-fill peak" style="width: 100%;"></div></div>
+      <div class="dossier-bar-value peak">+214</div>
+    </div>
+  </div>
+</body>
+</html>

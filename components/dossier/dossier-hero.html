@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>卷宗Hero区域 · Dossier Hero</title>
+  <style>
+    :root {
+      --ink-900: #07090f;
+      --gold-300: #e4c989;
+      --gold-500: #d4af6a;
+      --gold-600: #b89152;
+      --text: #ece4cf;
+      --text-dim: #b0a890;
+      --text-mute: #6e6a5c;
+      --line: rgba(212, 175, 106, 0.18);
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: var(--ink-900);
+      color: var(--text);
+      padding: 20px;
+    }
+    /* =========== Hero =========== */
+    .dossier-hero {
+      text-align: center;
+      padding: 40px 0 32px;
+      position: relative;
+    }
+    .dossier-hero::before,
+    .dossier-hero::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+    }
+    .dossier-hero::before { top: 20px; }
+    .dossier-hero::after { bottom: 16px; }
+    .dossier-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "SF Mono", Monaco, Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .dossier-hero-eyebrow::before,
+    .dossier-hero-eyebrow::after {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--gold-600);
+    }
+    .dossier-hero-title {
+      font-family: "Songti SC", "SimSun", serif;
+      font-size: clamp(26px, 6.5vw, 36px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+    .dossier-hero-title em {
+      font-style: normal;
+      color: var(--gold-500);
+      font-weight: 500;
+    }
+    .dossier-hero-money {
+      font-family: "Songti SC", "SimSun", serif;
+      font-size: clamp(72px, 22vw, 128px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      display: block;
+      margin: 12px 0 8px;
+      position: relative;
+      color: var(--gold-300);
+      background: linear-gradient(180deg, #f4e3bb 0%, #d4af6a 45%, #8f6f3a 75%, #d4af6a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 20px rgba(212, 175, 106, 0.25));
+    }
+    .dossier-hero-money .currency {
+      font-family: "Songti SC", "SimSun", serif;
+      font-size: 0.45em;
+      font-weight: 300;
+      vertical-align: top;
+      margin-right: 4px;
+      letter-spacing: 0;
+      color: var(--gold-600);
+      -webkit-text-fill-color: var(--gold-600);
+    }
+    .dossier-hero-sub {
+      font-family: "SF Mono", Monaco, Menlo, monospace;
+      font-size: 11px;
+      color: var(--gold-500);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-top: 14px;
+    }
+    .dossier-hero-desc {
+      color: var(--text-dim);
+      font-size: 13px;
+      margin-top: 18px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+    .dossier-hero-desc .amt {
+      font-family: "SF Mono", Monaco, Menlo, monospace;
+      color: var(--gold-500);
+      font-weight: 500;
+    }
+    .dossier-hero-desc .divider {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold-600);
+      transform: rotate(45deg);
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="dossier-hero">
+    <div class="dossier-hero-eyebrow">ALL IN · 赌上所有的筹码</div>
+    <div class="dossier-hero-title"><em>最高奖金池</em> · 两场考试</div>
+    <span class="dossier-hero-money"><span class="currency">¥</span>1,500</span>
+    <div class="dossier-hero-sub">THE GRAND PRIZE</div>
+    <p class="dossier-hero-desc">
+      生地会考 <span class="amt">¥800</span>
+      <span class="divider"></span>
+      期末考试 <span class="amt">¥700</span>
+      <br>
+      分数越高，回报越狠——最后 5 分的价值，是前三十分的 <span class="amt">13 倍</span>。
+    </p>
+  </div>
+</body>
+</html>

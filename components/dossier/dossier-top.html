@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>卷宗头标 · Dossier Top</title>
+  <style>
+    :root {
+      --ink-900: #07090f;
+      --gold-500: #d4af6a;
+      --gold-600: #b89152;
+      --seal-red: #8b2d2d;
+      --text-mute: #6e6a5c;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: var(--ink-900);
+      padding: 20px;
+    }
+    /* ============ 卷宗头标 ============ */
+    .dossier-top {
+      padding: 26px 0 14px;
+      border-bottom: 1px solid rgba(212, 175, 106, 0.18);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .dossier-top .brand {
+      font-family: "SF Mono", Monaco, Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: var(--gold-500);
+      text-transform: uppercase;
+    }
+    .dossier-top .brand .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--seal-red);
+      margin-right: 6px;
+      vertical-align: middle;
+      box-shadow: 0 0 8px rgba(139, 45, 45, 0.7);
+      animation: dossier-top-blink 2s ease-in-out infinite;
+    }
+    @keyframes dossier-top-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    .dossier-top .meta {
+      font-family: "SF Mono", Monaco, Menlo, monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--text-mute);
+      text-align: right;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="dossier-top">
+    <div class="brand"><span class="dot"></span>DOSSIER · CONFIDENTIAL</div>
+    <div class="meta">
+      N° 01 / 2026<br>
+      ISSUED · MAY
+    </div>
+  </div>
+</body>
+</html>

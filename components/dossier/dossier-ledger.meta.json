@@ -1,0 +1,19 @@
+{
+  "id": "dossier-ledger",
+  "name": "奖励档位列表",
+  "category": "dossier",
+  "tags": [
+    "卷宗",
+    "档位",
+    "列表",
+    "表格",
+    "暗色"
+  ],
+  "props": {},
+  "when_to_use": [
+    "需要奖励档位列表时",
+    "创建卷宗风格页面",
+    "暗色主题设计"
+  ],
+  "description": "卷宗风格的奖励档位列表，支持3种特殊档位样式：tier-max（翡翠绿王座）、tier-crit（金色暴击）、tier-zero（印章红生死线）。"
+}

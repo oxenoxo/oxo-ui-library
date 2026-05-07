@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>筹码卡片 · Dossier Chips</title>
+  <style>
+    :root {
+      --ink-800: #0a0d14;
+      --gold-300: #e4c989;
+      --gold-600: #b89152;
+      --text-mute: #6e6a5c;
+      --serif: "Songti SC", "SimSun", serif;
+      --mono: "SF Mono", Monaco, Menlo, monospace;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07090f;
+      color: #ece4cf;
+      padding: 20px;
+    }
+    /* ============ 两场考试筹码卡 ============ */
+    .dossier-chips {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      margin-top: 8px;
+      padding: 18px 0;
+    }
+    .dossier-chip {
+      text-align: center;
+    }
+    .dossier-chip-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .dossier-chip-value {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--gold-300);
+      letter-spacing: -0.01em;
+    }
+    .dossier-chip-value .unit {
+      font-family: var(--mono);
+      font-size: 0.32em;
+      color: var(--gold-600);
+      margin-left: 4px;
+      letter-spacing: 0.1em;
+      font-weight: 400;
+    }
+    .dossier-chip-divider {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(180deg, transparent, var(--gold-600), transparent);
+      position: relative;
+    }
+    .dossier-chip-divider::after {
+      content: "×";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--ink-800);
+      padding: 0 6px;
+      font-family: var(--serif);
+      color: #d4af6a;
+      font-size: 18px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="dossier-chips">
+    <div class="dossier-chip">
+      <div class="dossier-chip-label">BIO · 生地会考</div>
+      <div class="dossier-chip-value">800<span class="unit">CNY</span></div>
+    </div>
+    <div class="dossier-chip-divider"></div>
+    <div class="dossier-chip">
+      <div class="dossier-chip-label">FINAL · 期末</div>
+      <div class="dossier-chip-value">700<span class="unit">CNY</span></div>
+    </div>
+  </div>
+</body>
+</html>

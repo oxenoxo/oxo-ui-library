@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>考试档位卡 · Dossier Exam Card</title>
+  <style>
+    :root {
+      --ink-700: #10141d;
+      --gold-300: #e4c989;
+      --gold-500: #d4af6a;
+      --gold-600: #b89152;
+      --jade: #6ba18a;
+      --seal-red: #8b2d2d;
+      --text: #ece4cf;
+      --text-dim: #b0a890;
+      --text-mute: #6e6a5c;
+      --line: rgba(212, 175, 106, 0.18);
+      --line-faint: rgba(212, 175, 106, 0.08);
+      --serif: "Songti SC", "SimSun", serif;
+      --mono: "SF Mono", Monaco, Menlo, monospace;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07090f;
+      color: var(--text);
+      padding: 20px;
+    }
+    /* ============ 期末考档位卡 ============ */
+    .dossier-exam-stack {
+      display: grid;
+      gap: 10px;
+    }
+    .dossier-exam-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(16, 20, 29, 0.55), rgba(10, 13, 20, 0.3));
+      position: relative;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+    .dossier-exam-card:hover {
+      border-color: rgba(212, 175, 106, 0.42);
+      transform: translateY(-1px);
+    }
+    .dossier-exam-card.tier-full {
+      border-color: rgba(107, 161, 138, 0.4);
+      background: linear-gradient(180deg, rgba(107, 161, 138, 0.08), rgba(10, 13, 20, 0.3));
+    }
+    .dossier-exam-card.tier-zero {
+      border-color: rgba(139, 45, 45, 0.35);
+      background: linear-gradient(180deg, rgba(139, 45, 45, 0.06), rgba(10, 13, 20, 0.3));
+      opacity: 0.85;
+    }
+    .dossier-exam-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px dashed var(--line);
+    }
+    .dossier-exam-score {
+      display: flex;
+      flex-direction: column;
+    }
+    .dossier-exam-score .lbl {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .dossier-exam-score .val {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .dossier-exam-card.tier-full .dossier-exam-score .val {
+      color: #a8d4bf;
+    }
+    .dossier-exam-card.tier-zero .dossier-exam-score .val {
+      color: var(--ash, #8a8f9c);
+    }
+    .dossier-exam-prize {
+      text-align: right;
+    }
+    .dossier-exam-prize .lbl {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .dossier-exam-prize .val {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--gold-300);
+      letter-spacing: 0.01em;
+    }
+    .dossier-exam-prize .val .cur {
+      font-family: var(--mono);
+      font-size: 0.35em;
+      font-weight: 400;
+      color: var(--gold-600);
+      margin-right: 3px;
+    }
+    .dossier-exam-card.tier-full .dossier-exam-prize .val { color: #a8d4bf; }
+    .dossier-exam-card.tier-full .dossier-exam-prize .val .cur { color: #6ba18a; }
+    .dossier-exam-card.tier-zero .dossier-exam-prize .val { color: var(--ash, #8a8f9c); }
+    .dossier-exam-card.tier-zero .dossier-exam-prize .val .cur { color: var(--ash-dim, #5a6071); }
+
+    .dossier-exam-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-bottom: 14px;
+    }
+    .dossier-metric {
+      text-align: center;
+      padding: 8px 4px;
+      border-right: 1px solid var(--line-faint);
+    }
+    .dossier-metric:last-child { border-right: none; }
+    .dossier-metric .k {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .dossier-metric .v {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .dossier-metric .v.accent { color: var(--gold-500); }
+    .dossier-metric .v.jade { color: var(--jade); }
+    .dossier-metric .v.dim { color: var(--ash, #8a8f9c); }
+
+    .dossier-exam-note {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-dim);
+      padding: 10px 14px;
+      background: rgba(212, 175, 106, 0.04);
+      border-left: 2px solid var(--gold-600);
+      border-radius: 0 6px 6px 0;
+      line-height: 1.6;
+    }
+    .dossier-exam-card.tier-full .dossier-exam-note {
+      border-left-color: var(--jade);
+      background: rgba(107, 161, 138, 0.06);
+      color: #c9e0d5;
+    }
+    .dossier-exam-card.tier-zero .dossier-exam-note {
+      border-left-color: var(--seal-red);
+      background: rgba(139, 45, 45, 0.05);
+      color: var(--text-mute);
+    }
+  </style>
+</head>
+<body>
+  <div class="dossier-exam-stack">
+    <div class="dossier-exam-card tier-full">
+      <div class="dossier-exam-card-head">
+        <div class="dossier-exam-score">
+          <div class="lbl">TOTAL SCORE</div>
+          <div class="val">590</div>
+        </div>
+        <div class="dossier-exam-prize">
+          <div class="lbl">PAYOUT</div>
+          <div class="val"><span class="cur">¥</span>700</div>
+        </div>
+      </div>
+      <div class="dossier-exam-metrics">
+        <div class="dossier-metric"><div class="k">进度</div><div class="v jade">100%</div></div>
+        <div class="dossier-metric"><div class="k">每 5 分增值</div><div class="v accent">+214</div></div>
+        <div class="dossier-metric"><div class="k">距目标</div><div class="v jade">TARGET</div></div>
+      </div>
+      <div class="dossier-exam-note">封神 · 拿走全部 700 元。</div>
+    </div>
+
+    <div class="dossier-exam-card tier-zero">
+      <div class="dossier-exam-card-head">
+        <div class="dossier-exam-score">
+          <div class="lbl">TOTAL SCORE</div>
+          <div class="val">560</div>
+        </div>
+        <div class="dossier-exam-prize">
+          <div class="lbl">PAYOUT</div>
+          <div class="val"><span class="cur">¥</span>0</div>
+        </div>
+      </div>
+      <div class="dossier-exam-metrics">
+        <div class="dossier-metric"><div class="k">进度</div><div class="v dim">0%</div></div>
+        <div class="dossier-metric"><div class="k">每 5 分增值</div><div class="v dim">—</div></div>
+        <div class="dossier-metric"><div class="k">距目标</div><div class="v dim">−30</div></div>
+      </div>
+      <div class="dossier-exam-note">警戒线 · 一分未得，颗粒无收。</div>
+    </div>
+  </div>
+</body>
+</html>

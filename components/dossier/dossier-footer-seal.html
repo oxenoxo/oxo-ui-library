@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>底部印章 · Dossier Footer Seal</title>
+  <style>
+    :root {
+      --ink-700: #10141d;
+      --ink-900: #07090f;
+      --gold-500: #d4af6a;
+      --gold-600: #b89152;
+      --seal-red: #8b2d2d;
+      --text-mute: #6e6a5c;
+      --line: rgba(212, 175, 106, 0.18);
+      --serif: "Songti SC", "SimSun", serif;
+      --mono: "SF Mono", Monaco, Menlo, monospace;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: var(--ink-900);
+      color: #ece4cf;
+      padding: 20px;
+    }
+    /* ============ 底部印章区 ============ */
+    .dossier-footer-seal {
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .dossier-footer-left {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-mute);
+      letter-spacing: 0.15em;
+      line-height: 1.8;
+    }
+    .dossier-footer-left b {
+      color: var(--gold-500);
+      font-weight: 500;
+    }
+    .dossier-seal {
+      width: 78px;
+      height: 78px;
+      border: 2px solid var(--seal-red);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--seal-red);
+      font-family: var(--serif);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      transform: rotate(-8deg);
+      position: relative;
+      box-shadow: 0 0 0 2px rgba(139, 45, 45, 0.15);
+      opacity: 0.9;
+      flex-shrink: 0;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .dossier-seal::before {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border: 1px solid var(--seal-red);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+    .dossier-seal span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dossier-footer-seal">
+    <div class="dossier-footer-left">
+      DOSSIER N° 01 · ISSUED 2026<br>
+      <b>TOTAL POOL</b> &nbsp; ¥1,500<br>
+      VALID UNTIL · FINAL EXAM
+    </div>
+    <div class="dossier-seal">
+      ALL IN<span>赌上筹码</span>
+    </div>
+  </div>
+</body>
+</html>

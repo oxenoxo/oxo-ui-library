@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>奖励档位列表 · Dossier Ledger</title>
+  <style>
+    :root {
+      --ink-700: #10141d;
+      --gold-300: #e4c989;
+      --gold-500: #d4af6a;
+      --gold-600: #b89152;
+      --gold-700: #8f6f3a;
+      --jade: #6ba18a;
+      --seal-red: #8b2d2d;
+      --ash: #8a8f9c;
+      --ash-dim: #5a6071;
+      --text: #ece4cf;
+      --text-dim: #b0a890;
+      --text-mute: #6e6a5c;
+      --line: rgba(212, 175, 106, 0.18);
+      --line-faint: rgba(212, 175, 106, 0.08);
+      --serif: "Songti SC", "SimSun", serif;
+      --mono: "SF Mono", Monaco, Menlo, monospace;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: #07090f;
+      color: var(--text);
+      padding: 20px;
+    }
+    /* ============ 奖励档位卷宗条目 ============ */
+    .dossier-ledger {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(16, 20, 29, 0.5), rgba(10, 13, 20, 0.3));
+    }
+    .dossier-ledger-head {
+      display: grid;
+      grid-template-columns: 80px 1fr 110px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(212, 175, 106, 0.04);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: var(--gold-600);
+      text-transform: uppercase;
+    }
+    .dossier-ledger-head span:last-child { text-align: right; }
+
+    .dossier-ledger-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 110px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line-faint);
+      align-items: center;
+      gap: 12px;
+      transition: background 0.2s ease;
+      position: relative;
+    }
+    .dossier-ledger-row:last-child { border-bottom: none; }
+    .dossier-ledger-row:hover {
+      background: rgba(212, 175, 106, 0.04);
+    }
+    .dossier-ledger-row .score {
+      font-family: var(--mono);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .dossier-ledger-row .score .plus {
+      color: var(--gold-600);
+      margin: 0 2px;
+    }
+    .dossier-ledger-row .desc {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.5;
+      font-weight: 300;
+    }
+    .dossier-ledger-row .desc .final {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-mute);
+      display: block;
+      margin-top: 3px;
+      letter-spacing: 0.05em;
+    }
+    .dossier-ledger-row .bonus {
+      text-align: right;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--gold-300);
+      letter-spacing: -0.01em;
+    }
+    .dossier-ledger-row .bonus .cur {
+      font-family: var(--mono);
+      font-size: 0.45em;
+      font-weight: 400;
+      color: var(--gold-600);
+      margin-right: 2px;
+    }
+
+    /* 特殊档位样式 */
+    .dossier-ledger-row.tier-max {
+      background: linear-gradient(90deg, rgba(107, 161, 138, 0.1), transparent 70%);
+    }
+    .dossier-ledger-row.tier-max::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--jade);
+    }
+    .dossier-ledger-row.tier-max .bonus { color: #a8d4bf; }
+    .dossier-ledger-row.tier-max .score { color: var(--text); }
+
+    .dossier-ledger-row.tier-crit {
+      background: linear-gradient(90deg, rgba(212, 175, 106, 0.08), transparent 70%);
+    }
+    .dossier-ledger-row.tier-crit::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold-500);
+    }
+
+    .dossier-ledger-row.tier-zero {
+      background: linear-gradient(90deg, rgba(139, 45, 45, 0.1), transparent 70%);
+    }
+    .dossier-ledger-row.tier-zero::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--seal-red);
+    }
+    .dossier-ledger-row.tier-zero .score,
+    .dossier-ledger-row.tier-zero .bonus {
+      color: var(--ash);
+    }
+    .dossier-ledger-row.tier-zero .bonus .cur { color: var(--ash-dim); }
+
+    .dossier-tier-badge {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 7px;
+      border: 1px solid currentColor;
+      border-radius: 3px;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .dossier-tier-badge.jade { color: var(--jade); }
+    .dossier-tier-badge.gold { color: var(--gold-500); }
+    .dossier-tier-badge.red { color: var(--seal-red); }
+  </style>
+</head>
+<body>
+  <div class="dossier-ledger">
+    <div class="dossier-ledger-head">
+      <span>SCORE</span>
+      <span>NOTE</span>
+      <span>PAYOUT</span>
+    </div>
+
+    <div class="dossier-ledger-row tier-max">
+      <div class="score">100<span class="plus">+</span>80</div>
+      <div class="desc">
+        王座 · 无伤通关，拿走全部筹码
+        <span class="dossier-tier-badge jade">CROWN</span>
+        <span class="final">最终折算 90.0 · 满分</span>
+      </div>
+      <div class="bonus"><span class="cur">¥</span>800</div>
+    </div>
+
+    <div class="dossier-ledger-row">
+      <div class="score">99<span class="plus">+</span>80</div>
+      <div class="desc">完美·只差一丝运气<span class="final">最终折算 89.5</span></div>
+      <div class="bonus"><span class="cur">¥</span>730</div>
+    </div>
+
+    <div class="dossier-ledger-row tier-crit">
+      <div class="score">95<span class="plus">+</span>80</div>
+      <div class="desc">
+        暴击·触发 267 元隐藏宝箱
+        <span class="dossier-tier-badge gold">CRIT</span>
+        <span class="final">最终折算 87.5</span>
+      </div>
+      <div class="bonus"><span class="cur">¥</span>530</div>
+    </div>
+
+    <div class="dossier-ledger-row tier-zero">
+      <div class="score">90<span class="plus">+</span>80</div>
+      <div class="desc">
+        生死线 · 惊险保本，不赚不赔
+        <span class="dossier-tier-badge red">LINE</span>
+        <span class="final">最终折算 85.0</span>
+      </div>
+      <div class="bonus"><span class="cur">¥</span>0</div>
+    </div>
+  </div>
+</body>
+</html>
