@@ -3,8 +3,8 @@ node_modules/
 __pycache__/
 *.pyc
 
-# 缩略图（可选忽略，或提交示例缩略图）
-thumbnails/
+# 缩略图（提交 PNG 缩略图到仓库）
+thumbnails/**
 !thumbnails/**/*.png
 
 # 历史备份
