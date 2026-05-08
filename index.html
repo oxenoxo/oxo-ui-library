@@ -965,6 +965,20 @@
       border: 1px solid rgba(125, 211, 252, 0.18);
       color: #bae6fd;
       font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .tag:hover {
+      background: rgba(125, 211, 252, 0.2);
+      border-color: rgba(125, 211, 252, 0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+    }
+
+    .tag:active {
+      transform: scale(0.95);
     }
 
     .tag:nth-child(1),
@@ -1400,6 +1414,62 @@
     let aiMode = false;
     let selectedComponent = null;
 
+    // 标签点击过滤
+    window.filterByTag = function(type, val1, val2) {
+      console.log('Filtering by:', type, val1, val2);
+      
+      const searchBox = document.getElementById('searchBox');
+      const menu = document.getElementById('categoryMenu');
+      if (!menu) return;
+
+      if (type === 'l1') {
+        currentCategoryL1 = val1;
+        currentCategoryL2 = null;
+        currentSearch = '';
+        if (searchBox) searchBox.value = '';
+        
+        // 更新侧边栏 UI
+        menu.querySelectorAll('.category-all, .category-l2-item').forEach(el => el.classList.remove('active'));
+        const l1El = menu.querySelector('.category-l1[data-l1="' + val1 + '"]');
+        if (l1El) {
+          l1El.classList.add('expanded');
+          // 注意：L1 点击通常不设为 active，因为逻辑上我们是筛选 L1 下的所有内容
+          // 但我们可以高亮显示第一个 L2 或者保持现状
+        }
+      } else if (type === 'l2') {
+        currentCategoryL1 = val1;
+        currentCategoryL2 = val2;
+        currentSearch = '';
+        if (searchBox) searchBox.value = '';
+
+        // 更新侧边栏 UI
+        menu.querySelectorAll('.category-all, .category-l2-item').forEach(el => el.classList.remove('active'));
+        const l1El = menu.querySelector('.category-l1[data-l1="' + val1 + '"]');
+        if (l1El) l1El.classList.add('expanded');
+        
+        const l2El = menu.querySelector('.category-l2-item[data-l1="' + val1 + '"][data-l2="' + val2 + '"]');
+        if (l2El) l2El.classList.add('active');
+      } else if (type === 'tag') {
+        currentCategoryL1 = null;
+        currentCategoryL2 = null;
+        currentSearch = val1;
+        if (searchBox) searchBox.value = val1;
+
+        // 更新侧边栏 UI
+        menu.querySelectorAll('.category-all, .category-l2-item').forEach(el => el.classList.remove('active'));
+        const allEl = menu.querySelector('.category-all');
+        if (allEl) allEl.classList.add('active');
+      }
+
+      renderComponents();
+      
+      // 滚动回顶部
+      const componentsArea = document.querySelector('.components-area');
+      if (componentsArea) {
+        componentsArea.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
     // 加载组件列表
     function loadComponentsData() {
       renderComponents();
@@ -1446,9 +1516,9 @@
           '<div class="component-info">' +
             '<div class="component-name">' + comp.name + '</div>' +
             '<div class="component-tags">' +
-              '<span class="tag">' + (comp.category_l1_name || '未分类') + '</span>' +
-              '<span class="tag">' + (comp.category_l2_name || '未分类') + '</span>' +
-              comp.tags.map(tag => '<span class="tag">#' + tag + '</span>').join('') +
+              '<span class="tag" onclick="event.stopPropagation(); filterByTag(\'l1\', \'' + (comp.category_l1 || '') + '\')">' + (comp.category_l1_name || '未分类') + '</span>' +
+              '<span class="tag" onclick="event.stopPropagation(); filterByTag(\'l2\', \'' + (comp.category_l1 || '') + '\', \'' + (comp.category_l2 || '') + '\')">' + (comp.category_l2_name || '未分类') + '</span>' +
+              comp.tags.map(tag => '<span class="tag" onclick="event.stopPropagation(); filterByTag(\'tag\', \'' + tag + '\')">#' + tag + '</span>').join('') +
             '</div>' +
             '<div class="component-actions">' +
               '<button class="btn" onclick="previewComponent(\'' + comp.id + '\')">查看演示</button>' +
