@@ -533,7 +533,8 @@
       border: none;
       color: var(--text-muted);
       cursor: pointer;
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 300;
     }
 
     .ai-chat-messages {
@@ -1187,6 +1188,8 @@
       align-items: center;
       justify-content: center;
       color: #fff;
+      font-size: 20px;
+      font-weight: 300;
       cursor: pointer;
       z-index: 2001;
     }
@@ -1219,9 +1222,9 @@
   <div class="main-content">
     <!-- 工具栏 -->
     <div class="toolbar">
-      <div class="hamburger" id="hamburger">☰</div>
+      <div class="hamburger" id="hamburger">三</div>
       <div class="search-shell">
-        <span class="search-icon">⌕</span>
+        <span class="search-icon">Q</span>
         <input type="text" class="search-box" placeholder="搜索组件、分类、标签或 ID..." id="searchBox">
       </div>
       <button class="btn btn-secondary" id="aiModeBtn">AI模式：关</button>
@@ -1347,7 +1350,7 @@
       l1Map.forEach((l1Data, l1Id) => {
         html += '<div class="category-group">';
         html += '<div class="category-l1" data-l1="' + l1Id + '">';
-        html += '<span class="arrow">▶</span>';
+        html += '<span class="arrow">&gt;</span>';
         html += '<span>' + l1Data.name + '</span>';
         html += '</div>';
         html += '<div class="category-l2-list">';
