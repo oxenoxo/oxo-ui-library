@@ -1,7 +1,6 @@
 {
   "id": "dossier-tabs",
   "name": "Tab导航",
-  "category": "dossier",
   "tags": [
     "卷宗",
     "Tab",
@@ -15,5 +14,10 @@
     "创建卷宗风格页面",
     "暗色主题设计"
   ],
-  "description": "卷宗风格的Tab导航栏，支持吸顶效果（sticky）、磨砂玻璃背景、圆角按钮组。包含完整的JS交互逻辑。"
+  "description": "卷宗风格的Tab导航栏，支持吸顶效果（sticky）、磨砂玻璃背景、圆角按钮组。包含完整的JS交互逻辑。",
+  "category_l1": "navigation",
+  "category_l1_name": "导航",
+  "category_l2": "tabs",
+  "category_l2_name": "标签",
+  "category_old": "dossier"
 }

@@ -1,13 +1,23 @@
 {
   "id": "dossier-top",
   "name": "卷宗头标",
-  "category": "dossier",
-  "tags": ["卷宗", "头部", "品牌", "元信息", "暗色"],
+  "tags": [
+    "卷宗",
+    "头部",
+    "品牌",
+    "元信息",
+    "暗色"
+  ],
   "props": {},
   "when_to_use": [
     "需要显示品牌标识和文档编号时",
     "创建卷宗风格页面的顶部区域",
     "需要带闪烁红点的 confidential 标记"
   ],
-  "description": "卷宗风格的顶部标识栏，包含品牌名称（带闪烁红点动画）和文档元信息（编号、日期）。适合机密文档、奖励卷宗等场景。"
+  "description": "卷宗风格的顶部标识栏，包含品牌名称（带闪烁红点动画）和文档元信息（编号、日期）。适合机密文档、奖励卷宗等场景。",
+  "category_l1": "layout",
+  "category_l1_name": "布局",
+  "category_l2": "page-structure",
+  "category_l2_name": "页面结构",
+  "category_old": "dossier"
 }

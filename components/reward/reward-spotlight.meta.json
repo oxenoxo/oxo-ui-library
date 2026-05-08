@@ -1,16 +1,38 @@
 {
   "id": "reward-spotlight",
   "name": "亮点洞察卡片",
-  "category": "reward",
-  "tags": ["亮点", "洞察", "关键数据", "双栏", "金色"],
+  "tags": [
+    "亮点",
+    "洞察",
+    "关键数据",
+    "双栏",
+    "金色"
+  ],
   "props": {
-    "big_number": {"type": "string", "default": "95", "description": "大号数字"},
-    "title": {"type": "string", "default": "关键暴击点", "description": "标题"},
-    "description": {"type": "string", "default": "94到95分单分差值340元", "description": "描述文字"}
+    "big_number": {
+      "type": "string",
+      "default": "95",
+      "description": "大号数字"
+    },
+    "title": {
+      "type": "string",
+      "default": "关键暴击点",
+      "description": "标题"
+    },
+    "description": {
+      "type": "string",
+      "default": "94到95分单分差值340元",
+      "description": "描述文字"
+    }
   },
   "when_to_use": [
     "需要突出某个关键数据点",
     "奖励/考试页面的核心洞察展示"
   ],
-  "description": "左侧大号数字胶囊+右侧标题描述的双栏卡片，带金色光晕背景，用于突出关键洞察。"
+  "description": "左侧大号数字胶囊+右侧标题描述的双栏卡片，带金色光晕背景，用于突出关键洞察。",
+  "category_l1": "content",
+  "category_l1_name": "内容呈现",
+  "category_l2": "highlight",
+  "category_l2_name": "高亮",
+  "category_old": "reward"
 }

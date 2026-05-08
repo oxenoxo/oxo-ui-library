@@ -1,7 +1,6 @@
 {
   "id": "dossier-amount-plate",
   "name": "金额大字展示",
-  "category": "dossier",
   "tags": [
     "卷宗",
     "金额",
@@ -15,5 +14,10 @@
     "创建卷宗风格页面",
     "暗色主题设计"
   ],
-  "description": "卷宗风格的金额大字展示区域，包含标签、超大渐变金额、说明文字。金额使用特殊渐变和阴影效果。"
+  "description": "卷宗风格的金额大字展示区域，包含标签、超大渐变金额、说明文字。金额使用特殊渐变和阴影效果。",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "metrics",
+  "category_l2_name": "指标",
+  "category_old": "dossier"
 }

@@ -1,7 +1,6 @@
 {
   "id": "dossier-bar-chart",
   "name": "增值条",
-  "category": "dossier",
   "tags": [
     "卷宗",
     "柱状图",
@@ -15,5 +14,10 @@
     "创建卷宗风格页面",
     "暗色主题设计"
   ],
-  "description": "卷宗风格的增值条/柱状图，显示每5分增值曲线。支持普通和peak（峰值高亮）两种样式。"
+  "description": "卷宗风格的增值条/柱状图，显示每5分增值曲线。支持普通和peak（峰值高亮）两种样式。",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "charts",
+  "category_l2_name": "图表",
+  "category_old": "dossier"
 }

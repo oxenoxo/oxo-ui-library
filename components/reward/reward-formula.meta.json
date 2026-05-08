@@ -1,15 +1,33 @@
 {
   "id": "reward-formula",
   "name": "公式卡片",
-  "category": "reward",
-  "tags": ["公式", "等宽字体", "计算原理", "暗色", "金色边框"],
+  "tags": [
+    "公式",
+    "等宽字体",
+    "计算原理",
+    "暗色",
+    "金色边框"
+  ],
   "props": {
-    "formula_title": {"type": "string", "default": "Final Exam Formula", "description": "公式标题"},
-    "formula_text": {"type": "string", "default": "奖金 = 700 × ((你的总分 − 560) / 30)²", "description": "公式内容"}
+    "formula_title": {
+      "type": "string",
+      "default": "Final Exam Formula",
+      "description": "公式标题"
+    },
+    "formula_text": {
+      "type": "string",
+      "default": "奖金 = 700 × ((你的总分 − 560) / 30)²",
+      "description": "公式内容"
+    }
   },
   "when_to_use": [
     "需要展示计算规则/公式",
     "奖励计算原理说明"
   ],
-  "description": "等宽字体的公式展示卡片，金色边框，适合展示奖励计算公式。"
+  "description": "等宽字体的公式展示卡片，金色边框，适合展示奖励计算公式。",
+  "category_l1": "content",
+  "category_l1_name": "内容呈现",
+  "category_l2": "formulas",
+  "category_l2_name": "公式",
+  "category_old": "reward"
 }

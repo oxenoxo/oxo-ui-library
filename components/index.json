@@ -1,12 +1,11 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-05-07T07:11:52.708Z",
+  "last_updated": "2026-05-07T13:13:53.599Z",
   "library_path": "/Users/oxohuang/oxo-ui-library",
   "components": [
     {
       "id": "reward-hero",
       "name": "奖励Hero区域",
-      "category": "reward",
       "tags": [
         "奖励",
         "Hero",
@@ -16,12 +15,16 @@
       ],
       "meta_path": "components/reward/reward-hero.meta.json",
       "file_path": "components/reward/reward-hero.html",
-      "thumbnail": "thumbnails/reward/reward-hero.png"
+      "thumbnail": "thumbnails/reward/reward-hero.png",
+      "category_l1": "templates",
+      "category_l1_name": "模板",
+      "category_l2": "combinations",
+      "category_l2_name": "组合区块",
+      "category_old": "reward"
     },
     {
       "id": "reward-pool",
       "name": "奖励池卡片",
-      "category": "reward",
       "tags": [
         "奖励",
         "池子",
@@ -31,12 +34,16 @@
       ],
       "meta_path": "components/reward/reward-pool.meta.json",
       "file_path": "components/reward/reward-pool.html",
-      "thumbnail": "thumbnails/reward/reward-pool.png"
+      "thumbnail": "thumbnails/reward/reward-pool.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "cards",
+      "category_l2_name": "卡片",
+      "category_old": "reward"
     },
     {
       "id": "reward-tier-card",
       "name": "奖励档位卡片",
-      "category": "reward",
       "tags": [
         "奖励",
         "档位",
@@ -47,12 +54,16 @@
       ],
       "meta_path": "components/reward/reward-tier-card.meta.json",
       "file_path": "components/reward/reward-tier-card.html",
-      "thumbnail": "thumbnails/reward/reward-tier-card.png"
+      "thumbnail": "thumbnails/reward/reward-tier-card.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "cards",
+      "category_l2_name": "卡片",
+      "category_old": "reward"
     },
     {
       "id": "reward-metrics",
       "name": "奖励指标网格",
-      "category": "reward",
       "tags": [
         "指标",
         "网格",
@@ -62,12 +73,16 @@
       ],
       "meta_path": "components/reward/reward-metrics.meta.json",
       "file_path": "components/reward/reward-metrics.html",
-      "thumbnail": "thumbnails/reward/reward-metrics.png"
+      "thumbnail": "thumbnails/reward/reward-metrics.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "metrics",
+      "category_l2_name": "指标",
+      "category_old": "reward"
     },
     {
       "id": "reward-spotlight",
       "name": "亮点洞察卡片",
-      "category": "reward",
       "tags": [
         "亮点",
         "洞察",
@@ -77,12 +92,16 @@
       ],
       "meta_path": "components/reward/reward-spotlight.meta.json",
       "file_path": "components/reward/reward-spotlight.html",
-      "thumbnail": "thumbnails/reward/reward-spotlight.png"
+      "thumbnail": "thumbnails/reward/reward-spotlight.png",
+      "category_l1": "content",
+      "category_l1_name": "内容呈现",
+      "category_l2": "highlight",
+      "category_l2_name": "高亮",
+      "category_old": "reward"
     },
     {
       "id": "reward-progress",
       "name": "进度条区域",
-      "category": "reward",
       "tags": [
         "进度条",
         "分数",
@@ -92,12 +111,16 @@
       ],
       "meta_path": "components/reward/reward-progress.meta.json",
       "file_path": "components/reward/reward-progress.html",
-      "thumbnail": "thumbnails/reward/reward-progress.png"
+      "thumbnail": "thumbnails/reward/reward-progress.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "progress",
+      "category_l2_name": "进度",
+      "category_old": "reward"
     },
     {
       "id": "reward-formula",
       "name": "公式卡片",
-      "category": "reward",
       "tags": [
         "公式",
         "等宽字体",
@@ -107,12 +130,16 @@
       ],
       "meta_path": "components/reward/reward-formula.meta.json",
       "file_path": "components/reward/reward-formula.html",
-      "thumbnail": "thumbnails/reward/reward-formula.png"
+      "thumbnail": "thumbnails/reward/reward-formula.png",
+      "category_l1": "content",
+      "category_l1_name": "内容呈现",
+      "category_l2": "formulas",
+      "category_l2_name": "公式",
+      "category_old": "reward"
     },
     {
       "id": "reward-bar-chart",
       "name": "柱状图列表",
-      "category": "reward",
       "tags": [
         "柱状图",
         "对比",
@@ -122,12 +149,16 @@
       ],
       "meta_path": "components/reward/reward-bar-chart.meta.json",
       "file_path": "components/reward/reward-bar-chart.html",
-      "thumbnail": "thumbnails/reward/reward-bar-chart.png"
+      "thumbnail": "thumbnails/reward/reward-bar-chart.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "charts",
+      "category_l2_name": "图表",
+      "category_old": "reward"
     },
     {
       "id": "reward-insight",
       "name": "洞察文本网格",
-      "category": "reward",
       "tags": [
         "洞察",
         "文本",
@@ -137,12 +168,16 @@
       ],
       "meta_path": "components/reward/reward-insight.meta.json",
       "file_path": "components/reward/reward-insight.html",
-      "thumbnail": "thumbnails/reward/reward-insight.png"
+      "thumbnail": "thumbnails/reward/reward-insight.png",
+      "category_l1": "content",
+      "category_l1_name": "内容呈现",
+      "category_l2": "text",
+      "category_l2_name": "文本",
+      "category_old": "reward"
     },
     {
       "id": "reward-template-complete",
       "name": "奖励页面完整模板",
-      "category": "reward",
       "tags": [
         "奖励",
         "完整模板",
@@ -152,12 +187,16 @@
       ],
       "meta_path": "components/reward/reward-template-complete.meta.json",
       "file_path": "components/reward/reward-template-complete.html",
-      "thumbnail": "thumbnails/reward/reward-template-complete.png"
+      "thumbnail": "thumbnails/reward/reward-template-complete.png",
+      "category_l1": "templates",
+      "category_l1_name": "模板",
+      "category_l2": "full-pages",
+      "category_l2_name": "完整页面",
+      "category_old": "reward"
     },
     {
       "id": "dossier-top",
       "name": "卷宗头标",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "头部",
@@ -167,12 +206,16 @@
       ],
       "meta_path": "components/dossier/dossier-top.meta.json",
       "file_path": "components/dossier/dossier-top.html",
-      "thumbnail": "thumbnails/dossier/dossier-top.png"
+      "thumbnail": "thumbnails/dossier/dossier-top.png",
+      "category_l1": "layout",
+      "category_l1_name": "布局",
+      "category_l2": "page-structure",
+      "category_l2_name": "页面结构",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-hero",
       "name": "卷宗Hero区域",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "Hero",
@@ -182,12 +225,16 @@
       ],
       "meta_path": "components/dossier/dossier-hero.meta.json",
       "file_path": "components/dossier/dossier-hero.html",
-      "thumbnail": "thumbnails/dossier/dossier-hero.png"
+      "thumbnail": "thumbnails/dossier/dossier-hero.png",
+      "category_l1": "templates",
+      "category_l1_name": "模板",
+      "category_l2": "combinations",
+      "category_l2_name": "组合区块",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-chips",
       "name": "筹码卡片",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "筹码",
@@ -197,12 +244,16 @@
       ],
       "meta_path": "components/dossier/dossier-chips.meta.json",
       "file_path": "components/dossier/dossier-chips.html",
-      "thumbnail": "thumbnails/dossier/dossier-chips.png"
+      "thumbnail": "thumbnails/dossier/dossier-chips.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "cards",
+      "category_l2_name": "卡片",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-tabs",
       "name": "Tab导航",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "Tab",
@@ -212,12 +263,16 @@
       ],
       "meta_path": "components/dossier/dossier-tabs.meta.json",
       "file_path": "components/dossier/dossier-tabs.html",
-      "thumbnail": "thumbnails/dossier/dossier-tabs.png"
+      "thumbnail": "thumbnails/dossier/dossier-tabs.png",
+      "category_l1": "navigation",
+      "category_l1_name": "导航",
+      "category_l2": "tabs",
+      "category_l2_name": "标签",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-section",
       "name": "区块头部",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "区块",
@@ -227,12 +282,16 @@
       ],
       "meta_path": "components/dossier/dossier-section.meta.json",
       "file_path": "components/dossier/dossier-section.html",
-      "thumbnail": "thumbnails/dossier/dossier-section.png"
+      "thumbnail": "thumbnails/dossier/dossier-section.png",
+      "category_l1": "content",
+      "category_l1_name": "内容呈现",
+      "category_l2": "section-headers",
+      "category_l2_name": "区块头部",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-amount-plate",
       "name": "金额大字展示",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "金额",
@@ -242,12 +301,16 @@
       ],
       "meta_path": "components/dossier/dossier-amount-plate.meta.json",
       "file_path": "components/dossier/dossier-amount-plate.html",
-      "thumbnail": "thumbnails/dossier/dossier-amount-plate.png"
+      "thumbnail": "thumbnails/dossier/dossier-amount-plate.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "metrics",
+      "category_l2_name": "指标",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-kv-row",
       "name": "数据行",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "数据",
@@ -257,12 +320,16 @@
       ],
       "meta_path": "components/dossier/dossier-kv-row.meta.json",
       "file_path": "components/dossier/dossier-kv-row.html",
-      "thumbnail": "thumbnails/dossier/dossier-kv-row.png"
+      "thumbnail": "thumbnails/dossier/dossier-kv-row.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "metrics",
+      "category_l2_name": "指标",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-ledger",
       "name": "奖励档位列表",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "档位",
@@ -272,12 +339,16 @@
       ],
       "meta_path": "components/dossier/dossier-ledger.meta.json",
       "file_path": "components/dossier/dossier-ledger.html",
-      "thumbnail": "thumbnails/dossier/dossier-ledger.png"
+      "thumbnail": "thumbnails/dossier/dossier-ledger.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "lists",
+      "category_l2_name": "列表",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-exam-card",
       "name": "考试档位卡",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "考试",
@@ -287,12 +358,16 @@
       ],
       "meta_path": "components/dossier/dossier-exam-card.meta.json",
       "file_path": "components/dossier/dossier-exam-card.html",
-      "thumbnail": "thumbnails/dossier/dossier-exam-card.png"
+      "thumbnail": "thumbnails/dossier/dossier-exam-card.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "cards",
+      "category_l2_name": "卡片",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-formula",
       "name": "公式卡片",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "公式",
@@ -302,12 +377,16 @@
       ],
       "meta_path": "components/dossier/dossier-formula.meta.json",
       "file_path": "components/dossier/dossier-formula.html",
-      "thumbnail": "thumbnails/dossier/dossier-formula.png"
+      "thumbnail": "thumbnails/dossier/dossier-formula.png",
+      "category_l1": "content",
+      "category_l1_name": "内容呈现",
+      "category_l2": "formulas",
+      "category_l2_name": "公式",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-bar-chart",
       "name": "增值条",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "柱状图",
@@ -317,12 +396,16 @@
       ],
       "meta_path": "components/dossier/dossier-bar-chart.meta.json",
       "file_path": "components/dossier/dossier-bar-chart.html",
-      "thumbnail": "thumbnails/dossier/dossier-bar-chart.png"
+      "thumbnail": "thumbnails/dossier/dossier-bar-chart.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "charts",
+      "category_l2_name": "图表",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-insights",
       "name": "策略启示",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "洞察",
@@ -332,12 +415,16 @@
       ],
       "meta_path": "components/dossier/dossier-insights.meta.json",
       "file_path": "components/dossier/dossier-insights.html",
-      "thumbnail": "thumbnails/dossier/dossier-insights.png"
+      "thumbnail": "thumbnails/dossier/dossier-insights.png",
+      "category_l1": "content",
+      "category_l1_name": "内容呈现",
+      "category_l2": "text",
+      "category_l2_name": "文本",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-footer-seal",
       "name": "底部印章",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "底部",
@@ -346,12 +433,16 @@
       ],
       "meta_path": "components/dossier/dossier-footer-seal.meta.json",
       "file_path": "components/dossier/dossier-footer-seal.html",
-      "thumbnail": "thumbnails/dossier/dossier-footer-seal.png"
+      "thumbnail": "thumbnails/dossier/dossier-footer-seal.png",
+      "category_l1": "layout",
+      "category_l1_name": "布局",
+      "category_l2": "page-structure",
+      "category_l2_name": "页面结构",
+      "category_old": "dossier"
     },
     {
       "id": "dossier-template-complete",
       "name": "卷宗完整模板",
-      "category": "dossier",
       "tags": [
         "卷宗",
         "完整模板",
@@ -361,7 +452,12 @@
       ],
       "meta_path": "components/dossier/dossier-template-complete.meta.json",
       "file_path": "components/dossier/dossier-template-complete.html",
-      "thumbnail": "thumbnails/dossier/dossier-template-complete.png"
+      "thumbnail": "thumbnails/dossier/dossier-template-complete.png",
+      "category_l1": "templates",
+      "category_l1_name": "模板",
+      "category_l2": "full-pages",
+      "category_l2_name": "完整页面",
+      "category_old": "dossier"
     }
   ]
 }

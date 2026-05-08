@@ -1,7 +1,6 @@
 {
   "id": "dossier-footer-seal",
   "name": "底部印章",
-  "category": "dossier",
   "tags": [
     "卷宗",
     "底部",
@@ -14,5 +13,10 @@
     "创建卷宗风格页面",
     "暗色主题设计"
   ],
-  "description": "卷宗风格的底部印章区域，包含文档信息（左侧）和印章（右侧圆形红色印章，带旋转效果）。"
+  "description": "卷宗风格的底部印章区域，包含文档信息（左侧）和印章（右侧圆形红色印章，带旋转效果）。",
+  "category_l1": "layout",
+  "category_l1_name": "布局",
+  "category_l2": "page-structure",
+  "category_l2_name": "页面结构",
+  "category_old": "dossier"
 }

@@ -1,7 +1,6 @@
 {
   "id": "dossier-formula",
   "name": "公式卡片",
-  "category": "dossier",
   "tags": [
     "卷宗",
     "公式",
@@ -15,5 +14,10 @@
     "创建卷宗风格页面",
     "暗色主题设计"
   ],
-  "description": "卷宗风格的公式卡片，带四角装饰线。适合展示奖金计算公式、加速回报原理等。"
+  "description": "卷宗风格的公式卡片，带四角装饰线。适合展示奖金计算公式、加速回报原理等。",
+  "category_l1": "content",
+  "category_l1_name": "内容呈现",
+  "category_l2": "formulas",
+  "category_l2_name": "公式",
+  "category_old": "dossier"
 }

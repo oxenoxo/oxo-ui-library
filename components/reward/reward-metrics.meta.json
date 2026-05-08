@@ -1,19 +1,53 @@
 {
   "id": "reward-metrics",
   "name": "奖励指标网格",
-  "category": "reward",
-  "tags": ["指标", "网格", "3栏", "数据", "暗色"],
+  "tags": [
+    "指标",
+    "网格",
+    "3栏",
+    "数据",
+    "暗色"
+  ],
   "props": {
-    "num1": {"type": "string", "default": "800", "description": "指标1数值"},
-    "label1": {"type": "string", "default": "最高奖金 / 元", "description": "指标1标签"},
-    "num2": {"type": "string", "default": "90", "description": "指标2数值"},
-    "label2": {"type": "string", "default": "生死线分数", "description": "指标2标签"},
-    "num3": {"type": "string", "default": "100", "description": "指标3数值"},
-    "label3": {"type": "string", "default": "满分目标", "description": "指标3标签"}
+    "num1": {
+      "type": "string",
+      "default": "800",
+      "description": "指标1数值"
+    },
+    "label1": {
+      "type": "string",
+      "default": "最高奖金 / 元",
+      "description": "指标1标签"
+    },
+    "num2": {
+      "type": "string",
+      "default": "90",
+      "description": "指标2数值"
+    },
+    "label2": {
+      "type": "string",
+      "default": "生死线分数",
+      "description": "指标2标签"
+    },
+    "num3": {
+      "type": "string",
+      "default": "100",
+      "description": "指标3数值"
+    },
+    "label3": {
+      "type": "string",
+      "default": "满分目标",
+      "description": "指标3标签"
+    }
   },
   "when_to_use": [
     "需要在页面顶部展示3个关键指标",
     "奖励/考试场景的核心数据概览"
   ],
-  "description": "3栏指标网格，金色数字+灰色标签，常用于奖励页面顶部数据概览。"
+  "description": "3栏指标网格，金色数字+灰色标签，常用于奖励页面顶部数据概览。",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "metrics",
+  "category_l2_name": "指标",
+  "category_old": "reward"
 }

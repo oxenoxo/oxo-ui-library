@@ -1,7 +1,6 @@
 {
   "id": "dossier-template-complete",
   "name": "卷宗完整模板",
-  "category": "dossier",
   "tags": [
     "卷宗",
     "完整模板",
@@ -15,5 +14,10 @@
     "创建卷宗风格页面",
     "暗色主题设计"
   ],
-  "description": "完整的卷宗风格奖励页面模板，包含所有拆解出的组件的组合示例。可直接复制使用。"
+  "description": "完整的卷宗风格奖励页面模板，包含所有拆解出的组件的组合示例。可直接复制使用。",
+  "category_l1": "templates",
+  "category_l1_name": "模板",
+  "category_l2": "full-pages",
+  "category_l2_name": "完整页面",
+  "category_old": "dossier"
 }

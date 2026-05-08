@@ -1,15 +1,33 @@
 {
   "id": "reward-insight",
   "name": "洞察文本网格",
-  "category": "reward",
-  "tags": ["洞察", "文本", "网格", "策略", "暗色"],
+  "tags": [
+    "洞察",
+    "文本",
+    "网格",
+    "策略",
+    "暗色"
+  ],
   "props": {
-    "insight_title": {"type": "string", "default": "边际递增", "description": "洞察标题"},
-    "insight_text": {"type": "string", "default": "分数越接近目标，每1分奖金价值越高", "description": "洞察描述"}
+    "insight_title": {
+      "type": "string",
+      "default": "边际递增",
+      "description": "洞察标题"
+    },
+    "insight_text": {
+      "type": "string",
+      "default": "分数越接近目标，每1分奖金价值越高",
+      "description": "洞察描述"
+    }
   },
   "when_to_use": [
     "展示策略要点/洞察总结",
     "奖励规则的文字说明"
   ],
-  "description": "金色标题+灰色描述的洞察文本卡片网格，适合展示策略要点或规则说明。"
+  "description": "金色标题+灰色描述的洞察文本卡片网格，适合展示策略要点或规则说明。",
+  "category_l1": "content",
+  "category_l1_name": "内容呈现",
+  "category_l2": "text",
+  "category_l2_name": "文本",
+  "category_old": "reward"
 }

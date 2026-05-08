@@ -1,7 +1,6 @@
 {
   "id": "dossier-chips",
   "name": "筹码卡片",
-  "category": "dossier",
   "tags": [
     "卷宗",
     "筹码",
@@ -15,5 +14,10 @@
     "创建卷宗风格页面",
     "暗色主题设计"
   ],
-  "description": "卷宗风格的双栏筹码卡片，并排显示两个数值（如两场考试的奖励金额），中间有渐变分隔线和乘号。"
+  "description": "卷宗风格的双栏筹码卡片，并排显示两个数值（如两场考试的奖励金额），中间有渐变分隔线和乘号。",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "cards",
+  "category_l2_name": "卡片",
+  "category_old": "dossier"
 }

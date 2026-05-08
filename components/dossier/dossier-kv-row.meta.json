@@ -1,7 +1,6 @@
 {
   "id": "dossier-kv-row",
   "name": "数据行",
-  "category": "dossier",
   "tags": [
     "卷宗",
     "数据",
@@ -15,5 +14,10 @@
     "创建卷宗风格页面",
     "暗色主题设计"
   ],
-  "description": "卷宗风格的3栏数据行，支持accent高亮（金色顶部边线）。适合展示TOP PRIZE、生死线、满分等数据。"
+  "description": "卷宗风格的3栏数据行，支持accent高亮（金色顶部边线）。适合展示TOP PRIZE、生死线、满分等数据。",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "metrics",
+  "category_l2_name": "指标",
+  "category_old": "dossier"
 }
