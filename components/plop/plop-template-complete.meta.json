@@ -1,0 +1,17 @@
+{
+  "id": "plop-template-complete",
+  "name": "PLOP 完整页面模板",
+  "category": "plop",
+  "description": "PLOP风格完整三屏页面模板：Hero区 + 统计详情区 + 发现分类区。明亮粘土风，新粗野主义，响应式适配。",
+  "tags": ["PLOP", "完整模板", "明亮", "粘土风", "新粗野主义", "三屏", "响应式"],
+  "style": {
+    "color_scheme": "明亮",
+    "visual_style": "粘土风/新粗野主义",
+    "primary_color": "#FFE600",
+    "secondary_color": "#9FE1CB"
+  },
+  "use_cases": ["产品展示页", "品牌落地页", "活动页", "移动端H5"],
+  "responsive": true,
+  "created_at": "2026-05-08",
+  "updated_at": "2026-05-08"
+}

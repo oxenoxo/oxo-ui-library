@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLOP Detail List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .plop-detail-list {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+        .plop-detail-list .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .plop-detail-list .header-title {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #bbb;
+            letter-spacing: 1px;
+        }
+        .plop-detail-list .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-top: 1px solid #000;
+        }
+        .plop-detail-list .row:first-of-type {
+            border-top: 2px solid #000;
+        }
+        .plop-detail-list .row-key {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+        }
+        .plop-detail-list .row-value {
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (min-width: 768px) {
+            .plop-detail-list {
+                max-width: 600px;
+                padding: 48px;
+            }
+            .plop-detail-list .row-key,
+            .plop-detail-list .row-value {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="plop-detail-list">
+        <div class="header">
+            <span class="header-title">Title</span>
+            <span class="header-title">Details</span>
+        </div>
+        <div class="row">
+            <span class="row-key">Attribute 1</span>
+            <span class="row-value">Value Data</span>
+        </div>
+        <div class="row">
+            <span class="row-key">Attribute 2</span>
+            <span class="row-value">Value Data</span>
+        </div>
+        <div class="row">
+            <span class="row-key">Attribute 3</span>
+            <span class="row-value">Value Data</span>
+        </div>
+        <div class="row">
+            <span class="row-key">Attribute 4</span>
+            <span class="row-value">Value Data</span>
+        </div>
+    </div>
+</body>
+</html>

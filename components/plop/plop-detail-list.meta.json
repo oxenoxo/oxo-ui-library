@@ -1,0 +1,17 @@
+{
+  "id": "plop-detail-list",
+  "name": "PLOP 详情属性列表",
+  "category": "plop",
+  "description": "顶部标题行 + 键值对列表，粗黑分隔线，新粗野主义风格。响应式适配。",
+  "tags": ["PLOP", "详情", "列表", "键值对", "新粗野主义", "分隔线"],
+  "style": {
+    "color_scheme": "明亮",
+    "visual_style": "新粗野主义",
+    "primary_color": "#FFFFFF",
+    "secondary_color": "#000000"
+  },
+  "use_cases": ["产品属性", "数据详情", "参数列表"],
+  "responsive": true,
+  "created_at": "2026-05-08",
+  "updated_at": "2026-05-08"
+}

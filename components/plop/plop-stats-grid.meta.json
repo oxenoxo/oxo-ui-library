@@ -1,0 +1,17 @@
+{
+  "id": "plop-stats-grid",
+  "name": "PLOP 数据统计网格",
+  "category": "plop",
+  "description": "左侧大数字百分比统计 + 右侧粘土风视觉资产，双栏响应式布局。",
+  "tags": ["PLOP", "统计", "数据", "百分比", "粘土风", "双栏"],
+  "style": {
+    "color_scheme": "明亮",
+    "visual_style": "粘土风/新粗野主义",
+    "primary_color": "#FFFFFF",
+    "secondary_color": "#9FE1CB"
+  },
+  "use_cases": ["数据展示", "产品详情", "分析报告"],
+  "responsive": true,
+  "created_at": "2026-05-08",
+  "updated_at": "2026-05-08"
+}

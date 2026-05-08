@@ -1,0 +1,17 @@
+{
+  "id": "plop-discovery-header",
+  "name": "PLOP 发现页头部",
+  "category": "plop",
+  "description": "黄色顶部背景 + 大标题 + 底部突出的粘土风视觉资产。适用于分类/发现页入口。",
+  "tags": ["PLOP", "发现页", "头部", "黄色", "粘土风", "分类"],
+  "style": {
+    "color_scheme": "明亮",
+    "visual_style": "粘土风/新粗野主义",
+    "primary_color": "#FFE600",
+    "secondary_color": "#F0997B"
+  },
+  "use_cases": ["分类页头", "发现页", "频道入口"],
+  "responsive": true,
+  "created_at": "2026-05-08",
+  "updated_at": "2026-05-08"
+}

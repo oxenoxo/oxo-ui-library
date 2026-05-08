@@ -1047,6 +1047,148 @@
       "category_l2": "full-pages",
       "category_l2_name": "完整页面",
       "category_old": "score-rule"
+    },
+    {
+      "id": "plop-hero",
+      "name": "PLOP Hero区域",
+      "tags": [
+        "PLOP",
+        "Hero",
+        "明亮",
+        "黄色",
+        "粘土风",
+        "CTA",
+        "品牌"
+      ],
+      "meta_path": "components/plop/plop-hero.meta.json",
+      "file_path": "components/plop/plop-hero.html",
+      "thumbnail": "thumbnails/plop/plop-hero.png",
+      "category_l1": "templates",
+      "category_l1_name": "模板",
+      "category_l2": "combinations",
+      "category_l2_name": "组合区块",
+      "category_old": "plop"
+    },
+    {
+      "id": "plop-stats-grid",
+      "name": "PLOP 数据统计网格",
+      "tags": [
+        "PLOP",
+        "统计",
+        "数据",
+        "百分比",
+        "粘土风",
+        "双栏"
+      ],
+      "meta_path": "components/plop/plop-stats-grid.meta.json",
+      "file_path": "components/plop/plop-stats-grid.html",
+      "thumbnail": "thumbnails/plop/plop-stats-grid.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "metrics",
+      "category_l2_name": "指标",
+      "category_old": "plop"
+    },
+    {
+      "id": "plop-detail-list",
+      "name": "PLOP 详情属性列表",
+      "tags": [
+        "PLOP",
+        "详情",
+        "列表",
+        "键值对",
+        "新粗野主义",
+        "分隔线"
+      ],
+      "meta_path": "components/plop/plop-detail-list.meta.json",
+      "file_path": "components/plop/plop-detail-list.html",
+      "thumbnail": "thumbnails/plop/plop-detail-list.png",
+      "category_l1": "content",
+      "category_l1_name": "内容呈现",
+      "category_l2": "lists",
+      "category_l2_name": "列表",
+      "category_old": "plop"
+    },
+    {
+      "id": "plop-discovery-header",
+      "name": "PLOP 发现页头部",
+      "tags": [
+        "PLOP",
+        "发现页",
+        "头部",
+        "黄色",
+        "粘土风",
+        "分类"
+      ],
+      "meta_path": "components/plop/plop-discovery-header.meta.json",
+      "file_path": "components/plop/plop-discovery-header.html",
+      "thumbnail": "thumbnails/plop/plop-discovery-header.png",
+      "category_l1": "templates",
+      "category_l1_name": "模板",
+      "category_l2": "combinations",
+      "category_l2_name": "组合区块",
+      "category_old": "plop"
+    },
+    {
+      "id": "plop-category-card",
+      "name": "PLOP 分类卡片",
+      "tags": [
+        "PLOP",
+        "分类",
+        "卡片",
+        "双栏",
+        "新粗野主义",
+        "异形圆角"
+      ],
+      "meta_path": "components/plop/plop-category-card.meta.json",
+      "file_path": "components/plop/plop-category-card.html",
+      "thumbnail": "thumbnails/plop/plop-category-card.png",
+      "category_l1": "data-display",
+      "category_l1_name": "数据展示",
+      "category_l2": "cards",
+      "category_l2_name": "卡片",
+      "category_old": "plop"
+    },
+    {
+      "id": "plop-about-section",
+      "name": "PLOP 关于区域",
+      "tags": [
+        "PLOP",
+        "关于",
+        "文本",
+        "图片",
+        "双栏",
+        "介绍"
+      ],
+      "meta_path": "components/plop/plop-about-section.meta.json",
+      "file_path": "components/plop/plop-about-section.html",
+      "thumbnail": "thumbnails/plop/plop-about-section.png",
+      "category_l1": "content",
+      "category_l1_name": "内容呈现",
+      "category_l2": "text",
+      "category_l2_name": "文本",
+      "category_old": "plop"
+    },
+    {
+      "id": "plop-template-complete",
+      "name": "PLOP 完整页面模板",
+      "tags": [
+        "PLOP",
+        "完整模板",
+        "明亮",
+        "粘土风",
+        "新粗野主义",
+        "三屏",
+        "响应式"
+      ],
+      "meta_path": "components/plop/plop-template-complete.meta.json",
+      "file_path": "components/plop/plop-template-complete.html",
+      "thumbnail": "thumbnails/plop/plop-template-complete.png",
+      "category_l1": "templates",
+      "category_l1_name": "模板",
+      "category_l2": "full-pages",
+      "category_l2_name": "完整页面",
+      "category_old": "plop"
     }
   ]
 }

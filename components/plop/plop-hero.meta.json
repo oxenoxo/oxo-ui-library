@@ -1,0 +1,17 @@
+{
+  "id": "plop-hero",
+  "name": "PLOP Hero区域",
+  "category": "plop",
+  "description": "明亮黄色背景的Hero区域，包含品牌标签、大标题、粘土风视觉资产和底部CTA按钮行。支持响应式适配。",
+  "tags": ["PLOP", "Hero", "明亮", "黄色", "粘土风", "CTA", "品牌"],
+  "style": {
+    "color_scheme": "明亮",
+    "visual_style": "粘土风/新粗野主义",
+    "primary_color": "#FFE600",
+    "secondary_color": "#9FE1CB"
+  },
+  "use_cases": ["产品落地页首屏", "品牌展示", "活动页入口"],
+  "responsive": true,
+  "created_at": "2026-05-08",
+  "updated_at": "2026-05-08"
+}

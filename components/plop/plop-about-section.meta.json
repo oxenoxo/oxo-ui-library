@@ -1,0 +1,17 @@
+{
+  "id": "plop-about-section",
+  "name": "PLOP 关于区域",
+  "category": "plop",
+  "description": "标签标题 + 文本图片双栏布局，粉色视觉占位。适用于产品介绍/关于页面。",
+  "tags": ["PLOP", "关于", "文本", "图片", "双栏", "介绍"],
+  "style": {
+    "color_scheme": "明亮",
+    "visual_style": "新粗野主义",
+    "primary_color": "#FFFFFF",
+    "secondary_color": "#F4C0D1"
+  },
+  "use_cases": ["产品介绍", "关于我们", "详情说明"],
+  "responsive": true,
+  "created_at": "2026-05-08",
+  "updated_at": "2026-05-08"
+}

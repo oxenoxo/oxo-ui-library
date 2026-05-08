@@ -1,0 +1,17 @@
+{
+  "id": "plop-category-card",
+  "name": "PLOP 分类卡片",
+  "category": "plop",
+  "description": "左右分栏分类卡片：左侧VISIT按钮 + 右侧彩色信息卡（带异形圆角）。新粗野主义风格。",
+  "tags": ["PLOP", "分类", "卡片", "双栏", "新粗野主义", "异形圆角"],
+  "style": {
+    "color_scheme": "明亮",
+    "visual_style": "新粗野主义",
+    "primary_color": "#FFFFFF",
+    "secondary_color": "#F15A24"
+  },
+  "use_cases": ["分类导航", "产品卡片", "频道切换"],
+  "responsive": true,
+  "created_at": "2026-05-08",
+  "updated_at": "2026-05-08"
+}
