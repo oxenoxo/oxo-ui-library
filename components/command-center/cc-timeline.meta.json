@@ -1,0 +1,13 @@
+{
+  "id": "cc-timeline",
+  "name": "今日节奏时间线",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "lists",
+  "category_l2_name": "列表",
+  "category_old": "command-center",
+  "tags": ["时间线", "节奏", "日程", "暗色", "时间"],
+  "props": {},
+  "when_to_use": ["需要展示当日时间节奏安排", "紧凑的时间线+备注列表"],
+  "description": "暗色系时间线组件，展示时间点+事件+备注，适合日常节奏规划和日程展示"
+}

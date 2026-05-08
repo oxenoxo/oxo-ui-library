@@ -1,0 +1,13 @@
+{
+  "id": "cc-brand",
+  "name": "品牌标识+导航侧栏",
+  "category_l1": "layout",
+  "category_l1_name": "布局",
+  "category_l2": "page-structure",
+  "category_l2_name": "页面结构",
+  "category_old": "command-center",
+  "tags": ["导航", "侧栏", "品牌", "暗色", "任务管理"],
+  "props": {},
+  "when_to_use": ["需要左侧导航+品牌标识的暗色页面", "任务管理类应用的侧边栏"],
+  "description": "暗色系品牌标识+导航菜单+聚焦区块的组合侧栏，适合任务管理、指挥台等场景"
+}

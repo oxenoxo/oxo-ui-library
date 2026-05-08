@@ -1,0 +1,13 @@
+{
+  "id": "eval-model-compare",
+  "name": "模型对比卡片",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "cards",
+  "category_l2_name": "卡片",
+  "category_old": "eval-lab",
+  "tags": ["模型对比", "卡片", "标签", "衬线体", "评测"],
+  "props": {},
+  "when_to_use": ["对比多个AI模型的能力和特点", "评测报告中的模型横向对比"],
+  "description": "衬线字体纸质背景的三栏模型对比卡片，每张卡片含模型名、描述和特征标签，适合评测归因"
+}

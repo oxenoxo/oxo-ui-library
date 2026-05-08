@@ -1,0 +1,13 @@
+{
+  "id": "war-risk-radar",
+  "name": "风险雷达面板",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "lists",
+  "category_l2_name": "列表",
+  "category_old": "war-room",
+  "tags": ["风险", "雷达", "面板", "军事绿", "项目"],
+  "props": {},
+  "when_to_use": ["展示项目风险的列表面板", "战情室或项目管理中的风险追踪"],
+  "description": "军事绿暗色风险雷达面板，每个风险含编号+描述+备注，适合项目风险追踪场景"
+}

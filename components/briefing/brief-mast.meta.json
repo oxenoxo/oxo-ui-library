@@ -1,0 +1,13 @@
+{
+  "id": "brief-mast",
+  "name": "报头",
+  "category_l1": "content",
+  "category_l1_name": "内容呈现",
+  "category_l2": "section-headers",
+  "category_l2_name": "区块头部",
+  "category_old": "briefing",
+  "tags": ["报头", "晨报", "报纸", "日期", "信源策略"],
+  "props": {},
+  "when_to_use": ["情报晨报或新闻类页面的头部", "需要日期+标题+策略说明的三栏报头"],
+  "description": "报纸编辑风格的三栏报头，左日期、中标题、右信源策略，适合情报/晨报类页面"
+}

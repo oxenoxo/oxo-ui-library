@@ -1,0 +1,13 @@
+{
+  "id": "eval-topline",
+  "name": "报告头部",
+  "category_l1": "content",
+  "category_l1_name": "内容呈现",
+  "category_l2": "section-headers",
+  "category_l2_name": "区块头部",
+  "category_old": "eval-lab",
+  "tags": ["报告", "头部", "衬线体", "纸质", "编码"],
+  "props": {},
+  "when_to_use": ["需要正式报告风格的页面头部", "学术论文或评测报告的标题区"],
+  "description": "衬线字体纸质背景的报告头部，含编码标识、版本号和大标题，适合正式评测报告"
+}

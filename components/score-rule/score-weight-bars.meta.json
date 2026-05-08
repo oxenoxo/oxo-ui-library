@@ -1,0 +1,13 @@
+{
+  "id": "score-weight-bars",
+  "name": "科目权重条",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "metrics",
+  "category_l2_name": "指标",
+  "category_old": "score-rule",
+  "tags": ["权重", "进度条", "科目", "暗色", "计分"],
+  "props": {},
+  "when_to_use": ["展示科目/维度权重的进度条", "计分规则中的科目分值可视化"],
+  "description": "暗色系科目权重条列表，每行含科目名+渐变进度条+分值，适合计分/评测权重可视化"
+}

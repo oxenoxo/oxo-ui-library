@@ -1,0 +1,13 @@
+{
+  "id": "vault-detail-panel",
+  "name": "资产详情面板",
+  "category_l1": "layout",
+  "category_l1_name": "布局",
+  "category_l2": "page-structure",
+  "category_l2_name": "页面结构",
+  "category_old": "vault",
+  "tags": ["详情", "面板", "预览", "KV", "操作按钮"],
+  "props": {},
+  "when_to_use": ["需要展示资产详情的右侧面板", "资产/文件管理的预览+KV+操作组合"],
+  "description": "暗色档案风格的资产详情面板，含预览区、KV字段列表和操作按钮，适合三栏布局右侧"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "score-strategy",
+  "name": "策略说明网格",
+  "category_l1": "content",
+  "category_l1_name": "内容呈现",
+  "category_l2": "text",
+  "category_l2_name": "文本",
+  "category_old": "score-rule",
+  "tags": ["策略", "网格", "说明", "暗色", "行动路径"],
+  "props": {},
+  "when_to_use": ["展示策略或行动建议的网格", "计分规则中的策略说明"],
+  "description": "暗色系2x2策略说明网格，每格含标题+描述，蓝色标题高亮，适合行动建议和策略展示"
+}

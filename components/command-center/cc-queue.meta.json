@@ -1,0 +1,13 @@
+{
+  "id": "cc-queue",
+  "name": "AI等待队列",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "lists",
+  "category_l2_name": "列表",
+  "category_old": "command-center",
+  "tags": ["队列", "等待", "状态标签", "暗色", "AI任务"],
+  "props": {},
+  "when_to_use": ["展示AI或自动化任务的等待状态", "需要标签化状态的任务队列"],
+  "description": "暗色系AI等待队列，每个任务带彩色状态标签（自动/低负荷/待确认），适合展示自动化任务执行状态"
+}

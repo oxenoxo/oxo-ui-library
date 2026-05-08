@@ -1,0 +1,13 @@
+{
+  "id": "eval-verdict",
+  "name": "结论先行判定卡",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "cards",
+  "category_l2_name": "卡片",
+  "category_old": "eval-lab",
+  "tags": ["判定", "结论先行", "卡片", "衬线体", "评测"],
+  "props": {},
+  "when_to_use": ["评测报告需要首屏结论展示", "快速展示关键判定结果"],
+  "description": "三栏结论先行判定卡，展示最佳模型、风险等级、样本数等关键判定，适合评测报告首屏"
+}

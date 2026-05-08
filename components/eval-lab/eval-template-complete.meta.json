@@ -1,0 +1,13 @@
+{
+  "id": "eval-template-complete",
+  "name": "评测报告完整模板",
+  "category_l1": "templates",
+  "category_l1_name": "模板",
+  "category_l2": "full-pages",
+  "category_l2_name": "完整页面",
+  "category_old": "eval-lab",
+  "tags": ["完整模板", "评测", "衬线体", "纸质", "结论先行"],
+  "props": {},
+  "when_to_use": ["需要完整的AI评测报告页面", "学术论文风格的评测报告"],
+  "description": "衬线字体纸质背景的完整评测报告，含头部编码、结论先行判定、维度评分、核心结论和模型对比"
+}

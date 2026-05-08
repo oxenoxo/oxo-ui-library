@@ -1,0 +1,13 @@
+{
+  "id": "eval-dimension-score",
+  "name": "能力维度评分矩阵",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "metrics",
+  "category_l2_name": "指标",
+  "category_old": "eval-lab",
+  "tags": ["评分", "维度", "进度条", "衬线体", "评测"],
+  "props": {},
+  "when_to_use": ["展示多维度评分结果", "评测报告中的能力维度可视化"],
+  "description": "衬线字体纸质背景的多维度评分矩阵，每个维度含标签+渐变进度条+分数，适合评测归因"
+}

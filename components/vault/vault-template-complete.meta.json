@@ -1,0 +1,13 @@
+{
+  "id": "vault-template-complete",
+  "name": "资产档案库完整模板",
+  "category_l1": "templates",
+  "category_l1_name": "模板",
+  "category_l2": "full-pages",
+  "category_l2_name": "完整页面",
+  "category_old": "vault",
+  "tags": ["完整模板", "资产", "档案", "三栏", "暗色"],
+  "props": {},
+  "when_to_use": ["需要完整的资产/素材管理页面", "三栏布局的档案库/资源管理"],
+  "description": "暗色档案风格的三栏完整页面，左分类侧栏+中资产网格+右详情面板"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "vault-sidebar",
+  "name": "资产分类侧栏",
+  "category_l1": "layout",
+  "category_l1_name": "布局",
+  "category_l2": "page-structure",
+  "category_l2_name": "页面结构",
+  "category_old": "vault",
+  "tags": ["侧栏", "资产", "分类", "印鉴", "暗色"],
+  "props": {},
+  "when_to_use": ["需要资产分类导航的侧边栏", "档案库或资源管理页面的分类导航"],
+  "description": "暗色档案风格侧栏，顶部品牌印鉴+分类筛选导航，适合资产/资源管理类页面"
+}

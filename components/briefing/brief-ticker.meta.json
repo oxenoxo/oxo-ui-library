@@ -1,0 +1,13 @@
+{
+  "id": "brief-ticker",
+  "name": "数据滚动条",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "metrics",
+  "category_l2_name": "指标",
+  "category_old": "briefing",
+  "tags": ["指标", "滚动条", "新闻", "统计", "分割线"],
+  "props": {},
+  "when_to_use": ["展示关键统计数字的横向条", "情报页面顶部数据概览"],
+  "description": "四栏横向数据滚动条，粗边框分割，适合情报页面顶部展示关键统计数字"
+}

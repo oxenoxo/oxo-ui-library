@@ -1,0 +1,13 @@
+{
+  "id": "score-formula",
+  "name": "公式卡片组",
+  "category_l1": "content",
+  "category_l1_name": "内容呈现",
+  "category_l2": "formulas",
+  "category_l2_name": "公式",
+  "category_old": "score-rule",
+  "tags": ["公式", "等宽字体", "计分", "暗色", "计算"],
+  "props": {},
+  "when_to_use": ["展示计算公式和规则", "计分/评测系统的公式说明"],
+  "description": "暗色系等宽字体公式卡片组，每行一条公式，关键变量高亮，适合计分规则和计算说明"
+}

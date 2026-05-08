@@ -1,0 +1,13 @@
+{
+  "id": "cc-hero",
+  "name": "操作面板Hero区",
+  "category_l1": "templates",
+  "category_l1_name": "模板",
+  "category_l2": "combinations",
+  "category_l2_name": "组合区块",
+  "category_old": "command-center",
+  "tags": ["Hero", "标题", "暗色", "装饰环", "操作面板"],
+  "props": {},
+  "when_to_use": ["需要大标题+描述+装饰元素的页面头部", "暗色任务管理类应用的Hero区"],
+  "description": "暗色系Hero区域，含eyebrow标签、大标题、描述文字和装饰性同心环"
+}

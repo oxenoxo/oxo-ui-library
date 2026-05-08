@@ -1,0 +1,13 @@
+{
+  "id": "cc-template-complete",
+  "name": "日常指挥台完整模板",
+  "category_l1": "templates",
+  "category_l1_name": "模板",
+  "category_l2": "full-pages",
+  "category_l2_name": "完整页面",
+  "category_old": "command-center",
+  "tags": ["完整模板", "指挥台", "任务管理", "暗色", "三栏"],
+  "props": {},
+  "when_to_use": ["需要完整的日常任务管理页面", "三栏布局的指挥台/任务中心"],
+  "description": "日常任务指挥台完整页面，三栏布局：侧边导航+主面板Hero和A/B任务泳道+右侧时间线和AI队列"
+}

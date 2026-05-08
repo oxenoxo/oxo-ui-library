@@ -1,0 +1,13 @@
+{
+  "id": "score-tier-cards",
+  "name": "档位卡片",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "cards",
+  "category_l2_name": "卡片",
+  "category_old": "score-rule",
+  "tags": ["档位", "卡片", "王座", "暴击", "生死线"],
+  "props": {},
+  "when_to_use": ["展示奖励/考核档位的三栏卡片", "计分规则中的档位说明"],
+  "description": "三栏档位卡片（王座/暴击/生死线），每张有标签+标题+描述和差异化配色，适合奖励/考核体系"
+}

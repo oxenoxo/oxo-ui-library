@@ -1,0 +1,13 @@
+{
+  "id": "war-template-complete",
+  "name": "战情室完整模板",
+  "category_l1": "templates",
+  "category_l1_name": "模板",
+  "category_l2": "full-pages",
+  "category_l2_name": "完整页面",
+  "category_old": "war-room",
+  "tags": ["完整模板", "战情室", "看板", "军事绿", "项目管理"],
+  "props": {},
+  "when_to_use": ["需要完整的项目推进战情室页面", "多项目并行的看板+风险管理"],
+  "description": "军事绿暗色完整战情室页面，含Hero区+统计、三栏看板、风险雷达和依赖图"
+}

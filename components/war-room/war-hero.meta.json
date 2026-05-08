@@ -1,0 +1,13 @@
+{
+  "id": "war-hero",
+  "name": "战情室Hero区",
+  "category_l1": "templates",
+  "category_l1_name": "模板",
+  "category_l2": "combinations",
+  "category_l2_name": "组合区块",
+  "category_old": "war-room",
+  "tags": ["Hero", "统计", "军事绿", "暗色", "项目"],
+  "props": {},
+  "when_to_use": ["需要大标题+统计卡片的页面头部", "项目推进或战情室类应用的Hero区"],
+  "description": "军事绿暗色Hero区域，含大标题+描述和右侧统计卡片组，适合项目推进/战情室页面头部"
+}

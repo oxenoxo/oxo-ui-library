@@ -1,0 +1,13 @@
+{
+  "id": "brief-timeline",
+  "name": "时间线+行动面板",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "lists",
+  "category_l2_name": "列表",
+  "category_old": "briefing",
+  "tags": ["时间线", "行动", "晨报", "侧栏", "任务"],
+  "props": {},
+  "when_to_use": ["情报晨报的侧栏时间线和行动面板", "展示时间节奏和待办行动"],
+  "description": "组合面板：上半部分为时间线（时间+事件），下半部分为今日行动卡片，适合情报页面侧栏"
+}

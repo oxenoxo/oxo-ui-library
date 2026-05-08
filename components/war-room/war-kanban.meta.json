@@ -1,0 +1,13 @@
+{
+  "id": "war-kanban",
+  "name": "看板三栏",
+  "category_l1": "layout",
+  "category_l1_name": "布局",
+  "category_l2": "page-structure",
+  "category_l2_name": "页面结构",
+  "category_old": "war-room",
+  "tags": ["看板", "三栏", "进度", "军事绿", "项目管理"],
+  "props": {},
+  "when_to_use": ["项目看板三栏展示", "探索/交付/归档的项目状态分类"],
+  "description": "军事绿暗色三栏看板，每栏含状态标题+项目卡片（标签+标题+描述+进度条），适合项目管理"
+}

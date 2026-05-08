@@ -1,0 +1,13 @@
+{
+  "id": "score-hero",
+  "name": "总分Hero区",
+  "category_l1": "templates",
+  "category_l1_name": "模板",
+  "category_l2": "combinations",
+  "category_l2_name": "组合区块",
+  "category_old": "score-rule",
+  "tags": ["Hero", "总分", "金色", "暗色", "仪表盘"],
+  "props": {},
+  "when_to_use": ["需要大标题+目标数字的页面头部", "计分/规则类仪表盘的Hero区"],
+  "description": "暗色仪表盘Hero区域，含标签+大标题+描述和右侧金色目标总分卡片，适合计分规则页面"
+}

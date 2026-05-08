@@ -1,0 +1,13 @@
+{
+  "id": "vault-asset-grid",
+  "name": "资产卡片网格",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "cards",
+  "category_l2_name": "卡片",
+  "category_old": "vault",
+  "tags": ["资产", "网格", "卡片", "缩略图", "暗色"],
+  "props": {},
+  "when_to_use": ["展示资产/资源的三栏卡片网格", "需要缩略图+标题+标签的资产浏览"],
+  "description": "暗色档案风格的三栏资产卡片网格，每张卡片含抽象缩略图区+标题+元信息标签"
+}

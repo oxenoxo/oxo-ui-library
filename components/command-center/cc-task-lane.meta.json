@@ -1,0 +1,13 @@
+{
+  "id": "cc-task-lane",
+  "name": "A/B任务泳道",
+  "category_l1": "layout",
+  "category_l1_name": "布局",
+  "category_l2": "page-structure",
+  "category_l2_name": "页面结构",
+  "category_old": "command-center",
+  "tags": ["任务", "泳道", "看板", "暗色", "A/B层"],
+  "props": {},
+  "when_to_use": ["需要分优先级展示任务的双栏布局", "日常任务管理中区分主线深度和等待填充"],
+  "description": "双栏任务泳道，A层为主线深度任务，B层为等待填充任务，每个任务卡片含标题、描述、标签"
+}

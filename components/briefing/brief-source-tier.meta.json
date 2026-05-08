@@ -1,0 +1,13 @@
+{
+  "id": "brief-source-tier",
+  "name": "信源分级面板",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "lists",
+  "category_l2_name": "列表",
+  "category_old": "briefing",
+  "tags": ["信源", "分级", "L1/L2/L3", "晨报", "核验"],
+  "props": {},
+  "when_to_use": ["展示信息来源可信度分级", "情报晨报中的信源核验面板"],
+  "description": "三级信源分级面板（L1官方/L2权威/L3待确认），每级含彩色标签+说明，适合情报核验场景"
+}

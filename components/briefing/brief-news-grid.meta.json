@@ -1,0 +1,13 @@
+{
+  "id": "brief-news-grid",
+  "name": "新闻网格",
+  "category_l1": "data-display",
+  "category_l1_name": "数据展示",
+  "category_l2": "cards",
+  "category_l2_name": "卡片",
+  "category_old": "briefing",
+  "tags": ["新闻", "网格", "卡片", "晨报", "分类"],
+  "props": {},
+  "when_to_use": ["展示分类新闻条目的网格布局", "情报晨报中的新闻聚合展示"],
+  "description": "大字导语+四栏分类新闻卡片网格，每张卡片含分类标签、标题、摘要，适合情报聚合展示"
+}
