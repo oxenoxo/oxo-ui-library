@@ -1034,23 +1034,173 @@
       backdrop-filter: blur(24px);
     }
 
-    /* 响应式 */
+    /* 响应式适配优化 */
     @media (max-width: 1200px) {
       .preview-panel {
-        display: none;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        bottom: 0;
+        width: 500px;
+        max-width: 90vw;
+        z-index: 2000;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex !important;
+        border-left: 1px solid rgba(255,255,255,0.15);
+      }
+
+      .preview-panel.active {
+        right: 0;
+      }
+
+      .main-content {
+        margin-right: 0;
+      }
+
+      .components-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       }
     }
 
     @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
       .sidebar {
-        display: none;
+        position: fixed;
+        left: -280px;
+        top: 0;
+        bottom: 0;
+        z-index: 2000;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: block !important;
+        box-shadow: 20px 0 50px rgba(0,0,0,0.5);
+      }
+
+      .sidebar.active {
+        left: 0;
+      }
+
+      .main-content {
+        height: 100vh;
+      }
+
+      .toolbar {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .hamburger {
+        display: flex !important;
+      }
+
+      .search-shell {
+        order: 1;
+        width: 100%;
+        min-width: 100%;
+      }
+
+      .toolbar .btn {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .library-hero {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .library-hero h1 {
+        font-size: 28px;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+      }
+
+      .stat-card {
+        min-width: unset;
+      }
+
+      .components-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-panel {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    /* 汉堡菜单按钮 */
+    .hamburger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+      transition: all 0.2s;
+    }
+
+    .hamburger:active {
+      transform: scale(0.9);
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* 遮罩层 */
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1900;
+    }
+
+    .mobile-overlay.active {
+      display: block;
+    }
+
+    /* 预览关闭按钮 (仅在激活预览时显示) */
+    .preview-close {
+      display: none;
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      z-index: 2001;
+    }
+
+    @media (max-width: 1200px) {
+      .preview-close {
+        display: flex;
       }
     }
   </style>
 </head>
 <body>
+  <!-- 移动端遮罩层 -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
   <!-- 侧边栏 -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <div class="brand-block">
       <div class="brand-mark">OXO</div>
       <div>
@@ -1066,6 +1216,7 @@
   <div class="main-content">
     <!-- 工具栏 -->
     <div class="toolbar">
+      <div class="hamburger" id="hamburger">☰</div>
       <div class="search-shell">
         <span class="search-icon">⌕</span>
         <input type="text" class="search-box" placeholder="搜索组件、分类、标签或 ID..." id="searchBox">
@@ -1094,7 +1245,8 @@
   </div>
 
   <!-- 预览面板 -->
-  <div class="preview-panel">
+  <div class="preview-panel" id="previewPanel">
+    <div class="preview-close" id="previewClose">×</div>
     <div class="preview-header">预览</div>
     <iframe class="preview-frame" id="previewFrame" src="about:blank"></iframe>
     <div class="code-panel" id="codePanel">点击组件查看代码</div>
@@ -1328,6 +1480,12 @@
       selectedComponent = comp;
       document.getElementById('previewFrame').src = comp.file_path;
 
+      // 移动端激活预览面板
+      if (window.innerWidth <= 1200) {
+        document.getElementById('previewPanel').classList.add('active');
+        document.getElementById('mobileOverlay').classList.add('active');
+      }
+
       try {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', comp.file_path, true);
@@ -1490,6 +1648,37 @@
 
     // 打开/关闭AI聊天面板
     let aiChatOpen = false;
+
+    // 响应式交互
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const previewPanel = document.getElementById('previewPanel');
+    const previewClose = document.getElementById('previewClose');
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      mobileOverlay.classList.add('active');
+    });
+
+    previewClose.addEventListener('click', () => {
+      previewPanel.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+    });
+
+    mobileOverlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      previewPanel.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+    });
+
+    // 分类项点击后自动收起侧边栏（移动端）
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && (e.target.closest('.category-l2-item') || e.target.closest('.category-all'))) {
+        sidebar.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+      }
+    });
 
     document.getElementById('aiChatToggle').addEventListener('click', () => {
       aiChatOpen = !aiChatOpen;
