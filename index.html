@@ -648,7 +648,7 @@
       font-size: 12px;
       font-weight: 900;
       letter-spacing: 0.8px;
-      background: linear-gradient(135deg, #7dd3fc, #f4d58d);
+      background: var(--accent);
       box-shadow: 0 12px 34px rgba(0, 212, 255, 0.22);
     }
 
@@ -695,8 +695,8 @@
 
     .category-all.active,
     .category-l2-item.active {
-      color: #06111f;
-      background: linear-gradient(135deg, #7dd3fc, #f4d58d);
+      color: #ffffff;
+      background: var(--accent);
       box-shadow: 0 10px 28px rgba(0, 212, 255, 0.18);
     }
 
@@ -759,8 +759,8 @@
       border-radius: 14px;
       font-weight: 700;
       letter-spacing: 0.01em;
-      background: linear-gradient(135deg, #0ea5e9, #6366f1);
-      box-shadow: 0 10px 24px rgba(14, 165, 233, 0.18);
+      background: var(--accent);
+      box-shadow: 0 10px 24px rgba(0, 212, 255, 0.18);
     }
 
     .btn:hover {
@@ -834,7 +834,7 @@
       letter-spacing: -0.05em;
       word-break: keep-all;
       margin-bottom: 12px;
-      background: linear-gradient(135deg, #f8fafc, #bfdbfe 52%, #f4d58d);
+      background: var(--accent);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -900,7 +900,7 @@
     .component-thumbnail {
       height: 196px;
       background:
-        linear-gradient(135deg, rgba(125,211,252,0.08), rgba(244,213,141,0.06)),
+        rgba(125, 211, 252, 0.05),
         #070b16;
     }
 
@@ -1289,7 +1289,7 @@
   <!-- AI聊天面板 -->
   <div class="ai-chat-panel" id="aiChatPanel">
     <div class="ai-chat-header">
-      <span>🤖 AI助手</span>
+      <span>AI助手</span>
       <button class="ai-chat-close" id="aiChatClose">×</button>
     </div>
     <div class="ai-chat-messages" id="aiChatMessages">
@@ -1495,8 +1495,8 @@
         card.dataset.id = comp.id;
 
         const thumbnailHtml = comp.thumbnail && comp.thumbnail !== ''
-          ? '<img src="' + comp.thumbnail + '" alt="' + comp.name + '" onerror="this.style.display=\'none\'; this.parentElement.innerHTML=\'<span>📦</span>\';">'
-          : '<span>📦</span>';
+          ? '<img src="' + comp.thumbnail + '" alt="' + comp.name + '" onerror="this.style.display=\'none\'; this.parentElement.innerHTML=\'<span>组件</span>\';">'
+          : '<span>组件</span>';
 
         card.innerHTML =
           '<div class="component-thumbnail">' +
