@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常 UI 模板 Demo 规划</title>
+  <style>
+    :root{--bg:#070A12;--panel:rgba(255,255,255,.06);--line:rgba(255,255,255,.11);--text:#F7FAFC;--muted:#94A3B8;--blue:#8BD3FF;--gold:#E8C46C;--green:#80E3B4;--red:#FF8A8A;--radius:24px}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 15% 12%,rgba(139,211,255,.18),transparent 28%),radial-gradient(circle at 82% 10%,rgba(232,196,108,.14),transparent 26%),linear-gradient(135deg,#070A12,#101827 58%,#070A12);color:var(--text);min-height:100vh}body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 75%);pointer-events:none}.shell{position:relative;max-width:1280px;margin:0 auto;padding:56px 28px 72px}.top{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch}.hero,.principles,.card,.taxonomy{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));box-shadow:0 28px 80px rgba(0,0,0,.32);backdrop-filter:blur(18px);border-radius:var(--radius)}.hero{padding:42px}.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.18em}.hero h1{font-size:56px;line-height:1.02;letter-spacing:-.06em;margin:16px 0 18px;background:linear-gradient(135deg,#fff,#BFE8FF 45%,#F0D48A);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:720px;color:#CBD5E1;font-size:16px;line-height:1.8}.principles{padding:28px}.principles h2,.taxonomy h2{margin:0 0 18px;font-size:18px}.principles ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}.principles li{padding:14px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);color:#D7DEE9}.section-title{display:flex;justify-content:space-between;align-items:end;margin:38px 0 18px}.section-title h2{margin:0;font-size:28px;letter-spacing:-.04em}.section-title p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{padding:22px;min-height:300px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(139,211,255,.45)}.card:after{content:"";position:absolute;right:-80px;top:-80px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(139,211,255,.18),transparent 68%)}.card:nth-child(2):after{background:radial-gradient(circle,rgba(232,196,108,.18),transparent 68%)}.card:nth-child(3):after{background:radial-gradient(circle,rgba(128,227,180,.18),transparent 68%)}.card:nth-child(4):after{background:radial-gradient(circle,rgba(180,151,255,.2),transparent 68%)}.card:nth-child(5):after{background:radial-gradient(circle,rgba(255,138,138,.18),transparent 68%)}.card:nth-child(6):after{background:radial-gradient(circle,rgba(255,255,255,.14),transparent 68%)}.num{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-weight:900;color:var(--blue)}.card h3{margin:18px 0 10px;font-size:22px;letter-spacing:-.03em}.card p{margin:0 0 18px;color:#AEB9C8;line-height:1.7}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}.chip{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(139,211,255,.22);color:#BFE8FF;background:rgba(139,211,255,.08)}a.open{display:inline-flex;margin-top:18px;text-decoration:none;color:#06111F;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--gold));padding:11px 14px;border-radius:14px;width:max-content}.taxonomy{margin-top:28px;padding:26px}.tax-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.tax{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.045);border-radius:18px;padding:16px}.tax b{display:block;margin-bottom:10px}.tax span{display:block;color:var(--muted);font-size:13px;line-height:1.7}@media(max-width:980px){.top,.grid,.tax-grid{grid-template-columns:1fr}.hero h1{font-size:40px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="top">
+      <div class="hero">
+        <div class="eyebrow">DAILY UI TEMPLATE PLAN</div>
+        <h1>日常高频 UI 模板库 Demo</h1>
+        <p>先按你日常真实工作流规划模板类型，再生成一组差异化 Demo。当前只做候选页面，不直接拆进组件库；你确认喜欢的方向后，再按组件粒度拆解、入库、生成缩略图。</p>
+      </div>
+      <aside class="principles">
+        <h2>设计约束</h2>
+        <ul>
+          <li>不用 emoji 图标，优先使用版式、线条、编号、几何图形表达信息层级。</li>
+          <li>避免同质化：每个 Demo 使用不同视觉语言和页面结构。</li>
+          <li>优先覆盖日常高频：规划、评测、情报、资产、项目、计分。</li>
+          <li>可拆解为组件：每个页面都内含可复用模块。</li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="section-title">
+      <div><h2>6 个候选 Demo</h2><p>先看整体方向，后续选中后再解析进 UI 库</p></div>
+    </div>
+
+    <section class="grid">
+      <article class="card"><div class="num">01</div><h3>日常任务指挥台</h3><p>适合每日计划、A/B 层任务、等待队列、执行节奏。视觉是深色指挥中心。</p><div class="chips"><span class="chip">任务规划</span><span class="chip">每日看板</span><span class="chip">AI 等待填充</span></div><a class="open" href="daily-command-center.html">查看 Demo</a></article>
+      <article class="card"><div class="num">02</div><h3>AI 评测报告</h3><p>适合模型评测、能力对比、归因分析、结论先行报告。视觉是实验室报告。</p><div class="chips"><span class="chip">模型评测</span><span class="chip">维度分析</span><span class="chip">结论报告</span></div><a class="open" href="eval-lab-report.html">查看 Demo</a></article>
+      <article class="card"><div class="num">03</div><h3>行业情报晨报</h3><p>适合 AI 新闻监控、信源分级、趋势速览、今日行动建议。视觉是编辑部快报。</p><div class="chips"><span class="chip">晨报</span><span class="chip">信源核验</span><span class="chip">趋势雷达</span></div><a class="open" href="ai-briefing.html">查看 Demo</a></article>
+      <article class="card"><div class="num">04</div><h3>素材资产档案库</h3><p>适合图片、视频、HTML 模板、组件素材归档。视觉是高端资料库。</p><div class="chips"><span class="chip">资产管理</span><span class="chip">素材筛选</span><span class="chip">档案详情</span></div><a class="open" href="asset-vault.html">查看 Demo</a></article>
+      <article class="card"><div class="num">05</div><h3>项目推进战情室</h3><p>适合 Seedance、Z Agent、论文展板等多线项目推进。视觉是战情墙。</p><div class="chips"><span class="chip">里程碑</span><span class="chip">风险</span><span class="chip">多项目</span></div><a class="open" href="project-war-room.html">查看 Demo</a></article>
+      <article class="card"><div class="num">06</div><h3>计分规则仪表盘</h3><p>适合期末考试计分、奖励规则、分数段策略解释。视觉是精密规则面板。</p><div class="chips"><span class="chip">计分规则</span><span class="chip">公式</span><span class="chip">奖励档位</span></div><a class="open" href="score-rule-dashboard.html">查看 Demo</a></article>
+    </section>
+
+    <section class="taxonomy">
+      <h2>建议入库后的模板类目</h2>
+      <div class="tax-grid">
+        <div class="tax"><b>Planning</b><span>日程、任务拆解、执行节奏、复盘</span></div>
+        <div class="tax"><b>Evaluation</b><span>模型评测、方案对比、维度归因</span></div>
+        <div class="tax"><b>Intelligence</b><span>晨报、热点、信源核验、趋势</span></div>
+        <div class="tax"><b>Repository</b><span>素材、组件、案例、知识库</span></div>
+        <div class="tax"><b>Operation</b><span>项目推进、里程碑、风险状态</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
